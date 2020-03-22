@@ -47,8 +47,8 @@ topos = { 'mytopo': ( lambda: MyTopo() ) }
 
 class Jellyfish(Topo):
 
-	#initialize nums
-	def __init__(self, numNodes, numPorts, numServerPorts, numSwitches):
+    #initialize nums
+    def __init__(self, numNodes, numPorts, numServerPorts, numSwitches):
         self.numNodes = numNodes
         self.numPorts = numPorts
         self.numServerPorts = numServerPorts
@@ -56,7 +56,7 @@ class Jellyfish(Topo):
 
         # Initialize graph of switch topology using networkx
         self.graph = nx.Graph()
-        g.add_nodes_from(['s'+str(i) for i in range(numSwitches)])
+        self.graph.add_nodes_from(['s'+str(i) for i in range(numSwitches)])
 
     '''
     see https://github.com/mininet/mininet/wiki/Introduction-to-Mininet
@@ -70,8 +70,8 @@ class Jellyfish(Topo):
                 self.addLink(host, switch)
     '''
 
-	#algo to create graph
-	def build(self):
+    #algo to create graph
+    def build(self):
         hosts = []
         for i in range(numNodes):
             hosts.append(self.addHost('h' + str(i)))
