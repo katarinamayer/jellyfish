@@ -79,7 +79,7 @@ class Jellyfish(Topo):
         switches = []
         ports = []
         for i in range(numSwitches):
-            switches.append(self.addHost('s' + str(i))
+            switches.append(self.addHost('s' + str(i)))
             ports.append(numPorts)
             # each switch has all open ports at this point
 
@@ -87,20 +87,26 @@ class Jellyfish(Topo):
 
         #randomly pick a pair of (non-neighboring) switches with free ports, Join them with a link, Repeat until no further links can be added.
 
+        # Track adjacent switches
         adjacent = set()
-        checked_switch1 = []
+        #Track switch 1
+        marked_switch1 = []
 
-        # loop through all switches 
-        while len(checked_switch1) < numSwitches:
+        # Loop through all switches
+        while len(marked_switch1) < numSwitches:
             index1 = randrange(numSwitches)
 
-            while index1 not in checked_switch1 and ports[index1] > 0:
+            # Check that switch has not been marked and that it has open ports
+            while index1 not in marked_switch1 and ports[index1] > 0:
 
-                checked_switch2 = []
+                # Track switch2
+                marked_switch2 = []
                 index2 = randrange(numSwitches)
 
-                while index2 not in checked_switch2 and index2 != index1 and ports[index2] > 0:
+                # Check that switch has not been marked, is not equal to index1 and has open ports
+                while index2 not in marked_switch2 and index2 != index1 and ports[index2] > 0:
 
+                    # Check that the links are not adjacent
                     while (index1, index2) not in adjacent:
 
                         # Form new link
@@ -110,9 +116,11 @@ class Jellyfish(Topo):
                         adjacent.add((index1, index2))
                         adjacent.add((index2, index1))
 
-                        checked_switch2.append(index2)
+                        # Mark swtich2
+                        marked_switch2.append(index2)
 
-            checked_switch1.append(index1)
+            # Mark switch 1
+            marked_switch1.append(index1)
 
         #get switch at index1 (switch1)
         # while switch1 has open ports:
