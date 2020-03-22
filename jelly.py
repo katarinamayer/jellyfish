@@ -6,7 +6,7 @@ import os
 import sys
 import argparse
 import random
-import networkx
+#import networkx
 # need to import a bunch of mininet shit
 
 
@@ -49,14 +49,17 @@ class Jellyfish(Topo):
 
     #initialize nums
     def __init__(self, numNodes, numPorts, numServerPorts, numSwitches):
+        super(Jellyfish, self).__init__()
         self.numNodes = numNodes
         self.numPorts = numPorts
         self.numServerPorts = numServerPorts
         self.numSwitches = numSwitches
 
+        self.build(self)
+
         # Initialize graph of switch topology using networkx
-        self.graph = nx.Graph()
-        self.graph.add_nodes_from(['s'+str(i) for i in range(numSwitches)])
+ #       self.graph = nx.Graph()
+ #       self.graph.add_nodes_from(['s'+str(i) for i in range(numSwitches)])
 
     '''
     see https://github.com/mininet/mininet/wiki/Introduction-to-Mininet
@@ -162,8 +165,8 @@ def main():
     numSwitches = 10
 
 
-    topo = Jellyfish(numNodes, numPorts, numServerPorts, numSwitches)
-    network = Mininet(topo)
+    topo = Jellyfish(numNodes=numNodes, numPorts=numPorts, numServerPorts=numServerPorts, numSwitches=numSwitches)
+    network = Mininet(topo=topo)
 
     network.start()
     network.pingAll()
