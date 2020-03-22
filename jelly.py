@@ -76,18 +76,18 @@ class Jellyfish(Topo):
     #algo to create graph
     def build(self):
         hosts = []
-        for i in range(numNodes):
+        for i in range(self.numNodes):
             hosts.append(self.addHost('h' + str(i)))
 
         switches = []
         ports = []
-        for i in range(numSwitches):
+        for i in range(self.numSwitches):
             switches.append(self.addHost('s' + str(i)))
-            ports.append(numPorts)
+            ports.append(self.numPorts)
             # each switch has all open ports at this point
 
         #Connect each host to a switch --> ASSUME EQUAL NUM OF EACH (for now)
-        for i in range(numNodes):
+        for i in range(self.numNodes):
             self.addLink(hosts[i], switches[i])
             ports[i] -= 1
 
@@ -103,15 +103,15 @@ class Jellyfish(Topo):
         marked_switch1 = []
 
         # Loop through all switches
-        while len(marked_switch1) < numSwitches:
-            index1 = randrange(numSwitches)
+        while len(marked_switch1) < self.numSwitches:
+            index1 = randrange(self.numSwitches)
 
             # Check that switch has not been marked and that it has open ports
             while index1 not in marked_switch1 and ports[index1] > 0:
 
                 # Track switch2
                 marked_switch2 = []
-                index2 = randrange(numSwitches)
+                index2 = randrange(self.numSwitches)
 
                 # Check that switch has not been marked, is not equal to index1 and has open ports
                 while index2 not in marked_switch2 and index2 != index1 and ports[index2] > 0:
