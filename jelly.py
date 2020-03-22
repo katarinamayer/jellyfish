@@ -90,10 +90,12 @@ class Jellyfish(Topo):
         adjacent = set()
         checked_switch1 = []
 
-        while len(checked_switch1) < numSwitches: # loop through all switches
+        # loop through all switches 
+        while len(checked_switch1) < numSwitches:
             index1 = randrange(numSwitches)
 
             while index1 not in checked_switch1 and ports[index1] > 0:
+
                 checked_switch2 = []
                 index2 = randrange(numSwitches)
 
