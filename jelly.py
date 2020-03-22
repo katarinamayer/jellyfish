@@ -78,11 +78,12 @@ class Jellyfish(Topo):
         hosts = []
         for i in range(self.numNodes):
             hosts.append(self.addHost('h' + str(i)))
+            print(hosts[i])
 
         switches = []
         ports = []
         for i in range(self.numSwitches):
-            switches.append(self.addHost('s' + str(i)))
+            switches.append(self.addSwitch('s' + str(i)))
             ports.append(self.numPorts)
             # each switch has all open ports at this point
 
@@ -163,7 +164,6 @@ def main():
     numPorts = 10
     numServerPorts = 5
     numSwitches = 10
-
 
     topo = Jellyfish(numNodes=numNodes, numPorts=numPorts, numServerPorts=numServerPorts, numSwitches=numSwitches)
     network = Mininet(topo=topo)
