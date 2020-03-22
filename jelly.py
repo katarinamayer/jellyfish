@@ -55,7 +55,7 @@ class Jellyfish(Topo):
         self.numServerPorts = numServerPorts
         self.numSwitches = numSwitches
 
-        self.build(self)
+        self.build()
 
         # Initialize graph of switch topology using networkx
  #       self.graph = nx.Graph()
