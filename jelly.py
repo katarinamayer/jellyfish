@@ -83,9 +83,16 @@ class Jellyfish(Topo):
             ports.append(numPorts)
             # each switch has all open ports at this point
 
-        #connect each host to a switch?
+        #Connect each host to a switch --> ASSUME EQUAL NUM OF EACH (for now)
+        for i in range(numNodes):
+            self.addLink(hosts[i], switches[i])
+            ports[i] -= 1
 
-        #randomly pick a pair of (non-neighboring) switches with free ports, Join them with a link, Repeat until no further links can be added.
+        '''
+        Randomly pick a pair of (non-neighboring)
+        switches with free ports, join them with a link,
+        repeat until no further links can be added.
+        '''
 
         # Track adjacent switches
         adjacent = set()
@@ -110,7 +117,9 @@ class Jellyfish(Topo):
                     while (index1, index2) not in adjacent:
 
                         # Form new link
-                        self.addLink(switch[index1], switch[index2])
+                        self.addLink(switches[index1], switches[index2])
+                        ports[index1] -= 1
+                        ports[index2] -= 1
 
                         # Add new link to set to track adjacency
                         adjacent.add((index1, index2))
@@ -122,18 +131,6 @@ class Jellyfish(Topo):
             # Mark switch 1
             marked_switch1.append(index1)
 
-        #get switch at index1 (switch1)
-        # while switch1 has open ports:
-
-            #randomly pick switch2 (and track it - add it to some other checked array)
-            #if switch2 not adjacent to switch1:
-                #If switch2 has open port:
-                    #Join switch 1 and switch 2
-                    #decrement open port count for each
-
-            #if all switches accounted for, break
-
-        #checked.append(switch1)
 
         '''
         For sampling non-neighbors, just shuffle a list of non-neighbors, iterate through,
