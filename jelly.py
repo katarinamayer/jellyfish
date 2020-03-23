@@ -116,7 +116,7 @@ class Jellyfish(Topo):
         for i in range(self.numSwitches):
             if (ports[i] > 0):
                 for j in range (self.numSwitches):
-                    if (ports[j] > 0):
+                    if (ports[j] > 0 and j != i):
                         if((i, j) not in adjacent):
                             return True
         return False
