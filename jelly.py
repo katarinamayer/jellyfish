@@ -77,6 +77,8 @@ class Jellyfish(Topo):
         and adding links (p1, x) and (p2, y).
         '''
 
+        print("exited loop")
+
         for i in range(self.numSwitches):
             if (ports[i] > 2):
 
@@ -95,6 +97,7 @@ class Jellyfish(Topo):
                     adjacent.add((randLink[0], i))
                     adjacent.add((i, randLink[1]))
                     adjacent.add((randLink[1], i))
+                    ports[i] -= 2
 
 
         added = []
