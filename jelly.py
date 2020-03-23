@@ -49,20 +49,25 @@ class Jellyfish(Topo):
 
     #initialize nums
     def __init__(self, numNodes, numPorts, numServerPorts, numSwitches):
-        super(Jellyfish, self).__init__()
+        
+        #Topo.__init__(self)
+
         self.numNodes = numNodes
         self.numPorts = numPorts
         self.numServerPorts = numServerPorts
         self.numSwitches = numSwitches
+
+        super(Jellyfish, self).__init__()
         self.build()
 
         # Initialize graph of switch topology using networkx
- #       self.graph = nx.Graph()
- #       self.graph.add_nodes_from(['s'+str(i) for i in range(numSwitches)])
+        # self.graph = nx.Graph()
+        # self.graph.add_nodes_from(['s'+str(i) for i in range(numSwitches)])
 
     #algo to create graph
     def build(self):
         hosts = []
+        # print("x")
         for i in range(self.numNodes):
             hosts.append(self.addHost('h' + str(i)))
             print(hosts[i])
@@ -92,14 +97,14 @@ class Jellyfish(Topo):
 
         # Loop through all switches
         while len(marked_switch1) < self.numSwitches:
-            index1 = randrange(self.numSwitches)
+            index1 = random.randrange(self.numSwitches)
 
             # Check that switch has not been marked and that it has open ports
             while index1 not in marked_switch1 and ports[index1] > 0:
 
                 # Track switch2
                 marked_switch2 = []
-                index2 = randrange(self.numSwitches)
+                index2 = random.randrange(self.numSwitches)
 
                 # Check that switch has not been marked, is not equal to index1 and has open ports
                 while index2 not in marked_switch2 and index2 != index1 and ports[index2] > 0:
@@ -109,6 +114,8 @@ class Jellyfish(Topo):
 
                         # Form new link
                         self.addLink(switches[index1], switches[index2])
+                        print("s"+str(index1)+" links to s"+str(index2))
+
                         ports[index1] -= 1
                         ports[index2] -= 1
 
