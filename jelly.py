@@ -63,16 +63,13 @@ class Jellyfish(Topo):
                 if ((index1, index2) not in adjacent):
 
                     #self.addLink(switches[index1], switches[index2])
-                    print("s"+str(index1)+" links to s"+str(index2))
+                    print("s"+str(index1)+" forms link to s"+str(index2))
 
                     ports[index1] -= 1
                     ports[index2] -= 1
 
                     adjacent.add((index1, index2))
                     adjacent.add((index2, index1))
-
-        print("exited loop")
-
 
         ''' TODO
         If a switch remains with >= 2 free ports (p1, p2), 
@@ -83,11 +80,14 @@ class Jellyfish(Topo):
         for i in range(self.numSwitches):
             if (ports[i] > 2):
 
+                print("s"+str(i)+" has more than 2 ports")
+
                 randLink = random.choice(adjacent)
                 if (randLink[0] == i or randLink[1] == i):
                     i = i - 1 # restart the loop to choose a new random link
 
                 else:
+                    print("link between"+str(randLink)+"broken. New links between "+str((i, randLink[0]))+" and "+str((i, randLink[1]))+"formed")
                     adjacent.remove(randLink)
                     adjacent.remove((randLink[1], randLink[0]))
 
