@@ -54,28 +54,17 @@ class Jellyfish(Topo):
 		self.numPorts = numPorts
 		self.numServerPorts = numServerPorts
 		self.numSwitches = numSwitches
-
 		self.build()
 
 		# Initialize graph of switch topology using networkx
  #       self.graph = nx.Graph()
  #       self.graph.add_nodes_from(['s'+str(i) for i in range(numSwitches)])
 
-	'''
-	see https://github.com/mininet/mininet/wiki/Introduction-to-Mininet
-	class SingleSwitchTopo(Topo):
-		"Single switch connected to n hosts."
-		def build(self, n=2):
-			switch = self.addSwitch('s1')
-			# Python's range(N) generates 0..N-1
-			for h in range(n):
-				host = self.addHost('h%s' % (h + 1))
-				self.addLink(host, switch)
-	'''
-
 	#algo to create graph
 	def build(self):
+        print("x")
 		hosts = []
+        print('here')
 		for i in range(self.numNodes):
 			hosts.append(self.addHost('h' + str(i)))
 			print(hosts[i])
@@ -141,14 +130,14 @@ class Jellyfish(Topo):
 		and check whether each node is in a set of closed ports
 		'''
 
-#TODO
-def get_args():
-	parser = argparse.ArgumentParser()
-	parser.add_argument('--numNodes', help="Number of hosts", required=True)
-	parser.add_argument('--numPorts', help="Number of total ports per switch", required=True)
-	parser.add_argument('--numServerPorts', help="Number of ports per switch to reserve to servers", required=True)
-	parser.add_argument('--numSwitches', help="Number of Switches", required=True)
-	return parser.parse_args()
+# #TODO
+# def get_args():
+# 	parser = argparse.ArgumentParser()
+# 	parser.add_argument('--numNodes', help="Number of hosts", required=True)
+# 	parser.add_argument('--numPorts', help="Number of total ports per switch", required=True)
+# 	parser.add_argument('--numServerPorts', help="Number of ports per switch to reserve to servers", required=True)
+# 	parser.add_argument('--numSwitches', help="Number of Switches", required=True)
+# 	return parser.parse_args()
 
 
 # initalize the actual mininet
