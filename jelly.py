@@ -29,7 +29,7 @@ class Jellyfish(Topo):
         # print("x")
         for i in range(self.numNodes):
             hosts.append(self.addHost('h' + str(i)))
-            print(hosts[i])
+            #print(hosts[i])
 
         switches = []
         ports = []
@@ -77,19 +77,22 @@ class Jellyfish(Topo):
         and adding links (p1, x) and (p2, y).
         '''
 
-        print("exited loop")
+        #print("exited loop")
 
-        for i in range(self.numSwitches):
-            if (ports[i] > 2):
+        i = 0
+        while i < self.numSwitches:
+            if (ports[i] >= 2):
 
-                print("s"+str(i)+" has more than 2 ports")
+                #print("s"+str(i)+" has more than 2 ports.")
 
-                randLink = random.choice(adjacent)
+                randLink = random.choice(tuple(adjacent))
+                #print(randLink)
+
                 if (randLink[0] == i or randLink[1] == i):
-                    i = i - 1 # restart the loop to choose a new random link
+                    i += 0 # restart the loop to choose a new random link
 
                 else:
-                    print("link between"+str(randLink)+"broken. New links between "+str((i, randLink[0]))+" and "+str((i, randLink[1]))+"formed")
+                    print("s"+str(i)+" has >= 2 ports. Link between"+str(randLink)+" broken. New links between "+str((i, randLink[0]))+" and "+str((i, randLink[1]))+" formed.")
                     adjacent.remove(randLink)
                     adjacent.remove((randLink[1], randLink[0]))
 
@@ -98,6 +101,7 @@ class Jellyfish(Topo):
                     adjacent.add((i, randLink[1]))
                     adjacent.add((randLink[1], i))
                     ports[i] -= 2
+                    i += 1
 
 
         added = []
@@ -107,7 +111,7 @@ class Jellyfish(Topo):
 
             if((linkIndex2, linkIndex1) not in added): #check if the opposite is in the adjacent list
                 self.addLink(switches[linkIndex1], switches[linkIndex2])
-                print("link between s"+str(linkIndex1)+" and s"+str(linkIndex2)+" added to network")
+                print("Link between s"+str(linkIndex1)+" and s"+str(linkIndex2)+" added to mininet network.")
                 added.append(link)
 
 
@@ -142,7 +146,7 @@ def main():
     numSwitches = args.numSwitches
     '''
     numNodes = 10
-    numPorts = 10
+    numPorts = 15
     numServerPorts = 5
     numSwitches = 10
 
