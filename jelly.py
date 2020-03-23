@@ -130,7 +130,7 @@ class Jellyfish(Topo):
         #     # Mark switch 1
         #     marked_switch1.append(index1)
 
-        while True:
+        while checkPossibleLinks(adjacent):
 
             index1 = random.randrange(self.numSwitches)
             print("First switch is s"+str(index1))
@@ -158,6 +158,18 @@ class Jellyfish(Topo):
         For sampling non-neighbors, just shuffle a list of non-neighbors, iterate through,
         and check whether each node is in a set of closed ports
         '''
+
+    def checkPossibleLinks(self, adjacent):
+
+        for i in range(self.numNodes):
+            if (ports[i] > 0):
+                for j in range (self.numNodes):
+                    if((i, j) not in adjacent):
+                        return True
+
+        return False
+
+
 
 # #TODO
 # def get_args():
