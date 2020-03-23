@@ -80,7 +80,7 @@ class Jellyfish(Topo):
         and adding links (p1, x) and (p2, y).
         '''
 
-        for i in range(numSwitches):
+        for i in range(self.numSwitches):
             if (ports[i] > 2):
 
                 randLink = random.choice(adjacent)
@@ -102,10 +102,10 @@ class Jellyfish(Topo):
             linkIndex1 = link[0]
             linkIndex2 = link[1]
 
-            if((linkIndex1, linkIndex2) not in added):
+            if((linkIndex2, linkIndex1) not in added): #check if the opposite is in the adjacent list
                 self.addLink(switches[linkIndex1], switches[linkIndex2])
                 print("link between s"+str(linkIndex1)+" and s"+str(linkIndex2)+" added to network")
-                add.append(link)
+                added.append(link)
 
 
     # Helper method to check if links are still possible
