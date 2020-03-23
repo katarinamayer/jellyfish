@@ -7,43 +7,6 @@ import sys
 import argparse
 import random
 #import networkx
-# need to import a bunch of mininet shit
-
-
-'''
-Two directly connected switches plus a host for each switch:
-
-   host --- switch --- switch --- host
-
-Adding the 'topos' dict with a key/value pair to generate our newly defined
-topology enables one to pass in '--topo=mytopo' from the command line.
-"""
-
-from mininet.topo import Topo
-
-class MyTopo( Topo ):
-    "Simple topology example."
-
-    def __init__( self ):
-        "Create custom topo."
-
-        # Initialize topology
-        Topo.__init__( self )
-
-        # Add hosts and switches
-        leftHost = self.addHost( 'h1' )
-        rightHost = self.addHost( 'h2' )
-        leftSwitch = self.addSwitch( 's3' )
-        rightSwitch = self.addSwitch( 's4' )
-
-        # Add links
-        self.addLink( leftHost, leftSwitch )
-        self.addLink( leftSwitch, rightSwitch )
-        self.addLink( rightSwitch, rightHost )
-
-
-topos = { 'mytopo': ( lambda: MyTopo() ) }
-'''
 
 class Jellyfish(Topo):
 
@@ -85,45 +48,6 @@ class Jellyfish(Topo):
         switches with free ports, join them with a link,
         repeat until no further links can be added.
         '''
-        
-        '''
-        #Track switch 1
-        marked_switch1 = []
-
-        # Loop through all switches
-        while len(marked_switch1) < self.numSwitches:
-            index1 = random.randrange(self.numSwitches)
-
-            # Check that switch has not been marked and that it has open ports
-            while index1 not in marked_switch1 and ports[index1] > 0:
-
-                # Track switch2
-                marked_switch2 = []
-                index2 = random.randrange(self.numSwitches)
-
-                # Check that switch has not been marked, is not equal to index1 and has open ports
-                while index2 not in marked_switch2 and index2 != index1 and ports[index2] > 0:
-
-                    # Check that the links are not adjacent
-                    while (index1, index2) not in adjacent:
-
-                        # Form new link
-                        self.addLink(switches[index1], switches[index2])
-                        print("s"+str(index1)+" links to s"+str(index2))
-
-                        ports[index1] -= 1
-                        ports[index2] -= 1
-
-                        # Add new link to set to track adjacency
-                        adjacent.add((index1, index2))
-                        adjacent.add((index2, index1))
-
-                        # Mark swtich2
-                        marked_switch2.append(index2)
-
-            # Mark switch 1
-            marked_switch1.append(index1)
-        '''
 
         # Track adjacent switches
         adjacent = set()
@@ -149,6 +73,16 @@ class Jellyfish(Topo):
 
         print("exited loop")
 
+
+        ''' TODO
+        If a switch remains with >= 2 free ports (p1, p2), 
+        incorportate them by removing a uniform-random exisiting link (x,y) 
+        and adding links (p1, x) and (p2, y).
+        '''
+
+
+
+
     def checkPossibleLinks(self, adjacent, ports):
         for i in range(self.numSwitches):
             if (ports[i] > 0):
@@ -170,7 +104,6 @@ class Jellyfish(Topo):
 #   return parser.parse_args()
 
 
-# initalize the actual mininet
 def main():
     '''
     args = get_args()
