@@ -130,12 +130,12 @@ class Jellyfish(Topo):
         #     # Mark switch 1
         #     marked_switch1.append(index1)
 
-        while checkPossibleLinks(adjacent):
+        while self.checkPossibleLinks(adjacent, ports):
 
             index1 = random.randrange(self.numSwitches)
-            print("First switch is s"+str(index1))
+#            print("First switch is s"+str(index1))
             index2 = random.randrange(self.numSwitches)
-            print("Second switch is s"+str(index2))
+#            print("Second switch is s"+str(index2))
             while (index2 == index1):
                 index2 = random.randrange(self.numSwitches)
 
@@ -151,6 +151,7 @@ class Jellyfish(Topo):
 
                     adjacent.add((index1, index2))
                     adjacent.add((index2, index1))
+        print("exited loop")
 
 
 
@@ -159,13 +160,14 @@ class Jellyfish(Topo):
         and check whether each node is in a set of closed ports
         '''
 
-    def checkPossibleLinks(self, adjacent):
+    def checkPossibleLinks(self, adjacent, ports):
 
-        for i in range(self.numNodes):
+        for i in range(self.numSwitches):
             if (ports[i] > 0):
-                for j in range (self.numNodes):
-                    if((i, j) not in adjacent):
-                        return True
+                for j in range (self.numSwitches):
+                    if (ports[j] > 0):
+                        if((i, j) not in adjacent):
+                            return True
 
         return False
 
