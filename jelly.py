@@ -92,42 +92,66 @@ class Jellyfish(Topo):
 
         # Track adjacent switches
         adjacent = set()
-        #Track switch 1
-        marked_switch1 = []
+        
+        # #Track switch 1
+        # marked_switch1 = []
 
-        # Loop through all switches
-        while len(marked_switch1) < self.numSwitches:
+        # # Loop through all switches
+        # while len(marked_switch1) < self.numSwitches:
+        #     index1 = random.randrange(self.numSwitches)
+
+        #     # Check that switch has not been marked and that it has open ports
+        #     while index1 not in marked_switch1 and ports[index1] > 0:
+
+        #         # Track switch2
+        #         marked_switch2 = []
+        #         index2 = random.randrange(self.numSwitches)
+
+        #         # Check that switch has not been marked, is not equal to index1 and has open ports
+        #         while index2 not in marked_switch2 and index2 != index1 and ports[index2] > 0:
+
+        #             # Check that the links are not adjacent
+        #             while (index1, index2) not in adjacent:
+
+        #                 # Form new link
+        #                 self.addLink(switches[index1], switches[index2])
+        #                 print("s"+str(index1)+" links to s"+str(index2))
+
+        #                 ports[index1] -= 1
+        #                 ports[index2] -= 1
+
+        #                 # Add new link to set to track adjacency
+        #                 adjacent.add((index1, index2))
+        #                 adjacent.add((index2, index1))
+
+        #                 # Mark swtich2
+        #                 marked_switch2.append(index2)
+
+        #     # Mark switch 1
+        #     marked_switch1.append(index1)
+
+        while True:
+
             index1 = random.randrange(self.numSwitches)
-
-            # Check that switch has not been marked and that it has open ports
-            while index1 not in marked_switch1 and ports[index1] > 0:
-
-                # Track switch2
-                marked_switch2 = []
+            print("First switch is s"+str(index1))
+            index2 = random.randrange(self.numSwitches)
+            print("Second switch is s"+str(index2))
+            while (index2 == index1):
                 index2 = random.randrange(self.numSwitches)
 
-                # Check that switch has not been marked, is not equal to index1 and has open ports
-                while index2 not in marked_switch2 and index2 != index1 and ports[index2] > 0:
+            if (ports[index1] > 0 and ports[index2] > 0):
+                if ((index1, index2) not in adjacent):
 
-                    # Check that the links are not adjacent
-                    while (index1, index2) not in adjacent:
+                    self.addLink(switches[index1], switches[index2])
+                    print("s"+str(index1)+" links to s"+str(index2))
 
-                        # Form new link
-                        self.addLink(switches[index1], switches[index2])
-                        print("s"+str(index1)+" links to s"+str(index2))
+                    ports[index1] -= 1
+                    ports[index2] -= 1
 
-                        ports[index1] -= 1
-                        ports[index2] -= 1
 
-                        # Add new link to set to track adjacency
-                        adjacent.add((index1, index2))
-                        adjacent.add((index2, index1))
+                    adjacent.add((index1, index2))
+                    adjacent.add((index2, index1))
 
-                        # Mark swtich2
-                        marked_switch2.append(index2)
-
-            # Mark switch 1
-            marked_switch1.append(index1)
 
 
         '''
