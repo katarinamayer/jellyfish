@@ -6,7 +6,7 @@ import os
 import sys
 import argparse
 import random
-#import networkx
+import networkx
 
 class Jellyfish(Topo):
 
@@ -114,6 +114,16 @@ class Jellyfish(Topo):
                 print("Link between s"+str(linkIndex1)+" and s"+str(linkIndex2)+" added to network.")
                 added.append(link)
 
+        self.edge_list = adjacent
+
+    def visualize_graph():
+        # Visualize graph
+        g = nx.Graph()
+        g.add_nodes_from([i for i in range(self.edge_list)])
+        for a,b in adjacent:
+            g.add_edge(a,b)
+        nx.draw(g)
+        plt.show()
 
     # Helper method to check if links are still possible
     def checkPossibleLinks(self, adjacent, ports):
