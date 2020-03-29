@@ -38,11 +38,11 @@ class Jellyfish(Topo):
             ports[i] -= 1
 
         # For testing
-        self.addLink('s0', 's1')
+        # self.addLink('s0', 's1')
 
-        adjacent = self.build(hosts, switches, ports)
+        adjacent = self.build_graph(hosts, switches, ports)
 
-        '''
+        
         # Add link to mininet
         added_to_mininet = []
         for link in adjacent:
@@ -54,14 +54,15 @@ class Jellyfish(Topo):
                 #print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
                 added_to_mininet.append(link)
         # print(added_to_mininet)
-        '''
+        
 
         # Initialize graph of switch topology using networkx
         # self.graph = nx.Graph()
         # self.graph.add_nodes_from(['s'+str(i) for i in range(numSwitches)])
 
     # algo to create graph
-    def build(self, hosts, switches, ports):
+    
+    def build_graph(self, hosts, switches, ports):
 
         '''
         Randomly pick a pair of (non-neighboring)
@@ -130,6 +131,7 @@ class Jellyfish(Topo):
                         new_adjacent.add((a,b))
 
         return new_adjacent
+        
 
         ''' NEEDS TO BE MOVED TO INIT
         # Add link to mininet
@@ -214,10 +216,10 @@ def main():
     numServerPorts = arsg.numServerPorts
     numSwitches = args.numSwitches
     '''
-    numNodes = 10
-    numPorts = 10
+    numNodes = 20
+    numPorts = 5
     numServerPorts = 5
-    numSwitches = 10
+    numSwitches = 20
 
     setLogLevel( 'info' )
 
