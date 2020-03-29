@@ -8,7 +8,7 @@ import os
 import sys
 import argparse
 import random
-#import networkx as nx
+import networkx as nx
 
 class Jellyfish(Topo):
 
@@ -131,19 +131,19 @@ class Jellyfish(Topo):
                         new_adjacent.add((a,b))
 
 
-        #edge_list = new_adjacent
-        #self.visualize_graph(edge_list)
+        edge_list = new_adjacent
+        self.visualize_graph(edge_list)
 
         return new_adjacent
 
-    # def visualize_graph(edge_list):
-    #     # Visualize graph
-    #     g = nx.Graph()
-    #     g.add_nodes_from([i for i in range(edge_list)])
-    #     for a,b in adjacent:
-    #         g.add_edge(a,b)
-    #     nx.draw(g)
-    #     plt.show()
+    def visualize_graph():
+        # Visualize graph
+        g = nx.Graph()
+        g.add_nodes_from([i for i in range(edge_list)])
+        for a,b in adjacent:
+            g.add_edge(a,b)
+        nx.draw(g)
+        plt.show()
 
     # Helper method to check if links are still possible
     def checkPossibleLinks(self, adjacent, ports):
