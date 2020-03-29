@@ -104,6 +104,7 @@ class Jellyfish(Topo):
                     ports[i] -= 2
                     i += 1
 
+        # Add link to mininet
         added = []
         for link in adjacent:
             linkIndex1 = link[0]
@@ -114,16 +115,16 @@ class Jellyfish(Topo):
                 print("Link between s"+str(linkIndex1)+" and s"+str(linkIndex2)+" added to network.")
                 added.append(link)
 
-        self.edge_list = adjacent
+        #self.edge_list = adjacent
 
-    def visualize_graph():
-        # Visualize graph
-        g = nx.Graph()
-        g.add_nodes_from([i for i in range(self.edge_list)])
-        for a,b in adjacent:
-            g.add_edge(a,b)
-        nx.draw(g)
-        plt.show()
+    # def visualize_graph():
+    #     # Visualize graph
+    #     g = nx.Graph()
+    #     g.add_nodes_from([i for i in range(self.edge_list)])
+    #     for a,b in adjacent:
+    #         g.add_edge(a,b)
+    #     nx.draw(g)
+    #     plt.show()
 
     # Helper method to check if links are still possible
     def checkPossibleLinks(self, adjacent, ports):
@@ -157,7 +158,7 @@ class Jellyfish(Topo):
                 if visited[i] == False:
                     self.removeCycles(i, node, visited, adjacency_matrix)
                 else:
-                    # remove the cycle
+                    # remove the cycle in adjaceny_matrix
 
 
 # #TODO
