@@ -51,7 +51,7 @@ class Jellyfish(Topo):
 
         # Track adjacent switches
         adjacent = set()
-        adjacency_list = [][] # array of sets
+        #adjacency_list = [][] # array of sets
 
         while self.checkPossibleLinks(adjacent, ports):
 
@@ -78,11 +78,13 @@ class Jellyfish(Topo):
         and adding links (p1, x) and (p2, y).
         '''
 
-        #print("exited loop")
+        print("exited loop")
 
         i = 0
         while i < self.numSwitches:
+            #print("here")
             if (ports[i] >= 2):
+                #print("here2")
 
                 #print("s"+str(i)+" has more than 2 ports.")
 
@@ -103,17 +105,30 @@ class Jellyfish(Topo):
                     adjacent.add((randLink[1], i))
                     ports[i] -= 2
                     i += 1
+            i+=1
+
+        # Remove cycles here
+        adjacency_matrix = self.detectCycles(adjacent)
+
+        # Use adjacency matrix to re-write adjacent        
+        new_adjacent = set()
+        for a in range(self.numSwitches):
+            for b in range(self.numSwitches):
+                if a != b:
+                    if adjacency_matrix[a][b] == True:
+                        new_adjacent.add((a,b))
+        print(new_adjacent)
 
         # Add link to mininet
-        added = []
-        for link in adjacent:
-            linkIndex1 = link[0]
-            linkIndex2 = link[1]
+        added_to_mininet = []
+        for link in new_adjacent:
+            node1 = link[0]
+            node2 = link[1]
 
-            if((linkIndex2, linkIndex1) not in added): #check if the opposite is in the adjacent list
-                self.addLink(switches[linkIndex1], switches[linkIndex2])
-                print("Link between s"+str(linkIndex1)+" and s"+str(linkIndex2)+" added to network.")
-                added.append(link)
+            if((node2, node1) not in added_to_mininet): #check if the opposite is in the adjacent list
+                self.addLink(switches[node1], switches[node2])
+                print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
+                added_to_mininet.append(link)
 
         #self.edge_list = adjacent
 
@@ -140,7 +155,7 @@ class Jellyfish(Topo):
 
     def detectCycles(self, adjacent):
         # loop through set of edges and build adjacency list
-        adjaceny_matrix = [[False]*self.numSwitches for i in range(self.numSwithces)]
+        adjacency_matrix = [[False]*self.numSwitches for i in range(self.numSwitches)]
         for link in adjacent:
             node1 = link[0]
             node2 = link[1]
@@ -154,6 +169,8 @@ class Jellyfish(Topo):
             if visited[i] == False:
                 self.removeCycles(i, -1, visited, adjacency_matrix)
 
+        return adjacency_matrix
+
     def removeCycles(self, node, parent, visited, adjacency_matrix):
         visited[node] = True
         for i in range(self.numSwitches):
@@ -162,6 +179,8 @@ class Jellyfish(Topo):
                     self.removeCycles(i, node, visited, adjacency_matrix)
                 else:
                     # remove the cycle in adjaceny_matrix
+                    adjacency_matrix[i][node] = False
+                    adjacency_matrix[node][i] = False
 
 
 # #TODO
@@ -183,8 +202,8 @@ def main():
     numSwitches = args.numSwitches
     '''
     numNodes = 10
-    numPorts = 15
-    numServerPorts = 5
+    numPorts = 10
+    numServerPorts = 1
     numSwitches = 10
 
     topo = Jellyfish(numNodes=numNodes, numPorts=numPorts, numServerPorts=numServerPorts, numSwitches=numSwitches)

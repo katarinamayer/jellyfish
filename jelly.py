@@ -6,7 +6,7 @@ import os
 import sys
 import argparse
 import random
-import networkx
+#import networkx
 
 class Jellyfish(Topo):
 
@@ -164,6 +164,7 @@ def main():
     network = Mininet(topo=topo)
 
     network.start()
+    network.waitConnected()
     network.pingAll()
     network.stop()
 
