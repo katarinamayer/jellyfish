@@ -140,9 +140,12 @@ class Jellyfish(Topo):
 
     def detectCycles(self, adjacent):
         # loop through set of edges and build adjacency list
+        adjaceny_matrix = [[False]*self.numSwitches for i in range(self.numSwithces)]
         for link in adjacent:
-            # create adjacency_matrix
-            # use a 2D array of booleans
+            node1 = link[0]
+            node2 = link[1]
+            adjacency_matrix[node1][node2] = True
+            adjacency_matrix[node2][node1] = True
 
         # run BFS
         node = random.randrange(self.numSwitches)
