@@ -10,7 +10,7 @@ The first step in our project is to create and simulate a jellfish network. We b
 We constructed our graph using the Mininet framework in order to help simulate our network.
 
 #### Lingering Issues
-- After some research and a lot of headache, I've discovered that Mininet does not work well with cycles in a graph.
+- After some research and a lot of headache, I've discovered that Mininet does not work well with cycles in a graph, which is why it's dropping packets.
 - I've decided to try removing cycles from the graph (not as trivial as it sounds since I have to change around the current implenetation a fair bit) and run mininet on the resulting "random" spanning tree. Currently in the process of doing this.
 
 ### Phase 2: KSP & ECMP
