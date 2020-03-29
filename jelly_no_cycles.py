@@ -78,11 +78,13 @@ class Jellyfish(Topo):
         and adding links (p1, x) and (p2, y).
         '''
 
-        #print("exited loop")
+        print("exited loop")
 
         i = 0
         while i < self.numSwitches:
+            #print("here")
             if (ports[i] >= 2):
+                #print("here2")
 
                 #print("s"+str(i)+" has more than 2 ports.")
 
@@ -103,12 +105,13 @@ class Jellyfish(Topo):
                     adjacent.add((randLink[1], i))
                     ports[i] -= 2
                     i += 1
+            i+=1
 
         # Remove cycles here
         adjacency_matrix = self.detectCycles(adjacent)
 
         # Use adjacency matrix to re-write adjacent        
-        new_adjacent = []
+        new_adjacent = set()
         for a in range(self.numSwitches):
             for b in range(self.numSwitches):
                 if a != b:
@@ -118,7 +121,7 @@ class Jellyfish(Topo):
 
         # Add link to mininet
         added_to_mininet = []
-        for link in adjacent:
+        for link in new_adjacent:
             node1 = link[0]
             node2 = link[1]
 
@@ -152,7 +155,7 @@ class Jellyfish(Topo):
 
     def detectCycles(self, adjacent):
         # loop through set of edges and build adjacency list
-        adjaceny_matrix = [[False]*self.numSwitches for i in range(self.numSwithces)]
+        adjacency_matrix = [[False]*self.numSwitches for i in range(self.numSwitches)]
         for link in adjacent:
             node1 = link[0]
             node2 = link[1]
@@ -199,8 +202,8 @@ def main():
     numSwitches = args.numSwitches
     '''
     numNodes = 10
-    numPorts = 15
-    numServerPorts = 5
+    numPorts = 10
+    numServerPorts = 1
     numSwitches = 10
 
     topo = Jellyfish(numNodes=numNodes, numPorts=numPorts, numServerPorts=numServerPorts, numSwitches=numSwitches)

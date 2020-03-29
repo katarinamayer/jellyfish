@@ -51,6 +51,7 @@ class Jellyfish(Topo):
 
         # Track adjacent switches
         adjacent = set()
+        #adjacency_list = [][] # array of sets
 
         while self.checkPossibleLinks(adjacent, ports):
 
@@ -103,27 +104,39 @@ class Jellyfish(Topo):
                     ports[i] -= 2
                     i += 1
 
+        # Remove cycles here
+        adjacency_matrix = self.detectCycles(adjacent)
 
-        added = []
+        # Use adjacency matrix to re-write adjacent        
+        new_adjacent = []
+        for a in range(self.numSwitches):
+            for b in range(self.numSwitches):
+                if a != b:
+                    if adjacency_matrix[a][b] == True:
+                        new_adjacent.add((a,b))
+        print(new_adjacent)
+
+        # Add link to mininet
+        added_to_mininet = []
         for link in adjacent:
-            linkIndex1 = link[0]
-            linkIndex2 = link[1]
+            node1 = link[0]
+            node2 = link[1]
 
-            if((linkIndex2, linkIndex1) not in added): #check if the opposite is in the adjacent list
-                self.addLink(switches[linkIndex1], switches[linkIndex2])
-                print("Link between s"+str(linkIndex1)+" and s"+str(linkIndex2)+" added to network.")
-                added.append(link)
+            if((node2, node1) not in added_to_mininet): #check if the opposite is in the adjacent list
+                self.addLink(switches[node1], switches[node2])
+                print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
+                added_to_mininet.append(link)
 
-        self.edge_list = adjacent
+        #self.edge_list = adjacent
 
-    def visualize_graph():
-        # Visualize graph
-        g = nx.Graph()
-        g.add_nodes_from([i for i in range(self.edge_list)])
-        for a,b in adjacent:
-            g.add_edge(a,b)
-        nx.draw(g)
-        plt.show()
+    # def visualize_graph():
+    #     # Visualize graph
+    #     g = nx.Graph()
+    #     g.add_nodes_from([i for i in range(self.edge_list)])
+    #     for a,b in adjacent:
+    #         g.add_edge(a,b)
+    #     nx.draw(g)
+    #     plt.show()
 
     # Helper method to check if links are still possible
     def checkPossibleLinks(self, adjacent, ports):
@@ -135,6 +148,36 @@ class Jellyfish(Topo):
                             return True
         return False
 
+    #def checkCyles(node1, node2, adjacency_list):
+
+    def detectCycles(self, adjacent):
+        # loop through set of edges and build adjacency list
+        adjaceny_matrix = [[False]*self.numSwitches for i in range(self.numSwitches)]
+        for link in adjacent:
+            node1 = link[0]
+            node2 = link[1]
+            adjacency_matrix[node1][node2] = True
+            adjacency_matrix[node2][node1] = True
+
+        # run BFS
+        node = random.randrange(self.numSwitches)
+        visited = [False] * (self.numSwitches)
+        for i in range(self.numSwitches):
+            if visited[i] == False:
+                self.removeCycles(i, -1, visited, adjacency_matrix)
+
+        return adjacency_matrix
+
+    def removeCycles(self, node, parent, visited, adjacency_matrix):
+        visited[node] = True
+        for i in range(self.numSwitches): 
+            if (i != node and i != parent and adjacency_matrix[node][i] == True):
+                if visited[i] == False:
+                    self.removeCycles(i, node, visited, adjacency_matrix)
+                else:
+                    # remove the cycle in adjaceny_matrix
+                    adjacency_matrix[i][node] = False
+                    adjacency_matrix[node][i] = False
 
 
 # #TODO
@@ -164,7 +207,6 @@ def main():
     network = Mininet(topo=topo)
 
     network.start()
-    network.waitConnected()
     network.pingAll()
     network.stop()
 
