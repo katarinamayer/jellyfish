@@ -130,7 +130,6 @@ class Jellyfish(Topo):
                     if adjacency_matrix[a][b] == True:
                         new_adjacent.add((a,b))
 
-
         #edge_list = new_adjacent
         #self.visualize_graph(edge_list)
 

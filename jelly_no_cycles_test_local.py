@@ -1,16 +1,18 @@
-from mininet.net import Mininet
-from mininet.topo import Topo
-from mininet.util import dumpNodeConnections
-from mininet.cli import CLI
-
-from mininet.log import setLogLevel, info
+# from mininet.net import Mininet
+# from mininet.topo import Topo
+# from mininet.util import dumpNodeConnections
+# from mininet.cli import CLI
+# from mininet.log import setLogLevel, info
 import os
 import sys
 import argparse
 import random
 import networkx as nx
+from graphviz import Graph
 
-class Jellyfish(Topo):
+# COMMENT OUT ALL MININET, JUST BUILD GRAPH LOCALLY
+
+class Jellyfish():
 
     def __init__(self, numNodes, numPorts, numServerPorts, numSwitches):
         self.numNodes = numNodes
@@ -21,20 +23,20 @@ class Jellyfish(Topo):
         super(Jellyfish, self).__init__()
 
         hosts = []
-        for i in range(self.numNodes):
-            hosts.append(self.addHost('h' + str(i)))
-            #print(hosts[i])
+        # for i in range(self.numNodes):
+        #     hosts.append(self.addHost('h' + str(i)))
+        #     #print(hosts[i])
 
         switches = []
         ports = []
         for i in range(self.numSwitches):
-            switches.append(self.addSwitch('s' + str(i)))
+            # switches.append(self.addSwitch('s' + str(i)))
             ports.append(self.numPorts)
             # each switch has all open ports at this point
 
         # Connect each host to a switch
         for i in range(self.numNodes):
-            self.addLink(hosts[i], switches[i])
+            # self.addLink(hosts[i], switches[i])
             ports[i] -= 1
 
         # For testing
@@ -42,18 +44,16 @@ class Jellyfish(Topo):
 
         adjacent = self.build_graph(hosts, switches, ports)
 
-        
-        # Add link to mininet
-        added_to_mininet = []
-        for link in adjacent:
-            node1 = link[0]
-            node2 = link[1]
+        # # Add link to mininet
+        # added_to_mininet = []
+        # for link in adjacent:
+        #     node1 = link[0]
+        #     node2 = link[1]
 
-            if((node2, node1) not in added_to_mininet): #check if the opposite is in the adjacent list
-                self.addLink(switches[node1], switches[node2])
-                #print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
-                added_to_mininet.append(link)
-        # print(added_to_mininet)
+        #     if((node2, node1) not in added_to_mininet): #check if the opposite is in the adjacent list
+        #         self.addLink(switches[node1], switches[node2])
+        #         #print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
+        #         added_to_mininet.append(link)
         
 
         # Initialize graph of switch topology using networkx
@@ -131,19 +131,37 @@ class Jellyfish(Topo):
                         new_adjacent.add((a,b))
 
 
-        edge_list = new_adjacent
+        edge_list = adjacent
         self.visualize_graph(edge_list)
 
         return new_adjacent
 
-    def visualize_graph():
+    def visualize_graph(self, edge_list):
         # Visualize graph
-        g = nx.Graph()
-        g.add_nodes_from([i for i in range(edge_list)])
-        for a,b in adjacent:
-            g.add_edge(a,b)
-        nx.draw(g)
-        plt.show()
+        # g = nx.Graph()
+        # g.add_nodes_from([i for i in range(edge_list)])
+        # for a,b in adjacent:
+        #     g.add_edge(a,b)
+        # nx.draw(g)
+        # plt.show()
+
+        dot = Graph()
+        # for i in range(self.numSwitches):
+        #     dot.node(str(i))
+
+        added = []
+        for link in edge_list:
+            node1 = link[0]
+            node2 = link[1]
+
+            if((node2, node1) not in added):
+                dot.edge(str(node1), str(node2))
+                added.append(link)
+
+        dot.view()
+
+        #dot.edges(['AB', 'AL'])
+        #dot.edge('B', 'L', constraint='false')
 
     # Helper method to check if links are still possible
     def checkPossibleLinks(self, adjacent, ports):
@@ -203,25 +221,25 @@ def main():
     numServerPorts = arsg.numServerPorts
     numSwitches = args.numSwitches
     '''
-    numNodes = 20
+    numNodes = 80
     numPorts = 5
     numServerPorts = 5
-    numSwitches = 20
+    numSwitches = 80
 
-    setLogLevel( 'info' )
+    # setLogLevel( 'info' )
 
-    info( '* Creating Network\n' )
+    # info( '* Creating Network\n' )
     topo = Jellyfish(numNodes=numNodes, numPorts=numPorts, numServerPorts=numServerPorts, numSwitches=numSwitches)
-    network = Mininet(topo=topo)
+    # network = Mininet(topo=topo)
 
-    network.start()
+    # network.start()
 
-    dumpNodeConnections(network.hosts)
-    #network.pingAll()
+    # dumpNodeConnections(network.hosts)
+    # #network.pingAll()
 
-    network.run( CLI, network )
-    info( '* Stopping Network\n' )
-    network.stop()
+    # network.run( CLI, network )
+    # info( '* Stopping Network\n' )
+    # network.stop()
 
 if __name__ == '__main__':
     main()
