@@ -130,33 +130,20 @@ class Jellyfish(Topo):
                     if adjacency_matrix[a][b] == True:
                         new_adjacent.add((a,b))
 
+
+        edge_list = new_adjacent
+        self.visualize_graph(edge_list)
+
         return new_adjacent
-        
 
-        ''' NEEDS TO BE MOVED TO INIT
-        # Add link to mininet
-        added_to_mininet = []
-        for link in new_adjacent:
-            node1 = link[0]
-            node2 = link[1]
-
-            if((node2, node1) not in added_to_mininet): #check if the opposite is in the adjacent list
-                self.addLink(switches[node1], switches[node2])
-                #print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
-                added_to_mininet.append(link)
-        #print(added_to_mininet)
-        '''
-
-        #self.edge_list = adjacent
-
-    # def visualize_graph():
-    #     # Visualize graph
-    #     g = nx.Graph()
-    #     g.add_nodes_from([i for i in range(self.edge_list)])
-    #     for a,b in adjacent:
-    #         g.add_edge(a,b)
-    #     nx.draw(g)
-    #     plt.show()
+    def visualize_graph():
+        # Visualize graph
+        g = nx.Graph()
+        g.add_nodes_from([i for i in range(edge_list)])
+        for a,b in adjacent:
+            g.add_edge(a,b)
+        nx.draw(g)
+        plt.show()
 
     # Helper method to check if links are still possible
     def checkPossibleLinks(self, adjacent, ports):
