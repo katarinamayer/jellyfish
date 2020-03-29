@@ -1,7 +1,9 @@
 from mininet.net import Mininet
 from mininet.topo import Topo
 from mininet.util import dumpNodeConnections
+from mininet.cli import CLI
 
+from mininet.log import setLogLevel, info
 import os
 import sys
 import argparse
@@ -18,6 +20,7 @@ class Jellyfish(Topo):
 
         super(Jellyfish, self).__init__()
         self.build()
+        self.addLink('s0','s1')
 
         # Initialize graph of switch topology using networkx
         # self.graph = nx.Graph()
@@ -64,7 +67,7 @@ class Jellyfish(Topo):
                 if ((index1, index2) not in adjacent):
 
                     #self.addLink(switches[index1], switches[index2])
-                    print("s"+str(index1)+" forms link to s"+str(index2))
+                    #print("s"+str(index1)+" forms link to s"+str(index2))
 
                     ports[index1] -= 1
                     ports[index2] -= 1
@@ -95,7 +98,7 @@ class Jellyfish(Topo):
                     i += 0 # restart the loop to choose a new random link
 
                 else:
-                    print("s"+str(i)+" has >= 2 ports. Link between "+str(randLink)+" broken. New links between "+str((i, randLink[0]))+" and "+str((i, randLink[1]))+" formed.")
+                    #print("s"+str(i)+" has >= 2 ports. Link between "+str(randLink)+" broken. New links between "+str((i, randLink[0]))+" and "+str((i, randLink[1]))+" formed.")
                     adjacent.remove(randLink)
                     adjacent.remove((randLink[1], randLink[0]))
 
@@ -119,6 +122,7 @@ class Jellyfish(Topo):
                         new_adjacent.add((a,b))
         print(new_adjacent)
 
+        '''
         # Add link to mininet
         added_to_mininet = []
         for link in new_adjacent:
@@ -127,8 +131,15 @@ class Jellyfish(Topo):
 
             if((node2, node1) not in added_to_mininet): #check if the opposite is in the adjacent list
                 self.addLink(switches[node1], switches[node2])
-                print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
+                #print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
                 added_to_mininet.append(link)
+        #print(added_to_mininet)
+        '''
+
+        #TESTING
+        #self.addLink('s0', 's1')
+        #self.addLink('s1', 's2')
+        #self.addLink('h0', 'h1')
 
         #self.edge_list = adjacent
 
@@ -150,8 +161,6 @@ class Jellyfish(Topo):
                         if((i, j) not in adjacent):
                             return True
         return False
-
-    #def checkCyles(node1, node2, adjacency_list):
 
     def detectCycles(self, adjacent):
         # loop through set of edges and build adjacency list
@@ -203,14 +212,22 @@ def main():
     '''
     numNodes = 10
     numPorts = 10
-    numServerPorts = 1
+    numServerPorts = 5
     numSwitches = 10
 
+    setLogLevel( 'info' )
+
+    info( '* Creating Network\n' )
     topo = Jellyfish(numNodes=numNodes, numPorts=numPorts, numServerPorts=numServerPorts, numSwitches=numSwitches)
     network = Mininet(topo=topo)
 
     network.start()
-    network.pingAll()
+    #CLI(net)
+    #network.pingAll()
+    dumpNodeConnections(network.hosts)
+    #network.pingAll()
+    network.run( CLI, network )
+    info( '* Stopping Network\n' )
     network.stop()
 
 if __name__ == '__main__':
