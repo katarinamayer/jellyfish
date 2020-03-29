@@ -52,15 +52,8 @@ class Jellyfish(Topo):
                 self.addLink(switches[node1], switches[node2])
                 #print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
                 added_to_mininet.append(link)
-        # print(added_to_mininet)
-        
-
-        # Initialize graph of switch topology using networkx
-        # self.graph = nx.Graph()
-        # self.graph.add_nodes_from(['s'+str(i) for i in range(numSwitches)])
 
     # algo to create graph
-    
     def build_graph(self, hosts, switches, ports):
 
         '''
@@ -88,7 +81,7 @@ class Jellyfish(Topo):
                     adjacent.add((index1, index2))
                     adjacent.add((index2, index1))
 
-        ''' TODO
+        '''
         If a switch remains with >= 2 free ports (p1, p2), 
         incorportate them by removing a uniform-random exisiting link (x,y) 
         and adding links (p1, x) and (p2, y).
@@ -132,18 +125,19 @@ class Jellyfish(Topo):
         #self.visualize_graph(adjacent)
 
         return adjacent
-
-        # Use this impl. to remove cycles:
+        # NOTE: Uncomment this implementation to remove cycles:
         #return new_adjacent
-
-    # def visualize_graph(edge_list):
-    #     # Visualize graph
-    #     g = nx.Graph()
-    #     g.add_nodes_from([i for i in range(edge_list)])
-    #     for a,b in adjacent:
-    #         g.add_edge(a,b)
-    #     nx.draw(g)
-    #     plt.show()
+        
+    '''
+    def visualize_graph(edge_list):
+        # Visualize graph
+        g = nx.Graph()
+        g.add_nodes_from([i for i in range(edge_list)])
+        for a,b in adjacent:
+            g.add_edge(a,b)
+        nx.draw(g)
+        plt.show()
+        '''
 
     # Helper method to check if links are still possible
     def checkPossibleLinks(self, adjacent, ports):

@@ -53,15 +53,8 @@ class Jellyfish(Topo):
                 self.addLink(switches[node1], switches[node2])
                 #print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
                 added_to_mininet.append(link)
-        # print(added_to_mininet)
-        
-
-        # Initialize graph of switch topology using networkx
-        # self.graph = nx.Graph()
-        # self.graph.add_nodes_from(['s'+str(i) for i in range(numSwitches)])
 
     # algo to create graph
-    
     def build_graph(self, hosts, switches, ports):
 
         '''
@@ -89,7 +82,7 @@ class Jellyfish(Topo):
                     adjacent.add((index1, index2))
                     adjacent.add((index2, index1))
 
-        ''' TODO
+        '''
         If a switch remains with >= 2 free ports (p1, p2), 
         incorportate them by removing a uniform-random exisiting link (x,y) 
         and adding links (p1, x) and (p2, y).
