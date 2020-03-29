@@ -131,7 +131,7 @@ class Jellyfish():
                         new_adjacent.add((a,b))
 
 
-        edge_list = adjacent
+        edge_list = new_adjacent
         self.visualize_graph(edge_list)
 
         return new_adjacent
