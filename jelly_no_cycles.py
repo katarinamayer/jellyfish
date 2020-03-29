@@ -51,7 +51,7 @@ class Jellyfish(Topo):
 
         # Track adjacent switches
         adjacent = set()
-        adjacency_list = [][] # array of sets
+        #adjacency_list = [][] # array of sets
 
         while self.checkPossibleLinks(adjacent, ports):
 
@@ -104,16 +104,28 @@ class Jellyfish(Topo):
                     ports[i] -= 2
                     i += 1
 
-        # Add link to mininet
-        added = []
-        for link in adjacent:
-            linkIndex1 = link[0]
-            linkIndex2 = link[1]
+        # Remove cycles here
+        adjacency_matrix = self.detectCycles(adjacent)
 
-            if((linkIndex2, linkIndex1) not in added): #check if the opposite is in the adjacent list
-                self.addLink(switches[linkIndex1], switches[linkIndex2])
-                print("Link between s"+str(linkIndex1)+" and s"+str(linkIndex2)+" added to network.")
-                added.append(link)
+        # Use adjacency matrix to re-write adjacent        
+        new_adjacent = []
+        for a in range(self.numSwitches):
+            for b in range(self.numSwitches):
+                if a != b:
+                    if adjacency_matrix[a][b] == True:
+                        new_adjacent.add((a,b))
+        print(new_adjacent)
+
+        # Add link to mininet
+        added_to_mininet = []
+        for link in adjacent:
+            node1 = link[0]
+            node2 = link[1]
+
+            if((node2, node1) not in added_to_mininet): #check if the opposite is in the adjacent list
+                self.addLink(switches[node1], switches[node2])
+                print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
+                added_to_mininet.append(link)
 
         #self.edge_list = adjacent
 
@@ -154,6 +166,8 @@ class Jellyfish(Topo):
             if visited[i] == False:
                 self.removeCycles(i, -1, visited, adjacency_matrix)
 
+        return adjacency_matrix
+
     def removeCycles(self, node, parent, visited, adjacency_matrix):
         visited[node] = True
         for i in range(self.numSwitches):
@@ -162,6 +176,8 @@ class Jellyfish(Topo):
                     self.removeCycles(i, node, visited, adjacency_matrix)
                 else:
                     # remove the cycle in adjaceny_matrix
+                    adjacency_matrix[i][node] = False
+                    adjacency_matrix[node][i] = False
 
 
 # #TODO
