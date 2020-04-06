@@ -1,3 +1,6 @@
+# Last Revised 4/5/19
+# Refer to "Instructions to Run" in README
+
 from mininet.net import Mininet
 from mininet.topo import Topo
 from mininet.util import dumpNodeConnections
@@ -8,7 +11,7 @@ import os
 import sys
 import argparse
 import random
-#import networkx as nx
+# import networkx as nx
 
 class Jellyfish(Topo):
 
@@ -29,16 +32,13 @@ class Jellyfish(Topo):
         ports = []
         for i in range(self.numSwitches):
             switches.append(self.addSwitch('s' + str(i)))
-            ports.append(self.numPorts)
-            # each switch has all open ports at this point
+            ports.append(self.numPorts) # each switch has all open ports at this point
+            
 
         # Connect each host to a switch
         for i in range(self.numNodes):
             self.addLink(hosts[i], switches[i])
             ports[i] -= 1
-
-        # For testing
-        # self.addLink('s0', 's1')
 
         adjacent = self.build_graph(hosts, switches, ports)
         
@@ -48,12 +48,13 @@ class Jellyfish(Topo):
             node1 = link[0]
             node2 = link[1]
 
-            if((node2, node1) not in added_to_mininet): #check if the opposite is in the adjacent list
+            # check if opposite pair is in adjacent since we don't want to double link
+            if((node2, node1) not in added_to_mininet): 
                 self.addLink(switches[node1], switches[node2])
                 #print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
                 added_to_mininet.append(link)
 
-    # algo to create graph
+    # Create graph
     def build_graph(self, hosts, switches, ports):
 
         '''
@@ -90,9 +91,7 @@ class Jellyfish(Topo):
         i = 0
         while i < self.numSwitches:
             if (ports[i] >= 2):
-
                 #print("s"+str(i)+" has more than 2 ports.")
-
                 randLink = random.choice(tuple(adjacent))
 
                 if (randLink[0] == i or randLink[1] == i):
@@ -111,6 +110,7 @@ class Jellyfish(Topo):
                     i += 1
             i+=1
 
+        '''
         # Remove cycles
         adjacency_matrix = self.detectCycles(adjacent)
 
@@ -122,11 +122,11 @@ class Jellyfish(Topo):
                     if adjacency_matrix[a][b] == True:
                         new_adjacent.add((a,b))
 
-        #self.visualize_graph(adjacent)
+        # return new_adjacent
+        ''' 
 
-        return adjacent
-        # NOTE: Uncomment this implementation to remove cycles:
-        #return new_adjacent
+        return adjacent # do not remove cycles
+
         
     '''
     def visualize_graph(edge_list):
@@ -139,7 +139,7 @@ class Jellyfish(Topo):
         plt.show()
         '''
 
-    # Helper method to check if links are still possible
+    # Method to check if links are still possible
     def checkPossibleLinks(self, adjacent, ports):
         for i in range(self.numSwitches):
             if (ports[i] > 0):
@@ -149,6 +149,7 @@ class Jellyfish(Topo):
                             return True
         return False
 
+    # Method to detect cycles
     def detectCycles(self, adjacent):
         # loop through set of edges and build adjacency list
         adjacency_matrix = [[False]*self.numSwitches for i in range(self.numSwitches)]
@@ -167,6 +168,7 @@ class Jellyfish(Topo):
 
         return adjacency_matrix
 
+    # Method to remove cycles
     def removeCycles(self, node, parent, visited, adjacency_matrix):
         visited[node] = True
         for i in range(self.numSwitches):
@@ -177,16 +179,16 @@ class Jellyfish(Topo):
                     # remove the cycle in adjaceny_matrix
                     adjacency_matrix[i][node] = False
                     adjacency_matrix[node][i] = False
-
-# #TODO
-# def get_args():
-#   parser = argparse.ArgumentParser()
-#   parser.add_argument('--numNodes', help="Number of hosts", required=True)
-#   parser.add_argument('--numPorts', help="Number of total ports per switch", required=True)
-#   parser.add_argument('--numServerPorts', help="Number of ports per switch to reserve to servers", required=True)
-#   parser.add_argument('--numSwitches', help="Number of Switches", required=True)
-#   return parser.parse_args()
-
+'''
+# TODO
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--numNodes', help="Number of hosts", required=True)
+    parser.add_argument('--numPorts', help="Number of total ports per switch", required=True)
+    parser.add_argument('--numServerPorts', help="Number of ports per switch to reserve to servers", required=True)
+    parser.add_argument('--numSwitches', help="Number of Switches", required=True)
+    return parser.parse_args()
+'''
 
 def main():
     '''
