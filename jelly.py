@@ -22,7 +22,7 @@ class Jellyfish(Topo):
 
         hosts = []
         for i in range(self.numNodes):
-            hosts.append(self.addHost('h' + str(i)))
+            hosts.append(self.addHost('h' + str(i), ip = "127.0.0." +str(i+1)))
             #print(hosts[i])
 
         switches = []
