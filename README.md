@@ -14,7 +14,7 @@
 3. In terminal window 2, run ``` sudo mn --custom ~/ripl/ripl/mn.py --topo=jelly,20,5,5,20 --controller=remote --mac ```
 
 #### Next Steps (@ Laurent READ THIS):
-- Write and pre-run a script which will to create and output a "routing file" (pkl file). This will be a command line arg when starting the controller. e.g. The command to run the controller will be ```pox/pox.py riplpox.riplpox --topo=jelly,[N_NODES],[N_PORTS],[N_SERVERPORTS][N_SWITCHES] --routing=jelly,[ROUTING_FILE] --mode=reactive ```
+- Write and pre-run a script which will to create and output a "routing file" (pkl file). This will be a command line arg when starting the controller. e.g. The command to run the controller will be ```pox/pox.py riplpox.riplpox --topo=jelly,[N_NODES],[N_PORTS],[N_SERVERPORTS],[N_SWITCHES] --routing=jelly,[ROUTING_FILE] --mode=reactive ```
 - We can specify multiple types of routing by generating different routing files. e.g. ECMP
 
 
