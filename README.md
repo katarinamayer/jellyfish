@@ -15,7 +15,7 @@
 
 #### Next Steps:
 - (Laurent) in jelly_prescript.py, write logic for ecmp. Create and output a "routing file" (pkl file). This will be a command line arg when starting the controller. e.g. The command to run the controller will be ```pox/pox.py riplpox.riplpox --topo=jelly,[N_NODES],[N_PORTS],[ADLIST] --routing=jelly,[ROUTING_FILE] --mode=reactive ```
-- (Kat) Transfer graph creation logic from jelly.py to jelly_prescript.py to output adjacency list. Modify jelly.py to take in adjacency list.
+- (Kat) Transfer graph creation logic from jelly.py to jelly_prescript.py and modify to output adjacency list. Modify jelly.py to take in adjacency list. Fix riplpox config to work with new file system.
 
 
 #### Lingering Issues
