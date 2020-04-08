@@ -40,7 +40,7 @@ class Jellyfish(Topo):
             self.addLink(hosts[i], switches[i])
             ports[i] -= 1
 
-        adjacent = self.build_graph(hosts, switches, ports)
+        self.adjacent = self.build_graph(hosts, switches, ports)
         
         # Add link to mininet
         added_to_mininet = []
@@ -138,6 +138,14 @@ class Jellyfish(Topo):
         nx.draw(g)
         plt.show()
         '''
+
+    def convert_to_nx():
+        '''
+        Returns networkx representation of current topology
+        '''
+        g = nx.Graph()
+        g.add_edges_from(self.adjacent)
+        return g
 
     # Method to check if links are still possible
     def checkPossibleLinks(self, adjacent, ports):
