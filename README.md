@@ -9,10 +9,10 @@
 6. ``` sudo mn ``` to clear network (needs to be done after each time you run it)
 
 ### Instructions to Run Remote (Custom) Controller
-1. Start up the VM on GCP. ``` ssh [external IP]``` in two separate terminal windows.
+1. Start up the VM on GCP. ``` ssh [external IP]``` in two separate terminal windows. ``` cd cs419-project ``` in both windows.
 2. In terminal window 1, run ``` python3 jellyfish_prescript.py ``` to generate a new saved graph state in the form of an adjacency list.
-2. In terminal window 2, run ``` ~/pox/pox.py riplpox.riplpox --topo=jelly,20,20,5,graph.adjlist --routing=hashed --mode=reactive ``` I added our Jellyfish topo to ripl/ripl/mn.py as a custom topology which is why it is recognized. This controller uses default "hashed" routing.
-3. In terminal window 1, run ``` sudo mn --custom ~/ripl/ripl/mn.py --topo=jelly,20,20,5,graph.adjlist --controller=remote --mac ```
+3. In terminal window 2, run ``` ~/pox/pox.py riplpox.riplpox --topo=jelly,20,20,5,graph.adjlist --routing=hashed --mode=reactive ``` I added our Jellyfish topo to ripl/ripl/mn.py as a custom topology which is why it is recognized. This controller uses default "hashed" routing.
+4. In terminal window 1, run ``` sudo mn --custom ~/ripl/ripl/mn.py --topo=jelly,20,20,5,graph.adjlist --controller=remote --mac ```
 
 #### Next Steps:
 - (Laurent) in jellyfish_prescript.py, write logic for ecmp. Create and output a "routing file" (pkl file). This will be a command line arg when starting the controller. e.g. The command to run the controller will be ```pox/pox.py riplpox.riplpox --topo=jelly,[NHOSTS][NSWITCHES],[NPORTS],[ADJLIST_FILE] --routing=jelly,[ROUTING_FILE] --mode=reactive ```
