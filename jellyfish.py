@@ -1,6 +1,6 @@
 # Last Revised 4/5/20
 # Stand alone implementation (old implementation)
-# Refer to running instructions in README
+# Don't run this one anymore.
 
 from mininet.net import Mininet
 from mininet.topo import Topo
