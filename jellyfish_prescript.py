@@ -47,8 +47,8 @@ def get_graph(nSwitches, nPorts):
 
 def main():
     ''' output graph files '''
-    graph = get_graph(80, 5)
-    nx.write_adjlist(graph, "graph.ADJLIST")
+    graph = get_graph(20, 5)
+    nx.write_adjlist(graph, "graph.adjlist")
 
     ''' output routing files '''
 
