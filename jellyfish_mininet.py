@@ -38,7 +38,7 @@ class Jellyfish(Topo):
             self.addLink(hosts[i], switches[i])
             ports[i] -= 1
 
-        with open(adjlist_file) as f:
+        with open(adj_list) as f:
             for line in f:
                 if line.startswith("#"):
                     continue
