@@ -34,11 +34,12 @@ def get_graph(nSwitches, nPorts):
             G.add_edge(node1, node2)
             added.append(edge)
 
-    nx.write_adjlist(G, "test.adjlist")
+    nx.write_adjlist(G, "graph.ADJLIST")
+    nx.write_edgelist(G, "graph.EDGELIST")
 
 
-    nx.draw(G)
-    plt.show()
+    # nx.draw(G)
+    # plt.show()
 
     return G
 
@@ -62,7 +63,7 @@ def main():
     ''' create files '''
 
     # testing
-    graph = get_graph(80, 5)
+    graph = get_graph(20, 5)
     #visualize_graph(graph)
 
 
