@@ -9,9 +9,12 @@ import pickle
 from graphviz import Graph
 import networkx as nx
 
-from graph import Jellyfish
+# custom class to build Jellyfish graph
+from graph import Jellyfish 
 
-def compute_ecmp(graph): # graph will be a network_x graph
+
+def compute_ecmp(graph): 
+    # graph param is a networkx graph
     return 0
 
 def compute_ksp(graph):
@@ -34,37 +37,20 @@ def get_graph(nSwitches, nPorts):
             G.add_edge(node1, node2)
             added.append(edge)
 
-    nx.write_adjlist(G, "graph.ADJLIST")
-    nx.write_edgelist(G, "graph.EDGELIST")
-
-
     # nx.draw(G)
-    # plt.show()
+    # plt.savefig("graph.png")
 
     return G
 
 
-''' Simple function to visualize graph for testing '''
-def visualize_graph(edge_list):
-    dot = Graph()
-    added = []
-    for link in edge_list:
-        node1 = link[0]
-        node2 = link[1]
-
-        if((node2, node1) not in added):
-            dot.edge(str(node1), str(node2))
-            added.append(link)
-    dot.view()
-
-
-
 def main():
-    ''' create files '''
-
-    # testing
+    ''' output graph files '''
     graph = get_graph(20, 5)
-    #visualize_graph(graph)
+    nx.write_adjlist(graph, "graph.ADJLIST")
+    nx.write_edgelist(graph, "graph.EDGELIST")
+
+    ''' output routing files '''
+
 
 
 if __name__ == '__main__':

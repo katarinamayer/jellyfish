@@ -15,7 +15,6 @@ class Jellyfish():
             switches.append('s' + str(i))
             ports.append(self.numPorts) # each switch has all open ports at this point
 
-
         self.adjacent = self.build_graph(switches, ports)
 
     def build_graph(self, switches, ports):
