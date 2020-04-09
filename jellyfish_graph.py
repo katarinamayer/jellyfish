@@ -1,3 +1,6 @@
+# Last Revised 4/9/20
+# Class + functions to generate random graph
+
 import random
 
 class Jellyfish():

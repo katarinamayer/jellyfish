@@ -1,5 +1,6 @@
-# Last Revised 4/5/19
-# Refer to "Instructions to Run" in README
+# Last Revised 4/9/20
+# Script to build network on mininet based on adjacency list
+# Refer to running instructions in README
 
 from mininet.net import Mininet
 from mininet.topo import Topo

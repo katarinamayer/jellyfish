@@ -1,4 +1,6 @@
+# Last revised 4/9/20
 # Script containing logic to output adjacency list (saved graph) and routing files
+# Run this prior to jellyfish_network.py to generate files
 
 import os
 import sys
@@ -10,7 +12,7 @@ from graphviz import Graph
 import networkx as nx
 
 # custom class to build Jellyfish graph
-from graph import Jellyfish 
+from jellyfish_graph import Jellyfish 
 
 
 def compute_ecmp(graph): 
@@ -47,7 +49,6 @@ def main():
     ''' output graph files '''
     graph = get_graph(20, 5)
     nx.write_adjlist(graph, "graph.ADJLIST")
-    nx.write_edgelist(graph, "graph.EDGELIST")
 
     ''' output routing files '''
 
