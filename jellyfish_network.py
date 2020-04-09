@@ -161,8 +161,8 @@ def main():
     numServerPorts = arsg.numServerPorts
     numSwitches = args.numSwitches
     '''
-    numHosts = 20
-    numSwitches = 20
+    numHosts = 80
+    numSwitches = 80
     numPorts = 5
     adj_list = "graph.ADJLIST"
 
