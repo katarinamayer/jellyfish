@@ -164,7 +164,7 @@ def main():
     numHosts = 20
     numSwitches = 20
     numPorts = 5
-    adj_list = "graph.ADJLIST"
+    adj_list = "graph.adjlist"
 
     setLogLevel( 'info' )
 
