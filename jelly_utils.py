@@ -36,10 +36,10 @@ def create_routing_table(paths_file_name, numSwitches):
         
     return table
 
-def transform_paths_dpid(paths_file_name, numSwitches, maxLen):
+def transform_paths_dpid(paths_file_name, maxLen):
 	all_paths = load_obj(paths_file_name)
 	table = {}
-	for key, value in all_paths.iteritems():
+	for key, value in all_paths.items():
 		key_dpid = (switch_to_dpid(key[0]), switch_to_dpid(key[1]))
 		table[key_dpid] = []
 		reversed_key = (switch_to_dpid(key[1]), switch_to_dpid(key[0]))
