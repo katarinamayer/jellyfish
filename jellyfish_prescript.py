@@ -48,33 +48,6 @@ def compute_ksp(graph, k=8):
             all_ksp[(str(src), str(dst))] = ksp
     return all_ksp
 
-def create_routing_table(paths_file_name, numSwitches):
-    table = {}
-    for i in range(numSwitches):
-        table[str(i)] = {}
-    all_paths = load_obj(paths_file_name)
-    for key, value in all_paths.items():
-        start, end = key
-        for pathId in range(len(value)):
-            path = value[pathId]
-            for i in range(len(path)-1):
-                nextHop = path[i+1]
-                currentNode = path[i]
-                src_dst_pair = (str(start), str(end))
-                if src_dst_pair not in table[str(currentNode)]:
-                    table[str(currentNode)][src_dst_pair] = {}
-                table[str(currentNode)][src_dst_pair][str(pathId)] = str(nextHop)
-        #same but for the reverse direction
-        for j in range(len(path)-1, 0, -1):
-            nextHop = path[j-1]
-            currentNode = path[j]
-            dst_src_pair = (str(end), str(start))
-            if dst_src_pair not in table[str(currentNode)]:
-                table[str(currentNode)][dst_src_pair] = {}
-            table[str(currentNode)][dst_src_pair][str(pathId)] = str(nextHop)
-        
-    return table
-
 
 ''' Get graph, convert to networkx graph, save ADJLIST file to store graph '''
 def get_graph(nSwitches, nPorts): 
