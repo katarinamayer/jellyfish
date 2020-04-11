@@ -27,7 +27,7 @@ def compute_ksp(graph, k=8):
 
 def save_obj(obj, path):
     with open(path, 'wb') as f:
-        pickle.dump(obj,f)
+        pickle.dump(obj,f, protocol=0)
 
 def load_obj(path):
     with open(path, 'rb') as f:

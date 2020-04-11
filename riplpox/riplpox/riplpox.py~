@@ -514,7 +514,7 @@ def launch(topo = None, routing = None, mode = None):
   else:
     t = buildTopo(topo, topos)
     routing, paths = routing.split(",", 2)
-    r = getRouting(routing, t, paths)
+    r = getRouting(routing, t)
 
   core.registerNew(RipLController, t, r, mode)
 
