@@ -25,13 +25,14 @@ class Jellyfish(Topo):
 
         hosts = []
         for i in range(self.numNodes):
-            hosts.append(self.addHost('h' + str(i), ip = "127.0.0." +str(i+1)))
+            hosts.append(self.addHost('h' + str(i), ip = "10.0." +str(i+1)+".10"))
+            #print("10.0." +str(i+1)+".10")
             #print(hosts[i])
 
         switches = []
         ports = []
         for i in range(self.numSwitches):
-            switches.append(self.addSwitch('s' + str(i)))
+            switches.append(self.addSwitch('s' + str(i), stp=True, failMode='standalone'))
             ports.append(self.numPorts) # each switch has all open ports at this point
             
         # Connect each host to a switch
