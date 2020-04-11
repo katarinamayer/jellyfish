@@ -8,9 +8,8 @@ import networkx
 import random
 import matplotlib.pyplot as plt
 import pickle
-# from graphviz import Graph
 import networkx as nx
-import jelly_utils as util
+import util as util
 
 # custom class to build Jellyfish graph
 from jellyfish_graph import Jellyfish 
@@ -43,11 +42,11 @@ def get_graph(nSwitches, nPorts):
 def main():
     ''' output graph files '''
     graph = get_graph(20, 5)
-    nx.write_adjlist(graph, "graph.adjlist")
+    nx.write_adjlist(graph, "graph_adjlist")
     n = graph.number_of_nodes()
 
     ''' output routing files '''
-    filename = 'test_1'
+    filename = 'test'
     ecmp_routes = util.compute_ecmp(graph)
     ecmp_path = os.path.join(PKL_DIR, 'ecmp_{}.pkl'.format(filename))
     util.save_obj(ecmp_routes, ecmp_path)
