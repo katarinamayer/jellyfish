@@ -19,7 +19,6 @@ TRANSFORM_DIR = 'transformed_routes'
 PKL_DIR = 'pickled_routes'
 
 
-
 ''' Get graph, convert to networkx graph, save ADJLIST file to store graph '''
 def get_graph(nSwitches, nPorts): 
 
