@@ -511,6 +511,11 @@ def launch(topo = None, routing = None, mode = None):
   # Instantiate a topo object from the passed-in file.
   if not topo:
     raise Exception("please specify topo and args on cmd line")
+
+  if not routing:
+    t = buildTopo(topo, topos)
+    r = getRouting(routing, t, {})
+    
   else:
     t = buildTopo(topo, topos)
     routing, paths = routing.split(",", 2)
