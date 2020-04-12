@@ -6,15 +6,18 @@
 3. In terminal window, ``` sudo python jellyfish_network.py ```
 4. mininet> ``` pingall ```
 5. mininet> ``` iperf ```
-5. mininet> ``` exit ```
-6. ``` sudo mn ``` to clear network (needs to be done after each run)
+6. mininet> ``` exit ```
+7. ``` sudo mn ``` to clear network (needs to be done after each run)
 
-### Instructions to Run Remote (Custom) Controller
+### Instructions to Run Remote Controller
 1. Start up the VM on GCP. ``` ssh [external IP]``` in two separate terminal windows. ``` cd ../kat/cs419-project ``` in both windows.
 2. In terminal window 1, run ``` python jellyfish_prescript.py ``` to generate a new saved graph state in the form of an adjacency list.
 3. In terminal window 2, run ``` ~/pox/pox.py riplpox.riplpox --topo=jelly,20,20,5,graph_adjlist --routing=jelly,ecmp_8_test --mode=reactive ```.
 4. In terminal window 1, run ``` sudo mn --custom ~/ripl/ripl/mn.py --topo=jelly,20,20,5,graph.adjlist --controller=remote --mac ```
-5. Simple connectivity test: ``` pingall ```. Simple iperf test: ``` iperf h0 h1 ```.
+5. mininet> ``` pingall ``` 
+6. mininet> ``` iperf h0 h1 ```
+7. mininet> ``` exit ```
+8. Exit pox controller using ctrl-D
 
 #### Next Steps:
 - More robust iperf testing
