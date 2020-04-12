@@ -6,7 +6,7 @@ import os
 import sys
 import networkx
 import random
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import pickle
 import networkx as nx
 import util as util
