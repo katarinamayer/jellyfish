@@ -39,7 +39,7 @@ In terminal window 1, run this command to generate a saved graph (adjaceny list)
 ``` python
 $ python jellyfish_prescript.py
 ```
-In terminal window 2, start the controller. For custom routing, run:
+In terminal window 2, start the remote controller:
 ``` python
 $ ~/pox/pox.py riplpox.riplpox --topo=jelly,20,20,5,graph_adjlist --routing=jelly,ecmp_8_test --mode=reactive
 ```
@@ -48,14 +48,14 @@ In terminal window 1, start the network:
 $ sudo mn --custom ~/ripl/ripl/mn.py --topo=jelly,20,20,5,graph_adjlist --controller=remote --mac
 ```
 
-You should now be in the Mininet CLI and can perform some basic tests. See Instructions to Run Basic Network (above) for some basic commands. After exiting the mininet CLI in window 1, exit the pox controller in window 2 by hitting ctrl-D or type:
+You should now be in the Mininet CLI and can perform some basic tests. See Instructions to Run Basic Network (above) for some basic commands. After exiting the Mininet CLI in window 1, exit the pox controller in window 2 by hitting ctrl-D.
 
 
 ### Lingering Issues
 - FIXED, pingall now reaches all hosts. ~~After some research and a lot of headache, I've discovered that Mininet does not work well with cycles in a graph, which is why it's dropping packets.~~ Manually specified 10.0.X.X IP addresses and added stp and failMode params to addSwitch() calls.
 - Iperf tests with multiple hosts at a time (via script). Could add logic to Mininet startup in jellyfish_network.py script but this does not work with the remote controller since Mininet startup is handled by ripl.
 
-### Done
+### Progress Achieved
 - Built and tested custom Jellyfish topo and network. Our network is based on topology described in [this paper](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final82.pdf).
 - Configured network to work with a remote controller. Added custom topology flag to ripl/ripl/mn.py (``` topo=jelly,[NHOSTS][NSWITCHES],[NPORTS],[ADJLIST_FILE] ```) which directs to our topo in jellyfish_network.py.
 - Separated graph creation from network creation. Before this, we were generating the graph topology at Mininet startup time. Graph is now pre-generated and saved as an adjaceny list. This allows us to generate routing schemes for the saved graph. Jellyfish topo processes the adjacency list file to build the network.
