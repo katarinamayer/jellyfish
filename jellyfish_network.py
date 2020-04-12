@@ -172,11 +172,10 @@ def main():
     info( '* Creating Network\n' )
     topo = Jellyfish(numNodes=numHosts, numSwitches=numSwitches, numPorts=numPorts, adj_list = adj_list)
     network = Mininet(topo=topo)
-
+    
     network.start()
-
     dumpNodeConnections(network.hosts)
-    #network.pingAll()
+    network.pingAll()
 
     network.run( CLI, network )
     info( '* Stopping Network\n' )
