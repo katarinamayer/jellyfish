@@ -175,7 +175,7 @@ def main():
     
     network.start()
     dumpNodeConnections(network.hosts)
-    network.pingAll()
+    # network.pingAll()
 
     network.run( CLI, network )
     info( '* Stopping Network\n' )
