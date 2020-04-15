@@ -1,0 +1,4 @@
+h1 iperf -s -e &
+h2 iperf -c h1 -e >> results.txt & 
+h5 iperf -s -e &
+h6 iperf -c h6 -e >> results.txt &
