@@ -51,27 +51,22 @@ def get_tests(n):
     servers = HostNums[1::2]
     pairs = zip(clients, servers)
 
-    print(HostNums)
-    print(clients)
-    print(servers)
-
-
-    f = open("tests/1_flow_tests", "w+")
+    f = open("iperf/tests/1_flow", "w+")
     for pair in pairs:
         c = pair[0]
         s = pair[1]
 
         f.write("h" + str(s) + " iperf -s -e &\n")
-        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> results/1_flow.txt &\n")
+        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> iperf/results/1_flow.txt &\n")
     f.close()
 
-    f = open("tests/8_flow_tests", "w+")
+    f = open("iperf/tests/8_flow", "w+")
     for pair in pairs:
         c = pair[0]
         s = pair[1]
 
         f.write("h" + str(s) + " iperf -s -e &\n")
-        f.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> tests/8_flow.txt &\n")
+        f.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> iperf/tests/8_flow.txt &\n")
     f.close()
 
 
