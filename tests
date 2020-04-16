@@ -1,4 +1,0 @@
-h0 iperf -s &
-h1 iperf -c h0 -P 8 -t 60 >> results.txt &
-h3 iperf -s &
-h6 iperf -c h3 -P 8 -t 60 >> results.txt &

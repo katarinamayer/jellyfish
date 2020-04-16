@@ -18,7 +18,7 @@ TRANSFORM_DIR = 'transformed_routes'
 PKL_DIR = 'pickled_routes'
 
 
-''' Get graph, convert to networkx graph, save ADJLIST file to store graph '''
+''' Get graph, convert to networkx graph, save adjacency list to store graph '''
 def get_graph(nSwitches, nPorts): 
 
     j = Jellyfish(nSwitches, nPorts)
@@ -38,12 +38,52 @@ def get_graph(nSwitches, nPorts):
 
     return G
 
+def get_tests(n):
+    ''' get random sampling of tests '''
+    #num = random.randrange(n)
+
+    HostNums = []
+    for i in range(n):
+        HostNums.append(i)
+
+    random.shuffle(HostNums)
+    clients = HostNums[0::2]
+    servers = HostNums[1::2]
+    pairs = zip(clients, servers)
+
+    print(HostNums)
+    print(clients)
+    print(servers)
+
+
+    f = open("tests/1_flow_tests", "w+")
+    for pair in pairs:
+        c = pair[0]
+        s = pair[1]
+
+        f.write("h" + str(s) + " iperf -s -e &\n")
+        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> results/1_flow.txt &\n")
+    f.close()
+
+    f = open("tests/8_flow_tests", "w+")
+    for pair in pairs:
+        c = pair[0]
+        s = pair[1]
+
+        f.write("h" + str(s) + " iperf -s -e &\n")
+        f.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> tests/8_flow.txt &\n")
+    f.close()
+
+
 
 def main():
     ''' output graph files '''
     graph = get_graph(20, 5)
     nx.write_adjlist(graph, "graph_adjlist")
     n = graph.number_of_nodes()
+
+    ''' output tests '''
+    get_tests(n)
 
     ''' output routing files '''
     filename = 'test'
