@@ -1,5 +1,5 @@
-# Last revised 4/9/20
-# Script containing logic to output adjacency list (saved graph) and routing files
+# Last revised 4/15/20
+# Script containing logic to output adjacency list (saved graph), routing files and tests
 # Run this prior to jellyfish_network.py to generate files
 
 import os
@@ -40,7 +40,6 @@ def get_graph(nSwitches, nPorts):
 
 def get_tests(n):
     ''' get random sampling of tests '''
-    #num = random.randrange(n)
 
     HostNums = []
     for i in range(n):
@@ -51,41 +50,37 @@ def get_tests(n):
     servers = HostNums[1::2]
     pairs = zip(clients, servers)
 
-    f = open("iperf/tests/1_flow", "w+")
+    f = open("perftest/tests/single_flow", "w+")
+    g = open("perftest/tests/eight_flow", "w+")
     for pair in pairs:
         c = pair[0]
         s = pair[1]
 
         f.write("h" + str(s) + " iperf -s -e &\n")
-        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> iperf/results/1_flow.txt &\n")
+        f.write("h" + str(c) + " iperf -c h" + str(s) + " -t 90 -e >> perftest/results/single_flow.txt &\n")
+        g.write("h" + str(s) + " iperf -s -e &\n")
+        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -t 90 -e >> perftest/results/eight_flow.txt &\n")
+
+    g.close()
     f.close()
-
-    f = open("iperf/tests/8_flow", "w+")
-    for pair in pairs:
-        c = pair[0]
-        s = pair[1]
-
-        f.write("h" + str(s) + " iperf -s -e &\n")
-        f.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> iperf/tests/8_flow.txt &\n")
-    f.close()
-
 
 
 def main():
-    ''' output graph files '''
+    ''' output graph files in main directory '''
     graph = get_graph(20, 5)
     nx.write_adjlist(graph, "graph_adjlist")
     n = graph.number_of_nodes()
 
-    ''' output tests '''
+    ''' output tests in perftest/tests '''
     get_tests(n)
 
-    ''' output routing files '''
+    ''' output routing files in pickled_routes '''
     filename = 'test'
     ecmp_routes = util.compute_ecmp(graph)
     ecmp_path = os.path.join(PKL_DIR, 'ecmp_{}.pkl'.format(filename))
     util.save_obj(ecmp_routes, ecmp_path)
 
+    ''' output routing files in transformed_routes '''
     k = 8
     t_ecmp_routes = util.transform_paths_dpid(ecmp_path, k)
     t_ecmp_path = os.path.join(TRANSFORM_DIR, 'ecmp_{}_{}.pkl'.format(k, filename))

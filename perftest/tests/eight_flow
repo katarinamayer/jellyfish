@@ -1,0 +1,20 @@
+h5 iperf -s -e &
+h2 iperf -c h5 -P 8 -t 90 -e >> perftest/results/eight_flow.txt &
+h6 iperf -s -e &
+h1 iperf -c h6 -P 8 -t 90 -e >> perftest/results/eight_flow.txt &
+h15 iperf -s -e &
+h0 iperf -c h15 -P 8 -t 90 -e >> perftest/results/eight_flow.txt &
+h14 iperf -s -e &
+h11 iperf -c h14 -P 8 -t 90 -e >> perftest/results/eight_flow.txt &
+h7 iperf -s -e &
+h8 iperf -c h7 -P 8 -t 90 -e >> perftest/results/eight_flow.txt &
+h10 iperf -s -e &
+h18 iperf -c h10 -P 8 -t 90 -e >> perftest/results/eight_flow.txt &
+h4 iperf -s -e &
+h16 iperf -c h4 -P 8 -t 90 -e >> perftest/results/eight_flow.txt &
+h3 iperf -s -e &
+h9 iperf -c h3 -P 8 -t 90 -e >> perftest/results/eight_flow.txt &
+h12 iperf -s -e &
+h13 iperf -c h12 -P 8 -t 90 -e >> perftest/results/eight_flow.txt &
+h17 iperf -s -e &
+h19 iperf -c h17 -P 8 -t 90 -e >> perftest/results/eight_flow.txt &

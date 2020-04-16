@@ -1,4 +1,4 @@
-# Last Revised 4/9/20
+# Last Revised 4/11/20
 # Script to build network on mininet based on adjacency list
 # Refer to running instructions in README
 
@@ -154,6 +154,8 @@ def get_args():
     return parser.parse_args()
 '''
 
+# Running the topo via --custom flag does not run main
+# Running via sudo jellyfish_network.py calls main
 def main():
     '''
     args = get_args()
