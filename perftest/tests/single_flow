@@ -1,20 +1,20 @@
-h6 iperf -s -e &
-h9 iperf -c h6 -t 90 -e >> perftest/results/single_flow.txt &
-h17 iperf -s -e &
-h13 iperf -c h17 -t 90 -e >> perftest/results/single_flow.txt &
-h3 iperf -s -e &
-h14 iperf -c h3 -t 90 -e >> perftest/results/single_flow.txt &
-h8 iperf -s -e &
-h15 iperf -c h8 -t 90 -e >> perftest/results/single_flow.txt &
-h16 iperf -s -e &
-h0 iperf -c h16 -t 90 -e >> perftest/results/single_flow.txt &
-h19 iperf -s -e &
-h7 iperf -c h19 -t 90 -e >> perftest/results/single_flow.txt &
-h18 iperf -s -e &
-h4 iperf -c h18 -t 90 -e >> perftest/results/single_flow.txt &
-h12 iperf -s -e &
-h11 iperf -c h12 -t 90 -e >> perftest/results/single_flow.txt &
-h2 iperf -s -e &
-h1 iperf -c h2 -t 90 -e >> perftest/results/single_flow.txt &
-h10 iperf -s -e &
-h5 iperf -c h10 -t 90 -e >> perftest/results/single_flow.txt &
+h4 iperf -s -e >> perftest/results/single_flow_client &
+h16 iperf -c h4 -t 90 -e >> perftest/results/single_flow_client.txt &
+h8 iperf -s -e >> perftest/results/single_flow_client &
+h6 iperf -c h8 -t 90 -e >> perftest/results/single_flow_client.txt &
+h11 iperf -s -e >> perftest/results/single_flow_client &
+h0 iperf -c h11 -t 90 -e >> perftest/results/single_flow_client.txt &
+h17 iperf -s -e >> perftest/results/single_flow_client &
+h5 iperf -c h17 -t 90 -e >> perftest/results/single_flow_client.txt &
+h14 iperf -s -e >> perftest/results/single_flow_client &
+h1 iperf -c h14 -t 90 -e >> perftest/results/single_flow_client.txt &
+h18 iperf -s -e >> perftest/results/single_flow_client &
+h10 iperf -c h18 -t 90 -e >> perftest/results/single_flow_client.txt &
+h3 iperf -s -e >> perftest/results/single_flow_client &
+h13 iperf -c h3 -t 90 -e >> perftest/results/single_flow_client.txt &
+h19 iperf -s -e >> perftest/results/single_flow_client &
+h2 iperf -c h19 -t 90 -e >> perftest/results/single_flow_client.txt &
+h15 iperf -s -e >> perftest/results/single_flow_client &
+h9 iperf -c h15 -t 90 -e >> perftest/results/single_flow_client.txt &
+h12 iperf -s -e >> perftest/results/single_flow_client &
+h7 iperf -c h12 -t 90 -e >> perftest/results/single_flow_client.txt &
