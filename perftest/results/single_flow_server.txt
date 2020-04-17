@@ -1,0 +1,240 @@
+------------------------------------------------------------
+Server listening on TCP port 5001 with pid 7239
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.12.10 port 5001 connected with 10.0.2.10 port 51846
+------------------------------------------------------------
+Server listening on TCP port 5001 with pid 7248
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.1.10 port 5001 connected with 10.0.6.10 port 56340
+------------------------------------------------------------
+Server listening on TCP port 5001 with pid 7259
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.11.10 port 5001 connected with 10.0.20.10 port 48392
+------------------------------------------------------------
+Server listening on TCP port 5001 with pid 7269
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.3.10 port 5001 connected with 10.0.17.10 port 56548
+------------------------------------------------------------
+Server listening on TCP port 5001 with pid 7279
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.4.10 port 5001 connected with 10.0.16.10 port 57384
+------------------------------------------------------------
+Server listening on TCP port 5001 with pid 7289
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.7.10 port 5001 connected with 10.0.13.10 port 57798
+------------------------------------------------------------
+Server listening on TCP port 5001 with pid 7299
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.5.10 port 5001 connected with 10.0.19.10 port 49092
+------------------------------------------------------------
+Server listening on TCP port 5001 with pid 7309
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.14.10 port 5001 connected with 10.0.10.10 port 40552
+------------------------------------------------------------
+Server listening on TCP port 5001 with pid 7319
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.9.10 port 5001 connected with 10.0.18.10 port 58512
+------------------------------------------------------------
+Server listening on TCP port 5001 with pid 7329
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.15.10 port 5001 connected with 10.0.8.10 port 49416
+[ ID] Interval        Transfer    Bandwidth       Reads   Dist(bin=16.0K)
+[  4] 0.00-90.11 sec  15.0 GBytes  1.43 Gbits/sec  148121    188:171:272:48121:127:103:102:99037
+[ ID] Interval        Transfer    Bandwidth       Reads   Dist(bin=16.0K)
+[  4] 0.00-90.05 sec  12.8 GBytes  1.22 Gbits/sec  119933    298:356:517:27221:322:467:351:90401
+[ ID] Interval        Transfer    Bandwidth       Reads   Dist(bin=16.0K)
+[  4] 0.00-90.03 sec  17.6 GBytes  1.68 Gbits/sec  170154    325:216:432:48988:298:266:241:119388
+[ ID] Interval        Transfer    Bandwidth       Reads   Dist(bin=16.0K)
+[  4] 0.00-90.09 sec  11.4 GBytes  1.09 Gbits/sec  107000    282:294:377:24071:258:315:260:81143
+[ ID] Interval        Transfer    Bandwidth       Reads   Dist(bin=16.0K)
+[  4] 0.00-90.03 sec  14.7 GBytes  1.41 Gbits/sec  141977    253:214:430:39495:264:265:192:100864
+[ ID] Interval        Transfer    Bandwidth       Reads   Dist(bin=16.0K)
+[  4] 0.00-90.01 sec  22.1 GBytes  2.11 Gbits/sec  215200    315:207:461:64774:285:216:188:148754
+[ ID] Interval        Transfer    Bandwidth       Reads   Dist(bin=16.0K)
+[  4] 0.00-90.01 sec  14.7 GBytes  1.41 Gbits/sec  141033    277:342:479:37124:310:374:301:101826
+[ ID] Interval        Transfer    Bandwidth       Reads   Dist(bin=16.0K)
+[  4] 0.00-90.01 sec  12.9 GBytes  1.23 Gbits/sec  174598    25620:359:500:83669:329:464:350:63307
+[ ID] Interval        Transfer    Bandwidth       Reads   Dist(bin=16.0K)
+[  4] 0.00-90.01 sec  11.4 GBytes  1.09 Gbits/sec  159123    25650:330:459:77680:436:392:294:53882
+[ ID] Interval        Transfer    Bandwidth       Reads   Dist(bin=16.0K)
+[  4] 0.00-89.99 sec  15.2 GBytes  1.45 Gbits/sec  150718    1161:153:305:48557:162:149:123:100108
+[  6] local 10.0.12.10 port 5001 connected with 10.0.2.10 port 58746
+[  7] local 10.0.12.10 port 5001 connected with 10.0.2.10 port 58748
+[  8] local 10.0.12.10 port 5001 connected with 10.0.2.10 port 58750
+[  9] local 10.0.12.10 port 5001 connected with 10.0.2.10 port 58752
+[ 10] local 10.0.12.10 port 5001 connected with 10.0.2.10 port 58754
+[  4] local 10.0.12.10 port 5001 connected with 10.0.2.10 port 58744
+[  5] local 10.0.12.10 port 5001 connected with 10.0.2.10 port 58742
+[ 11] local 10.0.12.10 port 5001 connected with 10.0.2.10 port 58756
+[  5] local 10.0.1.10 port 5001 connected with 10.0.6.10 port 34980
+[  4] local 10.0.1.10 port 5001 connected with 10.0.6.10 port 34982
+[  6] local 10.0.1.10 port 5001 connected with 10.0.6.10 port 34984
+[  8] local 10.0.1.10 port 5001 connected with 10.0.6.10 port 34988
+[  7] local 10.0.1.10 port 5001 connected with 10.0.6.10 port 34986
+[  9] local 10.0.1.10 port 5001 connected with 10.0.6.10 port 34990
+[ 10] local 10.0.1.10 port 5001 connected with 10.0.6.10 port 34992
+[  5] local 10.0.11.10 port 5001 connected with 10.0.20.10 port 55278
+[  4] local 10.0.11.10 port 5001 connected with 10.0.20.10 port 55280
+[  6] local 10.0.11.10 port 5001 connected with 10.0.20.10 port 55282
+[  7] local 10.0.11.10 port 5001 connected with 10.0.20.10 port 55284
+[  9] local 10.0.11.10 port 5001 connected with 10.0.20.10 port 55288
+[  8] local 10.0.11.10 port 5001 connected with 10.0.20.10 port 55286
+[ 10] local 10.0.11.10 port 5001 connected with 10.0.20.10 port 55290
+[  4] local 10.0.3.10 port 5001 connected with 10.0.17.10 port 35218
+[  6] local 10.0.3.10 port 5001 connected with 10.0.17.10 port 35220
+[  7] local 10.0.3.10 port 5001 connected with 10.0.17.10 port 35222
+[  8] local 10.0.3.10 port 5001 connected with 10.0.17.10 port 35224
+[ 10] local 10.0.3.10 port 5001 connected with 10.0.17.10 port 35228
+[  5] local 10.0.3.10 port 5001 connected with 10.0.17.10 port 35216
+[  9] local 10.0.3.10 port 5001 connected with 10.0.17.10 port 35226
+[  5] local 10.0.4.10 port 5001 connected with 10.0.16.10 port 36066
+[  4] local 10.0.4.10 port 5001 connected with 10.0.16.10 port 36068
+[  6] local 10.0.4.10 port 5001 connected with 10.0.16.10 port 36070
+[  7] local 10.0.4.10 port 5001 connected with 10.0.16.10 port 36072
+[  9] local 10.0.4.10 port 5001 connected with 10.0.16.10 port 36076
+[  8] local 10.0.4.10 port 5001 connected with 10.0.16.10 port 36074
+[ 10] local 10.0.4.10 port 5001 connected with 10.0.16.10 port 36078
+[  6] local 10.0.7.10 port 5001 connected with 10.0.13.10 port 36498
+[  7] local 10.0.7.10 port 5001 connected with 10.0.13.10 port 36500
+[  8] local 10.0.7.10 port 5001 connected with 10.0.13.10 port 36502
+[  9] local 10.0.7.10 port 5001 connected with 10.0.13.10 port 36504
+[  5] local 10.0.7.10 port 5001 connected with 10.0.13.10 port 36494
+[  4] local 10.0.7.10 port 5001 connected with 10.0.13.10 port 36496
+[ 10] local 10.0.7.10 port 5001 connected with 10.0.13.10 port 36506
+[  6] local 10.0.5.10 port 5001 connected with 10.0.19.10 port 56072
+[  7] local 10.0.5.10 port 5001 connected with 10.0.19.10 port 56074
+[  8] local 10.0.5.10 port 5001 connected with 10.0.19.10 port 56076
+[  9] local 10.0.5.10 port 5001 connected with 10.0.19.10 port 56078
+[  5] local 10.0.5.10 port 5001 connected with 10.0.19.10 port 56068
+[  4] local 10.0.5.10 port 5001 connected with 10.0.19.10 port 56070
+[ 10] local 10.0.5.10 port 5001 connected with 10.0.19.10 port 56080
+[  6] local 10.0.14.10 port 5001 connected with 10.0.10.10 port 47546
+[  7] local 10.0.14.10 port 5001 connected with 10.0.10.10 port 47548
+[  8] local 10.0.14.10 port 5001 connected with 10.0.10.10 port 47550
+[  9] local 10.0.14.10 port 5001 connected with 10.0.10.10 port 47552
+[  5] local 10.0.14.10 port 5001 connected with 10.0.10.10 port 47542
+[  4] local 10.0.14.10 port 5001 connected with 10.0.10.10 port 47544
+[ 10] local 10.0.14.10 port 5001 connected with 10.0.10.10 port 47554
+[  7] local 10.0.9.10 port 5001 connected with 10.0.18.10 port 37290
+[  8] local 10.0.9.10 port 5001 connected with 10.0.18.10 port 37292
+[  9] local 10.0.9.10 port 5001 connected with 10.0.18.10 port 37294
+[ 10] local 10.0.9.10 port 5001 connected with 10.0.18.10 port 37296
+[  5] local 10.0.9.10 port 5001 connected with 10.0.18.10 port 37284
+[  4] local 10.0.9.10 port 5001 connected with 10.0.18.10 port 37286
+[  6] local 10.0.9.10 port 5001 connected with 10.0.18.10 port 37288
+[  8] local 10.0.15.10 port 5001 connected with 10.0.8.10 port 56442
+[  9] local 10.0.15.10 port 5001 connected with 10.0.8.10 port 56444
+[ 10] local 10.0.15.10 port 5001 connected with 10.0.8.10 port 56446
+[  5] local 10.0.15.10 port 5001 connected with 10.0.8.10 port 56434
+[  4] local 10.0.15.10 port 5001 connected with 10.0.8.10 port 56436
+[  6] local 10.0.15.10 port 5001 connected with 10.0.8.10 port 56438
+[  7] local 10.0.15.10 port 5001 connected with 10.0.8.10 port 56440
+[ 11] local 10.0.1.10 port 5001 connected with 10.0.6.10 port 34994
+[ 11] local 10.0.11.10 port 5001 connected with 10.0.20.10 port 55292
+[ 11] local 10.0.3.10 port 5001 connected with 10.0.17.10 port 35230
+[ 11] local 10.0.4.10 port 5001 connected with 10.0.16.10 port 36080
+[ 11] local 10.0.7.10 port 5001 connected with 10.0.13.10 port 36508
+[ 11] local 10.0.5.10 port 5001 connected with 10.0.19.10 port 56082
+[ 11] local 10.0.14.10 port 5001 connected with 10.0.10.10 port 47556
+[ 11] local 10.0.9.10 port 5001 connected with 10.0.18.10 port 37298
+[ 11] local 10.0.15.10 port 5001 connected with 10.0.8.10 port 56448
+[  9] 0.00-90.08 sec  2.69 GBytes   257 Mbits/sec  25561    1586:72:53:2688:891:59:64:20148
+[  4] 0.00-90.09 sec  3.10 GBytes   296 Mbits/sec  29624    1729:111:115:3571:881:74:85:23058
+[  5] 0.00-90.10 sec  3.63 GBytes   346 Mbits/sec  32278    682:257:238:1912:764:169:146:28110
+[  6] 0.00-90.11 sec  2.67 GBytes   254 Mbits/sec  23465    668:24:29:1120:669:23:27:20905
+[ 10] 0.00-90.12 sec  3.50 GBytes   334 Mbits/sec  34243    2032:618:521:4497:516:288:272:25499
+[ 11] 0.00-90.13 sec  3.41 GBytes   325 Mbits/sec  32774    2043:119:114:4061:934:72:73:25358
+[  8] 0.00-90.14 sec  3.03 GBytes   289 Mbits/sec  27108    715:197:243:1426:863:98:94:23472
+[  7] 0.00-90.15 sec  3.17 GBytes   302 Mbits/sec  28322    937:40:36:1520:1172:25:29:24563
+[SUM] 0.00-90.15 sec  25.2 GBytes  2.40 Gbits/sec  233375    10392:1438:1349:20795:6690:808:790:191113
+[  7] 0.00-91.06 sec  2.90 GBytes   274 Mbits/sec  26648    727:775:799:994:547:384:327:22095
+[  8] 0.00-91.08 sec  1.80 GBytes   170 Mbits/sec  16580    589:65:66:1251:993:38:36:13542
+[  5] 0.00-91.12 sec  1.63 GBytes   154 Mbits/sec  15375    629:426:398:830:529:192:145:12226
+[ 11] 0.00-91.12 sec  3.68 GBytes   347 Mbits/sec  33346    751:663:601:2082:515:328:321:28085
+[  9] 0.00-91.14 sec  2.87 GBytes   270 Mbits/sec  25989    665:162:184:2101:801:129:115:21832
+[  4] 0.00-91.15 sec  1.81 GBytes   171 Mbits/sec  16891    651:448:445:821:479:201:178:13668
+[ 10] 0.00-91.16 sec  1.57 GBytes   148 Mbits/sec  14824    684:254:253:1003:677:98:103:11752
+[  8] 0.00-91.08 sec   412 MBytes  37.9 Mbits/sec  3985    200:205:190:195:110:93:97:2895
+[  5] 0.00-91.09 sec  3.06 GBytes   288 Mbits/sec  28079    667:913:664:1513:451:325:291:23255
+[  9] 0.00-91.10 sec  1.81 GBytes   170 Mbits/sec  16973    561:549:562:922:358:322:282:13417
+[  6] 0.00-91.15 sec  1.27 GBytes   119 Mbits/sec  11600    344:264:257:539:319:128:113:9636
+[  9] 0.00-91.05 sec  2.22 GBytes   209 Mbits/sec  20832    949:310:330:1358:981:173:141:16590
+[  6] 0.00-91.07 sec   596 MBytes  54.9 Mbits/sec  5271    116:118:101:247:116:70:80:4423
+[ 11] 0.00-91.18 sec  1.95 GBytes   184 Mbits/sec  18439    571:826:734:773:326:354:290:14565
+[  4] 0.00-91.19 sec  2.44 GBytes   230 Mbits/sec  22333    645:592:553:939:486:300:270:18548
+[  5] 0.00-91.09 sec  2.00 GBytes   188 Mbits/sec  18639    740:25:18:1581:1394:33:28:14820
+[ 10] 0.00-91.11 sec   523 MBytes  48.1 Mbits/sec  4553    107:45:58:222:98:52:45:3926
+[  4] 0.00-91.12 sec  1.24 GBytes   117 Mbits/sec  11527    417:58:65:916:705:53:53:9260
+[ 11] 0.00-91.13 sec   539 MBytes  49.6 Mbits/sec  4790    97:112:147:188:84:105:98:3959
+[  8] 0.00-91.18 sec  3.35 GBytes   316 Mbits/sec  29989    1126:53:39:1369:1266:51:31:26054
+[  6] 0.00-91.07 sec   535 MBytes  49.3 Mbits/sec  4811    97:136:145:225:134:94:90:3890
+[  7] 0.00-91.19 sec  2.33 GBytes   220 Mbits/sec  21707    832:78:75:1791:1423:61:65:17382
+[SUM] 0.00-91.19 sec  12.8 GBytes  1.20 Gbits/sec  117308    4384:799:833:7672:6067:598:541:96414
+[  8] 0.00-91.08 sec   468 MBytes  43.1 Mbits/sec  4464    170:200:182:287:132:120:87:3286
+[  5] 0.00-91.10 sec   439 MBytes  40.4 Mbits/sec  3985    132:130:97:215:79:50:50:3232
+[  7] 0.00-91.17 sec   495 MBytes  45.5 Mbits/sec  4704    168:210:167:307:157:120:107:3468
+[ 10] 0.00-91.04 sec  2.51 GBytes   237 Mbits/sec  23215    1110:54:53:1566:1252:44:47:19089
+[ 11] 0.00-91.17 sec   714 MBytes  65.7 Mbits/sec  6460    153:160:204:341:169:138:116:5179
+[  7] 0.00-91.06 sec  2.49 GBytes   234 Mbits/sec  23243    733:705:775:1198:546:343:314:18629
+[  8] 0.00-91.07 sec  3.44 GBytes   325 Mbits/sec  31099    1062:119:113:1823:1357:90:89:26446
+[  9] 0.00-91.20 sec  1.80 GBytes   169 Mbits/sec  16753    537:533:550:726:391:244:219:13553
+[  9] 0.00-91.09 sec   657 MBytes  60.5 Mbits/sec  5749    107:75:75:327:114:98:89:4864
+[  5] 0.00-91.09 sec  4.38 GBytes   413 Mbits/sec  39213    998:149:151:2650:1260:157:133:33715
+[ 11] 0.00-91.10 sec  4.20 GBytes   396 Mbits/sec  37909    1056:102:105:2898:1562:88:71:32027
+[  6] 0.00-91.11 sec   725 MBytes  66.7 Mbits/sec  6375    130:111:118:347:112:92:84:5381
+[ 10] 0.00-91.29 sec   500 MBytes  45.9 Mbits/sec  4597    124:177:156:244:78:118:106:3594
+[  5] 0.00-91.04 sec  2.01 GBytes   190 Mbits/sec  19057    859:562:533:1132:441:273:252:15005
+[ 11] 0.00-91.04 sec  2.25 GBytes   212 Mbits/sec  20518    883:126:98:1188:783:81:90:17269
+[  6] 0.00-91.05 sec   513 MBytes  47.2 Mbits/sec  4795    128:205:220:229:132:140:124:3617
+[  7] 0.00-91.09 sec   475 MBytes  43.8 Mbits/sec  4271    96:112:142:183:107:93:64:3474
+[ 10] 0.00-91.09 sec   410 MBytes  37.7 Mbits/sec  3788    123:124:123:224:99:78:80:2937
+[  6] 0.00-91.72 sec  1.83 GBytes   172 Mbits/sec  20296    2271:1563:915:1463:556:354:286:12888
+[SUM] 0.00-91.72 sec  18.1 GBytes  1.69 Gbits/sec  169949    6967:4356:3661:10545:5097:1724:1511:136088
+[  8] 0.00-91.11 sec  1.39 GBytes   131 Mbits/sec  12548    487:51:52:643:536:35:32:10712
+[  4] 0.00-91.11 sec  1.63 GBytes   154 Mbits/sec  15338    706:62:58:1272:1019:59:61:12101
+[  4] 0.00-91.28 sec  1.59 GBytes   150 Mbits/sec  14395    374:156:153:1010:324:124:151:12103
+[SUM] 0.00-91.28 sec  20.0 GBytes  1.88 Gbits/sec  181198    5570:1471:1543:11819:6527:1036:978:152254
+[  8] 0.00-91.03 sec  1.83 GBytes   173 Mbits/sec  16694    706:97:67:897:730:34:38:14125
+[  7] 0.00-91.64 sec  1.71 GBytes   161 Mbits/sec  16306    581:679:598:740:416:306:252:12734
+[ 10] 0.00-91.06 sec   526 MBytes  48.5 Mbits/sec  4928    150:225:180:260:142:117:122:3732
+[ 11] 0.00-91.07 sec  1.84 GBytes   173 Mbits/sec  16702    522:242:246:937:423:130:118:14084
+[  9] 0.00-91.20 sec   566 MBytes  52.1 Mbits/sec  5088    139:143:120:257:93:87:81:4168
+[SUM] 0.00-91.20 sec  9.20 GBytes   866 Mbits/sec  85403    3421:1385:1346:5128:3210:846:784:69283
+[  7] 0.00-91.10 sec  1.34 GBytes   126 Mbits/sec  12952    568:584:485:650:308:285:258:9814
+[  5] 0.00-91.10 sec  1.07 GBytes   101 Mbits/sec  10282    509:247:204:724:473:98:120:7907
+[  6] 0.00-91.14 sec  1.62 GBytes   152 Mbits/sec  14635    427:255:297:591:381:175:137:12372
+[ 10] 0.00-91.05 sec  1.09 GBytes   102 Mbits/sec  10443    424:491:299:590:251:200:222:7966
+[  4] 0.00-91.19 sec  1.55 GBytes   146 Mbits/sec  14403    460:375:380:753:363:199:206:11667
+[ 11] 0.00-91.10 sec  1.40 GBytes   132 Mbits/sec  13608    655:402:417:1195:339:214:210:10176
+[  4] 0.00-91.61 sec   494 MBytes  45.2 Mbits/sec  4480    148:114:109:241:107:70:89:3602
+[SUM] 0.00-91.61 sec  5.36 GBytes   502 Mbits/sec  50254    1529:1660:1610:2586:1247:954:864:39804
+[  9] 0.00-91.27 sec  1.07 GBytes   101 Mbits/sec  11319    802:708:556:821:432:319:301:7380
+[SUM] 0.00-91.27 sec  10.8 GBytes  1.02 Gbits/sec  101915    4144:2733:2415:5633:3252:1357:1300:81081
+[  6] 0.00-91.18 sec  2.01 GBytes   189 Mbits/sec  18543    575:508:501:826:401:245:264:15223
+[ 10] 0.00-91.89 sec  2.50 GBytes   234 Mbits/sec  22805    619:666:526:834:516:255:224:19165
+[SUM] 0.00-91.89 sec  15.1 GBytes  1.41 Gbits/sec  140520    4188:4694:4084:6455:2982:2083:1819:114215
+[  4] 0.00-91.07 sec  1.47 GBytes   138 Mbits/sec  13330    451:73:62:782:677:38:56:11191
+[  9] 0.00-91.20 sec  1.37 GBytes   129 Mbits/sec  13022    495:489:459:614:308:256:236:10165
+[  8] 0.00-91.21 sec  1.30 GBytes   123 Mbits/sec  12670    551:507:390:847:421:261:246:9447
+[  5] 0.00-91.22 sec   437 MBytes  40.2 Mbits/sec  4116    135:186:182:227:97:95:82:3112
+[  4] 0.00-91.23 sec   448 MBytes  41.2 Mbits/sec  4218    140:203:159:215:118:100:92:3191
+[  7] 0.00-91.24 sec  1.65 GBytes   155 Mbits/sec  14971    489:261:205:697:397:128:124:12670
+[SUM] 0.00-91.24 sec  9.68 GBytes   912 Mbits/sec  91591    3464:3047:2612:5211:2332:1499:1476:71950
+[  9] 0.00-91.13 sec   536 MBytes  49.3 Mbits/sec  4827    120:134:127:246:111:84:76:3929
+[  7] 0.00-91.12 sec   502 MBytes  46.3 Mbits/sec  4750    145:242:194:275:117:113:107:3557
+[  8] 0.00-91.14 sec  1.34 GBytes   126 Mbits/sec  13109    727:568:441:733:417:222:223:9778
+[  6] 0.00-91.13 sec   475 MBytes  43.7 Mbits/sec  4300    147:109:109:204:94:93:65:3479
+[ 10] 0.00-91.15 sec   460 MBytes  42.3 Mbits/sec  4287    156:174:126:255:107:83:86:3300
+[  5] 0.00-91.14 sec   468 MBytes  43.1 Mbits/sec  4225    83:129:121:192:128:94:96:3382
+[ 11] 0.00-91.15 sec  1.92 GBytes   181 Mbits/sec  18329    544:892:844:743:375:322:301:14308
+[SUM] 0.00-91.15 sec  7.11 GBytes   670 Mbits/sec  67157    2373:2321:2024:3430:2026:1049:1010:52924

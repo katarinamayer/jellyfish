@@ -1,20 +1,20 @@
-h4 iperf -s -e >> perftest/results/eight_flow_client &
-h16 iperf -c h4 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
-h8 iperf -s -e >> perftest/results/eight_flow_client &
-h6 iperf -c h8 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
-h11 iperf -s -e >> perftest/results/eight_flow_client &
-h0 iperf -c h11 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
-h17 iperf -s -e >> perftest/results/eight_flow_client &
-h5 iperf -c h17 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
-h14 iperf -s -e >> perftest/results/eight_flow_client &
-h1 iperf -c h14 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
-h18 iperf -s -e >> perftest/results/eight_flow_client &
-h10 iperf -c h18 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
-h3 iperf -s -e >> perftest/results/eight_flow_client &
-h13 iperf -c h3 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
-h19 iperf -s -e >> perftest/results/eight_flow_client &
-h2 iperf -c h19 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
-h15 iperf -s -e >> perftest/results/eight_flow_client &
-h9 iperf -c h15 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
-h12 iperf -s -e >> perftest/results/eight_flow_client &
-h7 iperf -c h12 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
+h11 iperf -s -e >> perftest/results/eight_flow_server.txt &
+h1 iperf -c h11 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
+h0 iperf -s -e >> perftest/results/eight_flow_server.txt &
+h5 iperf -c h0 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
+h10 iperf -s -e >> perftest/results/eight_flow_server.txt &
+h19 iperf -c h10 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
+h2 iperf -s -e >> perftest/results/eight_flow_server.txt &
+h16 iperf -c h2 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
+h3 iperf -s -e >> perftest/results/eight_flow_server.txt &
+h15 iperf -c h3 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
+h6 iperf -s -e >> perftest/results/eight_flow_server.txt &
+h12 iperf -c h6 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
+h4 iperf -s -e >> perftest/results/eight_flow_server.txt &
+h18 iperf -c h4 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
+h13 iperf -s -e >> perftest/results/eight_flow_server.txt &
+h9 iperf -c h13 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
+h8 iperf -s -e >> perftest/results/eight_flow_server.txt &
+h17 iperf -c h8 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
+h14 iperf -s -e >> perftest/results/eight_flow_server.txt &
+h7 iperf -c h14 -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &
