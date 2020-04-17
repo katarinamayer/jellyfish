@@ -5,25 +5,25 @@
 
 ### Instructions to Run Basic Network
 Start up the VM on GCP. In a terminal window, type:
-``` python
+``` code
  $ ssh [external IP]
  $ cd ../kat/cs419-project
  $ sudo python jellyfish_network.py
  ```
 You should now be in the Mininet CLI and can perform some basic tests.
 
-``` python
+``` code
 mininet> pingall
 mininet> h0 iperf -s -e &
 mininet> h1 iperf -c h0 -e
 ```
 To exit the CLI, type:
-``` python
+``` code
 mininet> exit
 
 ```
 Clear the network after each run. To clear the network, type:
-``` python
+``` code
 $ sudo mn -c
 ```
 
