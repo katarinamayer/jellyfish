@@ -16,8 +16,18 @@ Make copy of the graph
 7: while U not empty do
     8: (p, G) ← dequeue(U)                  # dequeue a path-graph pair
     
-    9: for i ← 1, b do                      # for i in range (0,b)
-        10: x ← SAMPLEUNIFORM(p)            # get a random node from the path (not endpoints if you can help it)
+    9: for i ← 1, b do                                  # for i in range (0,b)
+        10: x ← SAMPLEUNIFORM(p)                        # x = (edge(uv), fraction of edge (t)) e.g. randomly choose edge along p, randomly choose some t:0-1 incl, 
+                                                        # loop through all edges in graph, remove all edges where no point along edge is in row
+                                                        # for each edge in graph:
+                                                            # for each endpoint (a,b) in edge:
+                                                                # calc len shortest path a,u + t
+                                                                # calc len shortest path a,v + 1-t
+                                                                # d = min(above paths)
+                                                                # if d < row, remove edge
+
+                                                            # for each ednpoint, find distance from endpoint to x.
+                                                            # e.g. Find min length distance from the endpoint to each of x's endpoints  
         11: E0 ← {e ∈ E : d(x, e(t)) ≥ ρ ∀t ∈ [0, 1]}
         12: G0 ← (V, E0)
         13: p0 ← SHORTESTPATH(G0, s, g)
@@ -34,6 +44,7 @@ Make copy of the graph
 return S
 '''
 
+# find up to k diverse paths
 def diverse_paths(graph, k=8):
 
     diverse_paths = {}
@@ -45,8 +56,9 @@ def diverse_paths(graph, k=8):
         for dst in range(src+1, n):
             U = []
             S = {}
-            path_len = nx.shortest_path_length(graph_copy, source=src, target=dst)
-            row = 0.1 * path_len
+
+            #path_len = nx.shortest_path_length(graph_copy, source=src, target=dst)
+            #row = 0.1 * path_len
 
             if nx.has_path(graph_copy, source=src, target=dst)
                 p = nx.shortest_path(graph_copy, source=src, target=dst)
@@ -54,9 +66,30 @@ def diverse_paths(graph, k=8):
                 S.add(p)
 
             while (len(U) > 0):
-                U.pop(0)
+                p, G = U.pop(0)
+                row = 0.1*len(p)
 
                 for i in range(0,b):
+                    G_copy = G
+
+                    # remove edges as above from G_copy
+                    # Find new shortest path between src and dest in G_copy
+
+                    # if path from s--->d
+                        # p' = get shortest path
+                        # add pair (p', G_copy) to U queue
+
+                    # if P < 90% similar to any other path (the higher the %, the less diverse)
+                        # add p' to S
+
+                    # if length of S = k
+                        # break
+
+            #return S
+
+
+
+
 
 
 
