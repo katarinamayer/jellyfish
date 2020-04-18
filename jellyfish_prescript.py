@@ -56,9 +56,9 @@ def get_tests(n):
         c = pair[0]
         s = pair[1]
 
-        f.write("h" + str(s) + " iperf -s -e >> perftest/results/single_flow_server.txt &\n")
+        f.write("h" + str(s) + " iperf -s -e &\n")
         f.write("h" + str(c) + " iperf -c h" + str(s) + " -t 90 -e >> perftest/results/single_flow_client.txt &\n")
-        g.write("h" + str(s) + " iperf -s -e >> perftest/results/eight_flow_server.txt &\n")
+        g.write("h" + str(s) + " iperf -s -e &\n")
         g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &\n")
 
     g.close()
@@ -80,11 +80,19 @@ def main():
     ecmp_path = os.path.join(PKL_DIR, 'ecmp_{}.pkl'.format(filename))
     util.save_obj(ecmp_routes, ecmp_path)
 
+    ksp_routes = util.compute_ksp(graph,8)
+    ksp_path = os.path.join(PKL_DIR, 'ksp_{}.pkl'.format(filename))
+    util.save_obj(ksp_routes, ksp_path)
+
     ''' output routing files in transformed_routes '''
     k = 8
     t_ecmp_routes = util.transform_paths_dpid(ecmp_path, k)
     t_ecmp_path = os.path.join(TRANSFORM_DIR, 'ecmp_{}_{}.pkl'.format(k, filename))
     util.save_obj(t_ecmp_routes, t_ecmp_path)
+
+    t_ksp_routes = util.transform_paths_dpid(ksp_path, k)
+    t_ksp_path = os.path.join(TRANSFORM_DIR, 'ksp_{}_{}.pkl'.format(k, filename))
+    util.save_obj(t_ksp_routes, t_ksp_path)
 
 if __name__ == '__main__':
     main()
