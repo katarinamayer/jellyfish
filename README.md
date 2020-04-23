@@ -95,9 +95,9 @@ To view the results, wait a few minutes and exit the Mininet CLI by typing ``` m
 
 
 ### References
-- Paper: [Jellyfish: Networking Data Centers Randomly, Singla et al](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final82.pdf)
-- Paper: [A Heuristic Approach to Finding Diverse Short Paths, Voss et al](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7139774)
-- Repository [mininet/mininet](https://github.com/mininet/mininet)
-- Repository: [brandonheller/ripl](https://github.com/brandonheller/ripl)
-- Repository: [brandonheller/riplpox](https://github.com/brandonheller/riplpox)
-- Reporitory: [lechengfan](https://github.com/lechengfan/cs244-assignment2/tree/f4f0f06fbb939a8a3bb9a10bd3446363f53bf6b2)
+- [Jellyfish: Networking Data Centers Randomly, Singla et al](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final82.pdf)
+- [A Heuristic Approach to Finding Diverse Short Paths, Voss et al](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7139774)
+- [mininet/mininet](https://github.com/mininet/mininet)
+- [brandonheller/ripl](https://github.com/brandonheller/ripl)
+- [brandonheller/riplpox](https://github.com/brandonheller/riplpox)
+- [lechengfan/cs244-assignment2](https://github.com/lechengfan/cs244-assignment2)
