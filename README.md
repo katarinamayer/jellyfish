@@ -4,7 +4,7 @@
 ### [Instructions for Cloud Computing Peer Validators](https://docs.google.com/document/d/1gw0bQXfTPnE98h_51koCD04AAzTgu5nammc-pARR2Jw/edit?usp=sharing)
 
 ### Install (TODO)
-Follow [these instructions](http://mininet.org/download/#option-2-native-installation-from-source) to install Mininet on linux distribution or VM. To install this project, clone ``` https://github.com/katarinamayer/cs419-project.git ```. To get setup, run ``` $ ./setup/install.sh ```
+Follow these [instructions](http://mininet.org/download/#option-2-native-installation-from-source) to install Mininet on linux distribution. To install this project, clone ``` https://github.com/katarinamayer/cs419-project.git ```. To get setup, run ``` $ ./setup/install.sh ```
 
 ### Startup Basic Network
 ``` code
