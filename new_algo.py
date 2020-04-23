@@ -50,27 +50,92 @@ def diverse_paths(graph, k=8):
     diverse_paths = {}
     b = 2
 
-    graph_copy = graph
+    graph_c = graph
 
     for src in range(n):
         for dst in range(src+1, n):
-            U = []
-            S = {}
+            S = heuristic(src, dst, graph_c)
+            diverse_paths[(str(src), str(dst))] = [p for p in S]
 
-            #path_len = nx.shortest_path_length(graph_copy, source=src, target=dst)
-            #row = 0.1 * path_len
+    return diverse_paths
+            
 
-            if nx.has_path(graph_copy, source=src, target=dst)
-                p = nx.shortest_path(graph_copy, source=src, target=dst)
-                U.append((p,graph_copy))
-                S.add(p)
+def heuristic(src, dst, graph_c, b):
+    U = []
+    S = []
 
-            while (len(U) > 0):
-                p, G = U.pop(0)
-                row = 0.1*len(p)
+    if nx.has_path(graph_c, source=src, target=dst)
+        p = nx.shortest_path(graph_c, source=src, target=dst)
+        U.append((p,graph_c))
+        S.add(p)
 
-                for i in range(0,b):
-                    G_copy = G
+    while (len(U) > 0):
+        p, G = U.pop(0)
+        row = 0.1*len(p)
+
+        for i in range(0,b):
+            G_c = G
+            edge_index = random.randrange(len(p)-1)
+
+            u = p[edge_index]
+            v = p[edge_index + 1]
+
+            t = random.random()
+
+            for edge in G_c.edges():
+                a = edge[0]
+                b = edge[0]
+
+                if nx.has_path(G_c, a, u):
+                    path_a_u = nx.shortest_path(G_c, a, u)
+                    a_u_len = len(path_a_u) + t
+
+                    path_a_v = nx.shortest_path(G_c, a, v)
+                    a_v_len = len(path_a_v) + (1-t)
+
+                    path_b_u = nx.shortest_path(G_c, b, u)
+                    b_u_len = len(path_b_u) + t
+
+                    path_b_v = nx.shortest_path(G_c, b, v)
+                    b_v_len = len(path_b_v) + (1-t)
+
+                    if a_u_len < row or a_v_len < row or b_u_len < row or b_v_len < row:
+                        G_c.remove(a,b)
+
+            if nx.has_path(G_c, src, dst):
+                p_c = nx.shortest_path(G_c, src, dst)
+                U.append((p_c,G_c))
+
+
+            if acceptable(p_c, S):
+                S.append(p_c)
+
+            if len(S) = k:
+                return S
+                        
+    return S
+
+
+
+def acceptable(p_c, S):
+
+    if len(S) < 1:
+        return True
+
+    else:
+        count = 0
+        for row in S:
+            for node in row:
+                if node in p_c:
+                    count += 1
+
+        if float(count)/float(len(p_c)) < 0.9:
+            return True
+
+    return False
+
+
+
 
                     # remove edges as above from G_copy
                     # Find new shortest path between src and dest in G_copy

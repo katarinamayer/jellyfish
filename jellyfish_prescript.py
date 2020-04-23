@@ -34,9 +34,13 @@ def get_graph(nSwitches, nPorts):
             added.append(edge)
 
     # nx.draw(G)
-    # plt.savefig("graph.png")
+    # plt.savefig("graph.png", with_labels=True)
+    # print(nx.info(G))
+    # print(G.edges())
 
-    return G
+    nx.write_adjlist(G, "graph_adjlist")
+
+    return G.edges()
 
 def get_tests(n):
     ''' get random sampling of tests '''
@@ -67,8 +71,26 @@ def get_tests(n):
 
 def main():
     ''' output graph files in main directory '''
-    graph = get_graph(20, 5)
-    nx.write_adjlist(graph, "graph_adjlist")
+    #graph = nx.Graph()
+    edges = get_graph(20,5)
+    #print(edges)
+    #print(G.edges())
+
+    # newG = nx.Graph()
+    # newG.add_edges_from(edges)
+    # print(newG.edges())
+
+    #nx.draw(G)
+    #plt.show()
+    #graph = nx.Graph(get_graph(10, 5))
+
+    graph = nx.read_adjlist("graph_adjlist", nodetype = int)
+    # nx.draw(graph)
+    # plt.savefig("called.png")
+    # print(nx.info(graph))
+    # print(graph.edges())
+    
+    # nx.write_adjlist(graph, "graph_adjlist")
     n = graph.number_of_nodes()
 
     ''' output tests in perftest/tests '''
@@ -83,6 +105,9 @@ def main():
     ksp_routes = util.compute_ksp(graph,8)
     ksp_path = os.path.join(PKL_DIR, 'ksp_{}.pkl'.format(filename))
     util.save_obj(ksp_routes, ksp_path)
+
+    diverse_routes = util.diverse_paths(graph, 8)
+    print(diverse_routes)
 
     ''' output routing files in transformed_routes '''
     k = 8
