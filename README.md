@@ -4,16 +4,16 @@
 ### [Instructions for Peer Validators](https://docs.google.com/document/d/1gw0bQXfTPnE98h_51koCD04AAzTgu5nammc-pARR2Jw/edit?usp=sharing)
 
 ### Install (TODO)
-Follow these [instructions](http://mininet.org/download/#option-2-native-installation-from-source) to install Mininet on linux distribution. To install this project:
+Follow these [instructions](http://mininet.org/download/#option-2-native-installation-from-source) to install Mininet on any linux distribution. Once Mininet is installed, install the project as follows:
 ``` code
 $ git clone https://github.com/katarinamayer/cs419-project.git
 $ cd cs419-project
 $ ./setup/install.sh 
 ```
 
-### Startup Basic Network
+### Start Basic Network
 ``` code
- $ cd ~/cs419-project/jellyfish
+ $ cd cs419-project/jellyfish
  $ sudo python network.py
  ```
 You should now be in the Mininet CLI and can perform some basic tests.
@@ -37,7 +37,7 @@ $ sudo mn -c
 
 In two separate terminal windows:
 ``` code
- $ cd ~/cs419-project/jellyfish
+ $ cd cs419-project/jellyfish
  ```
 In window 1, run this command to generate a saved graph (adjaceny list), routing files, and iperf test files:
 ``` code
