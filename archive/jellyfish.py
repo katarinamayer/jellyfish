@@ -128,17 +128,6 @@ class Jellyfish(Topo):
 
         return adjacent # do not remove cycles
 
-        
-    '''
-    def visualize_graph(edge_list):
-        # Visualize graph
-        g = nx.Graph()
-        g.add_nodes_from([i for i in range(edge_list)])
-        for a,b in adjacent:
-            g.add_edge(a,b)
-        nx.draw(g)
-        plt.show()
-        '''
 
     # Method to check if links are still possible
     def checkPossibleLinks(self, adjacent, ports):
@@ -180,25 +169,10 @@ class Jellyfish(Topo):
                     # remove the cycle in adjaceny_matrix
                     adjacency_matrix[i][node] = False
                     adjacency_matrix[node][i] = False
-'''
-# TODO
-def get_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--numNodes', help="Number of hosts", required=True)
-    parser.add_argument('--numPorts', help="Number of total ports per switch", required=True)
-    parser.add_argument('--numServerPorts', help="Number of ports per switch to reserve to servers", required=True)
-    parser.add_argument('--numSwitches', help="Number of Switches", required=True)
-    return parser.parse_args()
-'''
+
 
 def main():
-    '''
-    args = get_args()
-    numNodes = args.numNodes
-    numPorts = args.numPorts
-    numServerPorts = arsg.numServerPorts
-    numSwitches = args.numSwitches
-    '''
+
     numNodes = 20
     numPorts = 5
     numServerPorts = 5

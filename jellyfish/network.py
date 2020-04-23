@@ -1,5 +1,5 @@
 # Last Revised 4/11/20
-# Script to build network on mininet based on adjacency list
+# Script to build jellyfish network on mininet based on adjacency list
 # Refer to running instructions in README
 
 from mininet.net import Mininet
@@ -12,7 +12,6 @@ import os
 import sys
 import argparse
 import random
-# import networkx as nx
 
 class Jellyfish(Topo):
 
@@ -50,7 +49,6 @@ class Jellyfish(Topo):
                     self.addLink(switches[int(source_node)], switches[int(dest_node)])
 
 '''
-# TODO
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--numNodes', help="Number of hosts", required=True)
@@ -60,8 +58,8 @@ def get_args():
     return parser.parse_args()
 '''
 
-# Running the topo via --custom flag does not run main
-# Running via sudo jellyfish_network.py calls main
+# Running the topo via --custom flag does not run main()
+# Running via sudo network.py calls main()
 def main():
     '''
     args = get_args()

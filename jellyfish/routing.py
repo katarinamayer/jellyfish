@@ -1,5 +1,5 @@
 # Last revised 4/23/20
-# Routing algorithms
+# Routing algorithms for Jellyfish
 
 from __future__ import division
 import pickle

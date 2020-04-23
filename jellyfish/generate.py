@@ -1,6 +1,6 @@
 # Last revised 4/23/20
 # Script containing logic to output adjacency list (saved graph), routing files and tests
-# Run this prior to jellyfish_network.py to generate files
+# Run this prior to network.py to generate files
 
 import os
 import sys
@@ -15,8 +15,8 @@ import routing as routing
 ''' Custom class to build Jellyfish graph '''
 from jellyfish_graph import Jellyfish 
 
-TRANSFORM_DIR = 'transformed_routes'
-PKL_DIR = 'pickled_routes'
+TRANSFORM_DIR = '../transformed_routes'
+PKL_DIR = '../pickled_routes'
 
 
 ''' Get graph, convert to networkx graph
