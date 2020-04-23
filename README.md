@@ -1,13 +1,14 @@
 # Cloud Computing Project: Load Balancing in Jellyfish Networks
 
 
-### [Instructions for Peer Validators](https://docs.google.com/document/d/1gw0bQXfTPnE98h_51koCD04AAzTgu5nammc-pARR2Jw/edit?usp=sharing)
+### [Instructions for Cloud Computing Peer Validators](https://docs.google.com/document/d/1gw0bQXfTPnE98h_51koCD04AAzTgu5nammc-pARR2Jw/edit?usp=sharing)
 
-### Instructions to Run Basic Network
-Start up the VM on GCP. In a terminal window, type:
+### Install (TODO)
+Follow [these instructions](http://mininet.org/download/#option-2-native-installation-from-source) to install Mininet on linux distribution or VM. To install this project, clone ``` https://github.com/katarinamayer/cs419-project.git ```. To get setup, run ``` $ ./setup/install.sh ```
+
+### Startup Basic Network
 ``` code
- $ ssh [external IP]
- $ cd /home/kat/cs419-project/jellyfish
+ $ cd ~/cs419-project/jellyfish
  $ sudo python network.py
  ```
 You should now be in the Mininet CLI and can perform some basic tests.
@@ -22,30 +23,29 @@ To exit the CLI, type:
 mininet> exit
 
 ```
-Clear the network after each run. To clear the network, type:
+Clear the network after each run. 
 ``` code
 $ sudo mn -c
 ```
 
-### Instructions to Run Remote Controller
+### Custom Routing with Remote Controller
 
-Start up the VM on GCP. In two separate terminal windows, type:
+In two separate terminal windows:
 ``` code
- $ ssh [external IP]
- $ cd /home/kat/cs419-project/jellyfish
+ $ cd ~/cs419-project/jellyfish
  ```
-In terminal window 1, run this command to generate a saved graph (adjaceny list), routing files, and iperf test files:
+In window 1, run this command to generate a saved graph (adjaceny list), routing files, and iperf test files:
 ``` code
 $ python generate.py
 ```
-In terminal window 2, start the remote controller:
+In window 2, start the remote controller:
 
 ~~$ /home/kat/cs419-project/pox/pox.py riplpox.riplpox --topo=jelly,20,20,5,graph_adjlist --routing=jelly,ecmp_8_test --mode=reactive~~
 ``` code
 $ ~/pox/pox.py riplpox.riplpox --topo=jelly,20,20,5,graph_adjlist --routing=jelly,ecmp_8_test --mode=reactive
 ```
 
-In terminal window 1, start the network:
+In window 1, start the network:
 ``` code
 $ sudo mn --custom network.py --topo=jelly,20,20,5,graph_adjlist --controller=remote --mac
 ```
