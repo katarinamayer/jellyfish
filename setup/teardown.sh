@@ -5,3 +5,4 @@
 # #rm -rf perftest
 
 rm -rf __pycache__
+rm -rf jellyfish/__pycache__

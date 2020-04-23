@@ -17,8 +17,8 @@ import routing as routing
 ''' Custom class to build Jellyfish graph '''
 from graph import Jellyfish 
 
-TRANSFORM_DIR = '../transformed_routes'
-PKL_DIR = '../pickled_routes'
+TRANSFORM_DIR = '../routes/transformed'
+PKL_DIR = '../routes/pickled'
 
 
 ''' Get graph, convert to networkx graph
