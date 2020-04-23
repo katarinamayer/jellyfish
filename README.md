@@ -6,7 +6,8 @@
 ### Install (TODO)
 Follow these [instructions](http://mininet.org/download/#option-2-native-installation-from-source) to install Mininet on linux distribution. To install this project:
 ``` code
-git clone https://github.com/katarinamayer/cs419-project.git
+$ git clone https://github.com/katarinamayer/cs419-project.git
+$ cd cs419-project
 $ ./setup/install.sh 
 ```
 
