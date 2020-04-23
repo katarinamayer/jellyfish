@@ -1,7 +1,7 @@
 # Load Balancing in Jellyfish Networks
 
 
-### [Instructions for Cloud Computing Peer Validators](https://docs.google.com/document/d/1gw0bQXfTPnE98h_51koCD04AAzTgu5nammc-pARR2Jw/edit?usp=sharing)
+### [Instructions for Peer Validators](https://docs.google.com/document/d/1gw0bQXfTPnE98h_51koCD04AAzTgu5nammc-pARR2Jw/edit?usp=sharing)
 
 ### Install (TODO)
 Follow these [instructions](http://mininet.org/download/#option-2-native-installation-from-source) to install Mininet on linux distribution. To install this project:
