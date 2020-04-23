@@ -61,16 +61,16 @@ def get_tests(n):
     servers = HostNums[1::2]
     pairs = zip(clients, servers)
 
-    f = open("../perftest/tests/single_flow", "w+")
-    g = open("../perftest/tests/eight_flow", "w+")
+    f = open("perftest/tests/single_flow", "w+")
+    g = open("perftest/tests/eight_flow", "w+")
     for pair in pairs:
         c = pair[0]
         s = pair[1]
 
         f.write("h" + str(s) + " iperf -s -e &\n")
-        f.write("h" + str(c) + " iperf -c h" + str(s) + " -t 90 -e >> ../perftest/results/single_flow_client.txt &\n")
+        f.write("h" + str(c) + " iperf -c h" + str(s) + " -t 90 -e >> perftest/results/single_flow_client.txt &\n")
         g.write("h" + str(s) + " iperf -s -e &\n")
-        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -t 90 -e >> ../perftest/results/eight_flow_client.txt &\n")
+        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &\n")
 
     g.close()
     f.close()

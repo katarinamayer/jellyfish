@@ -7,8 +7,8 @@
 Start up the VM on GCP. In a terminal window, type:
 ``` code
  $ ssh [external IP]
- $ cd ../kat/cs419-project
- $ sudo python jellyfish_network.py
+ $ cd home/kat/cs419-project/jellyfish
+ $ sudo python network.py
  ```
 You should now be in the Mininet CLI and can perform some basic tests.
 
@@ -32,7 +32,7 @@ $ sudo mn -c
 Start up the VM on GCP. In two separate terminal windows, type:
 ``` code
  $ ssh [external IP]
- $ cd ../kat/cs419-project/jellyfish
+ $ cd home/kat/cs419-project/jellyfish
  ```
 In terminal window 1, run this command to generate a saved graph (adjaceny list), routing files, and iperf test files:
 ``` code
@@ -58,8 +58,8 @@ mininet> pingall
 
 After achieving successful connectivity, perform iperf tests by typing these commands into the CLI:
 ``` code
-mininet> source ../perftest/tests/single_flow
-mininet> source ../perftest/tests/eight_flow
+mininet> source perftest/tests/single_flow
+mininet> source perftest/tests/eight_flow
 ```
 
 To view the results, wait a few minutes and exit the Mininet CLI by typing ``` mininet> exit ```. View tests results under directory ``` perftest/results ``` After exiting the Mininet CLI in window 1, exit the pox controller in window 2 by hitting ctrl-D.
