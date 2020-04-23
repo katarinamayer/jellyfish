@@ -1,5 +1,5 @@
 # Last revised 4/23/20
-# Script containing logic to output adjacency list (saved graph), routing files and tests
+# Script containing logic to output adjacency list, routing files and tests
 # Run this prior to network.py to generate files
 
 import os
@@ -10,10 +10,12 @@ import matplotlib.pyplot as plt
 import pickle
 import networkx as nx
 import util as util
+
+''' Custom routing algorithms '''
 import routing as routing
 
 ''' Custom class to build Jellyfish graph '''
-from jellyfish_graph import Jellyfish 
+from graph import Jellyfish 
 
 TRANSFORM_DIR = '../transformed_routes'
 PKL_DIR = '../pickled_routes'
@@ -21,6 +23,7 @@ PKL_DIR = '../pickled_routes'
 
 ''' Get graph, convert to networkx graph
     and save adjacency list to store graph '''
+
 def get_graph(nSwitches, nPorts): 
 
     j = Jellyfish(nSwitches, nPorts)
@@ -46,6 +49,7 @@ def get_graph(nSwitches, nPorts):
 
 ''' Get random sampling of tests. 
     Divide hosts in half clients, half servers '''
+
 def get_tests(n):
 
     HostNums = []
@@ -57,16 +61,16 @@ def get_tests(n):
     servers = HostNums[1::2]
     pairs = zip(clients, servers)
 
-    f = open("perftest/tests/single_flow", "w+")
-    g = open("perftest/tests/eight_flow", "w+")
+    f = open("../perftest/tests/single_flow", "w+")
+    g = open("../perftest/tests/eight_flow", "w+")
     for pair in pairs:
         c = pair[0]
         s = pair[1]
 
         f.write("h" + str(s) + " iperf -s -e &\n")
-        f.write("h" + str(c) + " iperf -c h" + str(s) + " -t 90 -e >> perftest/results/single_flow_client.txt &\n")
+        f.write("h" + str(c) + " iperf -c h" + str(s) + " -t 90 -e >> ../perftest/results/single_flow_client.txt &\n")
         g.write("h" + str(s) + " iperf -s -e &\n")
-        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -t 90 -e >> perftest/results/eight_flow_client.txt &\n")
+        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -t 90 -e >> ../perftest/results/eight_flow_client.txt &\n")
 
     g.close()
     f.close()

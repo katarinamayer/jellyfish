@@ -11,8 +11,9 @@ from itertools import islice
 import matplotlib.pyplot as plt
 
 
-''' implementation to compute equal-cost multipaths (ECMP) 
-	with networkx library, inspired by lechengfan '''
+''' implementation to compute equal-cost multipaths (ECMP) with networkx library, 
+    inspired by https://github.com/lechengfan/cs244-assignment2/blob/master/build_topology.py '''
+
 def compute_ecmp(): 
     g = nx.read_adjlist("graph_adjlist", nodetype = int)
     n = g.number_of_nodes()
@@ -24,8 +25,9 @@ def compute_ecmp():
     return ecmp_paths
 
 
-''' implementation to compute k-shortest paths with networkx 
-	library, inspired by lechengfan '''
+''' implementation to compute k-shortest paths with networkx library, 
+    inspired by https://github.com/lechengfan/cs244-assignment2/blob/master/build_topology.py '''
+
 def compute_ksp(k=8):
     g = nx.read_adjlist("graph_adjlist", nodetype = int)
     n = g.number_of_nodes()
@@ -38,6 +40,7 @@ def compute_ksp(k=8):
 
 
 ''' implementation to compute (up to) k diverse short paths '''
+
 def compute_diverse_paths(k=8):
     diverse_paths = {}
     b = 2
@@ -63,6 +66,7 @@ def compute_diverse_paths(k=8):
 ''' diverse short paths algorithm (original implementation)	
 	adapted from Voss et al, A Heuristic Approach to Finding Diverse Short Paths
  	https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7139774 '''
+    
 def heuristic_algorithm(src, dst, graph_c, b, k):
     U = []
     S = []
