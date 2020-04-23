@@ -1,4 +1,4 @@
-# Cloud Computing Project: Load Balancing in Jellyfish Networks
+# Load Balancing in Jellyfish Networks
 
 
 ### [Instructions for Cloud Computing Peer Validators](https://docs.google.com/document/d/1gw0bQXfTPnE98h_51koCD04AAzTgu5nammc-pARR2Jw/edit?usp=sharing)
