@@ -1,4 +1,4 @@
-# Last revised 4/15/20
+# Last revised 4/23/20
 # Script containing logic to output adjacency list (saved graph), routing files and tests
 # Run this prior to jellyfish_network.py to generate files
 
@@ -11,14 +11,15 @@ import pickle
 import networkx as nx
 import util as util
 
-# custom class to build Jellyfish graph
+''' Custom class to build Jellyfish graph '''
 from jellyfish_graph import Jellyfish 
 
 TRANSFORM_DIR = 'transformed_routes'
 PKL_DIR = 'pickled_routes'
 
 
-''' Get graph, convert to networkx graph, save adjacency list to store graph '''
+''' Get graph, convert to networkx graph
+    and save adjacency list to store graph '''
 def get_graph(nSwitches, nPorts): 
 
     j = Jellyfish(nSwitches, nPorts)
@@ -42,8 +43,9 @@ def get_graph(nSwitches, nPorts):
 
     return G.edges()
 
+''' Get random sampling of tests. 
+    Divide hosts in half clients, half servers '''
 def get_tests(n):
-    ''' get random sampling of tests '''
 
     HostNums = []
     for i in range(n):
@@ -70,33 +72,22 @@ def get_tests(n):
 
 
 def main():
-    ''' output graph files in main directory '''
-    #graph = nx.Graph()
+    
+    ''' Get graph '''
     edges = get_graph(20,5)
-    #print(edges)
-    #print(G.edges())
-
-    # newG = nx.Graph()
-    # newG.add_edges_from(edges)
-    # print(newG.edges())
-
-    #nx.draw(G)
-    #plt.show()
-    #graph = nx.Graph(get_graph(10, 5))
-
     graph = nx.read_adjlist("graph_adjlist", nodetype = int)
+    n = graph.number_of_nodes()
+
     # nx.draw(graph)
     # plt.savefig("called.png")
     # print(nx.info(graph))
     # print(graph.edges())
-    
     # nx.write_adjlist(graph, "graph_adjlist")
-    n = graph.number_of_nodes()
 
-    ''' output tests in perftest/tests '''
+    ''' Output tests in perftest/tests '''
     get_tests(n)
 
-    ''' output routing files in pickled_routes '''
+    ''' Output routing files for ECMP, KSP and DP '''
     filename = 'test'
     ecmp_routes = util.compute_ecmp(graph)
     ecmp_path = os.path.join(PKL_DIR, 'ecmp_{}.pkl'.format(filename))
@@ -106,10 +97,11 @@ def main():
     ksp_path = os.path.join(PKL_DIR, 'ksp_{}.pkl'.format(filename))
     util.save_obj(ksp_routes, ksp_path)
 
-    diverse_routes = util.diverse_paths(graph, 8)
+    diverse_routes = util.compute_diverse_paths(graph, 8)
     print(diverse_routes)
+    diverse_path = os.path.join(PKL_DIR, 'dp_{}.pkl'.format(filename))
+    util.save_obj(diverse_routes, diverse_path)
 
-    ''' output routing files in transformed_routes '''
     k = 8
     t_ecmp_routes = util.transform_paths_dpid(ecmp_path, k)
     t_ecmp_path = os.path.join(TRANSFORM_DIR, 'ecmp_{}_{}.pkl'.format(k, filename))
@@ -118,6 +110,10 @@ def main():
     t_ksp_routes = util.transform_paths_dpid(ksp_path, k)
     t_ksp_path = os.path.join(TRANSFORM_DIR, 'ksp_{}_{}.pkl'.format(k, filename))
     util.save_obj(t_ksp_routes, t_ksp_path)
+
+    t_diverse_routes = util.transform_paths_dpid(diverse_path, k)
+    t_diverse_path = os.path.join(TRANSFORM_DIR, 'dp_{}_{}.pkl'.format(k, filename))
+    util.save_obj(t_diverse_routes, t_diverse_path)
 
 if __name__ == '__main__':
     main()

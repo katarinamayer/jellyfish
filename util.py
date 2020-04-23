@@ -1,3 +1,6 @@
+# Last revised 4/23/20
+# Routing algorithms and auxillary functions
+
 from __future__ import division
 import pickle
 import pdb
@@ -13,12 +16,7 @@ def compute_ecmp(graph):
     Assumptions made: nodes are labelled from 0 to n,
     where n is the number of nodes in the graph
     '''
-
     g = nx.read_adjlist("graph_adjlist", nodetype = int)
-    # nx.draw(g)
-    # plt.savefig("initial.png")
-    # print(nx.info(g))
-    # print(g.edges())
 
     n = g.number_of_nodes()
     ecmp_paths = {}
@@ -44,22 +42,14 @@ def compute_ksp(graph, k=8):
 
 ''' Algorithm from https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7139774
 '''
-def diverse_paths(graph, k=8):
-
-    #nx.draw(graph, with_labels=True)
+def compute_diverse_paths(graph, k=8):
     diverse_paths = {}
     b = 2
 
     g = nx.read_adjlist("graph_adjlist", nodetype = int, create_using=nx.Graph())
-    # nx.draw(g)
-    # plt.savefig("diverse.png", with_labels=True)
-    # print(nx.info(g))
-    # print(g.edges())
-
 
     n = g.number_of_nodes()
     graph_c = g
-
     #print(nx.info(graph_c))
 
     # src = 0
@@ -87,10 +77,8 @@ def heuristic(src, dst, graph_c, b, k):
         S.append(p)
 
     while (len(U) > 0):
-        #print('here')
         (p, G) = U.pop(0)
         #row = 0.26*len(p)
-        # print("row =" + str(row))
 
         #nx.write_adjlist(G, "graph_adjlist_temp")
 
@@ -99,12 +87,6 @@ def heuristic(src, dst, graph_c, b, k):
 
             G_c = nx.Graph()
             G_c.add_edges_from(G.edges())
-
-            nx.draw(G_c, with_labels=True)
-            # plt.savefig("path.png")
-            # print("before removal")
-            # print(nx.info(G_c))
-            # print(G_c.edges())
 
             edge_index = random.randrange(len(p)-1)
 
@@ -142,11 +124,6 @@ def heuristic(src, dst, graph_c, b, k):
             for edge in toRemove:
                 G_c.remove_edge(edge[0], edge[1])
 
-            # print("after removal")
-            # print(nx.info(G_c))
-            # print(G_c.edges())
-
-
             if nx.has_path(G_c, src, dst):
                 p_c = nx.shortest_path(G_c, src, dst)
                 U.append((p_c,G_c))
@@ -161,11 +138,10 @@ def heuristic(src, dst, graph_c, b, k):
 
             if len(S) == k:
                 return S
-
     return S
 
-def acceptable(p_c, S):
 
+def acceptable(p_c, S):
     if len(S) < 1:
         return True
 
