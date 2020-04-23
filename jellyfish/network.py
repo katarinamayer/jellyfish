@@ -48,6 +48,8 @@ class Jellyfish(Topo):
                 for dest_node in tokens[1:]:
                     self.addLink(switches[int(source_node)], switches[int(dest_node)])
 
+
+topos = {'jelly' : Jellyfish }
 '''
 def get_args():
     parser = argparse.ArgumentParser()
