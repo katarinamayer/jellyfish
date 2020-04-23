@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import pickle
 import networkx as nx
 import util as util
+import routing as routing
 
 ''' Custom class to build Jellyfish graph '''
 from jellyfish_graph import Jellyfish 
@@ -88,21 +89,22 @@ def main():
     get_tests(n)
 
     ''' Output routing files for ECMP, KSP and DP '''
+    k = 8
+
     filename = 'test'
-    ecmp_routes = util.compute_ecmp(graph)
+    ecmp_routes = routing.compute_ecmp()
     ecmp_path = os.path.join(PKL_DIR, 'ecmp_{}.pkl'.format(filename))
     util.save_obj(ecmp_routes, ecmp_path)
 
-    ksp_routes = util.compute_ksp(graph,8)
+    ksp_routes = routing.compute_ksp(k)
     ksp_path = os.path.join(PKL_DIR, 'ksp_{}.pkl'.format(filename))
     util.save_obj(ksp_routes, ksp_path)
 
-    diverse_routes = util.compute_diverse_paths(graph, 8)
+    diverse_routes = routing.compute_diverse_paths(k)
     print(diverse_routes)
     diverse_path = os.path.join(PKL_DIR, 'dp_{}.pkl'.format(filename))
     util.save_obj(diverse_routes, diverse_path)
 
-    k = 8
     t_ecmp_routes = util.transform_paths_dpid(ecmp_path, k)
     t_ecmp_path = os.path.join(TRANSFORM_DIR, 'ecmp_{}_{}.pkl'.format(k, filename))
     util.save_obj(t_ecmp_routes, t_ecmp_path)
