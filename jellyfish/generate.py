@@ -68,9 +68,9 @@ def get_tests(n):
         s = pair[1]
 
         f.write("h" + str(s) + " iperf -s -e &\n")
-        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/single_flow_client.txt &\n")
+        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/single_flow.txt &\n")
         g.write("h" + str(s) + " iperf -s -e &\n")
-        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/eight_flow_client.txt &\n")
+        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/eight_flow.txt &\n")
 
     g.close()
     f.close()

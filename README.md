@@ -7,7 +7,7 @@
 Start up the VM on GCP. In a terminal window, type:
 ``` code
  $ ssh [external IP]
- $ cd home/kat/cs419-project/jellyfish
+ $ cd /home/kat/cs419-project/jellyfish
  $ sudo python network.py
  ```
 You should now be in the Mininet CLI and can perform some basic tests.
@@ -32,19 +32,22 @@ $ sudo mn -c
 Start up the VM on GCP. In two separate terminal windows, type:
 ``` code
  $ ssh [external IP]
- $ cd home/kat/cs419-project/jellyfish
+ $ cd /home/kat/cs419-project/jellyfish
  ```
 In terminal window 1, run this command to generate a saved graph (adjaceny list), routing files, and iperf test files:
 ``` code
 $ python generate.py
 ```
 In terminal window 2, start the remote controller:
+
+~~$ /home/kat/cs419-project/pox/pox.py riplpox.riplpox --topo=jelly,20,20,5,graph_adjlist --routing=jelly,ecmp_8_test --mode=reactive~~
 ``` code
 $ ~/pox/pox.py riplpox.riplpox --topo=jelly,20,20,5,graph_adjlist --routing=jelly,ecmp_8_test --mode=reactive
 ```
+
 In terminal window 1, start the network:
 ``` code
-$ sudo mn --custom ~/ripl/ripl/mn.py --topo=jelly,20,20,5,graph_adjlist --controller=remote --mac
+$ sudo mn --custom network.py --topo=jelly,20,20,5,graph_adjlist --controller=remote --mac
 ```
 
 You should now be in the Mininet CLI and can perform some iperf tests.
@@ -69,6 +72,8 @@ To view the results, wait a few minutes and exit the Mininet CLI by typing ``` m
 ### Lingering Issues
 - FIXED, pingall now reaches all hosts. ~~After some research and a lot of headache, I've discovered that Mininet does not work well with cycles in a graph, which is why it's dropping packets.~~ Manually specified 10.0.X.X IP addresses and added stp and failMode params to addSwitch() calls.
 - FIXED, wrote a script with tests. Call script using ``` source ``` command in Mininet CLI. ~~Iperf tests with multiple hosts at a time (via script). Could add logic to Mininet startup in jellyfish_network.py script but this does not work with the remote controller since Mininet startup is handled by ripl.~~
+- Run POX controller from within repository folder.
+- There may be an issue in get_route() in ripl/ripl/routing.py. Check on this.
 
 ### Progress Achieved
 - Built and tested custom Jellyfish topo and network. Our network is based on topology described in [Jellyfish: Networking Data Centers Randomly](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final82.pdf).
@@ -76,10 +81,13 @@ To view the results, wait a few minutes and exit the Mininet CLI by typing ``` m
 - Separated graph creation from network creation. Before this, we were generating the graph topology at Mininet startup time. Graph is now pre-generated and saved as an adjaceny list. This allows us to generate routing schemes for the saved graph. Jellyfish topo processes the adjacency list file to build the network.
 - Added logic for ECMP and routing file output. Routing is "calculated" based on the saved graph and outputted in pickle format.
 - Modified getRouting() in riplpox/riplpox/util.py and riplpox/riplpox/riplpox.py for custom routing flag (```--routing=jelly[ROUTING FILE]```) and argument parsing. Added the i/o to process the pkl routing file in JellyfishRouting class in ripl/ripl/routing.py.
+- Implemented K-shortest paths routing
+- Implemented diverse short paths algorithm, adapted from Voss et al paper.
 
 ### Next Steps
+- Debug diverse short paths algorithm
 - More robust iperf testing
-- K-shortest paths routing
+
 
 ### References
 - Paper: [Jellyfish: Networking Data Centers Randomly, Singla et al](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final82.pdf)
