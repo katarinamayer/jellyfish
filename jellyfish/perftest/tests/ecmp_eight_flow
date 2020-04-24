@@ -1,20 +1,20 @@
-h14 iperf -s -e &
-h18 iperf -c h14 -P 8 -e -t 60 >> perftest/results/ecmp_eight_flow.txt &
-h7 iperf -s -e &
-h19 iperf -c h7 -P 8 -e -t 60 >> perftest/results/ecmp_eight_flow.txt &
 h10 iperf -s -e &
-h0 iperf -c h10 -P 8 -e -t 60 >> perftest/results/ecmp_eight_flow.txt &
-h15 iperf -s -e &
-h1 iperf -c h15 -P 8 -e -t 60 >> perftest/results/ecmp_eight_flow.txt &
-h5 iperf -s -e &
-h17 iperf -c h5 -P 8 -e -t 60 >> perftest/results/ecmp_eight_flow.txt &
-h8 iperf -s -e &
-h11 iperf -c h8 -P 8 -e -t 60 >> perftest/results/ecmp_eight_flow.txt &
-h4 iperf -s -e &
-h13 iperf -c h4 -P 8 -e -t 60 >> perftest/results/ecmp_eight_flow.txt &
-h9 iperf -s -e &
-h3 iperf -c h9 -P 8 -e -t 60 >> perftest/results/ecmp_eight_flow.txt &
+h1 iperf -c h10 -P 8 >> perftest/results/ecmp_eight_flow.txt &
+h11 iperf -s -e &
+h8 iperf -c h11 -P 8 >> perftest/results/ecmp_eight_flow.txt &
 h16 iperf -s -e &
-h6 iperf -c h16 -P 8 -e -t 60 >> perftest/results/ecmp_eight_flow.txt &
+h9 iperf -c h16 -P 8 >> perftest/results/ecmp_eight_flow.txt &
+h14 iperf -s -e &
+h18 iperf -c h14 -P 8 >> perftest/results/ecmp_eight_flow.txt &
 h12 iperf -s -e &
-h2 iperf -c h12 -P 8 -e -t 60 >> perftest/results/ecmp_eight_flow.txt &
+h0 iperf -c h12 -P 8 >> perftest/results/ecmp_eight_flow.txt &
+h7 iperf -s -e &
+h17 iperf -c h7 -P 8 >> perftest/results/ecmp_eight_flow.txt &
+h19 iperf -s -e &
+h3 iperf -c h19 -P 8 >> perftest/results/ecmp_eight_flow.txt &
+h13 iperf -s -e &
+h5 iperf -c h13 -P 8 >> perftest/results/ecmp_eight_flow.txt &
+h15 iperf -s -e &
+h2 iperf -c h15 -P 8 >> perftest/results/ecmp_eight_flow.txt &
+h4 iperf -s -e &
+h6 iperf -c h4 -P 8 >> perftest/results/ecmp_eight_flow.txt &
