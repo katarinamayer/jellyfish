@@ -21,8 +21,16 @@ def process_eight_flow(filepath):
 
 				line_ = line.split()
 
-				transfer.append(float(line_[3])) # GBytes/sec
-				bandwidth.append(float(line_[5])) # GBytes/sec
+
+				t = float(line_[3])
+				if t < 10:
+					t = t * 1000
+				transfer.append(t) # GBytes/sec
+				
+				b = float(line_[5])
+				if b < 10:
+					b = b * 1000
+				bandwidth.append(b) # GBytes/sec
 
 			else:
 				
@@ -48,7 +56,7 @@ def average(lst):
 
 
 def results_table(results):
-	print(tabulate([['8-Way ECMP', results[0][0], results[0][1], results[0][2]], ['8-Shorest Paths', results[1][0], results[1][1], results[1][2]], ['Diverse Short Paths', results[2][0], results[2][1], results[2][2]]], headers=['Average Transfer (Mbits)', 'Average Throughput (Mbytes/sec)', 'Average RTT (us)']))
+	print(tabulate([['8-Way ECMP', results[0][0], results[0][1], results[0][2]], ['8-Shorest Paths', results[1][0], results[1][1], results[1][2]], ['Diverse Short Paths', results[2][0], results[2][1], results[2][2]]], headers=['Average Transfer (Mbytes)', 'Average Throughput (Mbits/sec)', 'Average RTT (us)']))
 
 
 def read_file(filepath):
@@ -61,7 +69,7 @@ def read_file(filepath):
 def main():
 	results = []
 
-	ecmp_results = read_file('perftest/results/eight_flow_client.txt') # TODO change file path
+	ecmp_results = read_file('perftest/results/ecmp_eight_flow.txt') # TODO change file path
 	results.append(ecmp_results)
 
 	ksp_results = read_file('perftest/results/ksp_eight_flow.txt')
