@@ -29,13 +29,13 @@ def process_eight_flow(filepath):
 				line_ = line.split()
 
 				t = float(line_[3])
-				if t < 10:
-					t = t * 1000
+				#if t < 10:
+				#	t = t * 1000
 				transfer.append(t) # MBits/sec
 				
 				b = float(line_[5])
-				if b < 10:
-					b = b * 1000
+				#if b < 10:
+				#	b = b * 1000
 				bandwidth.append(b) # MBits/sec
 
 			else:
@@ -67,13 +67,13 @@ def process_single_flow(filepath):
 				line_ = line.split()
 
 				t = float(line_[4])
-				if t < 10:
-					t = t * 1000
+				#if t < 10:
+				#	t = t * 1000
 				transfer.append(t) # MBits/sec
 				
 				b = float(line_[6])
-				if b < 10:
-					b = b * 1000
+				#if b < 10:
+				#	b = b * 1000
 				bandwidth.append(b) # MBits/sec
 
 		av_transfer = average(transfer)
