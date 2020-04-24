@@ -45,7 +45,8 @@ def process_eight_flow(filepath):
 		#print(transfer)
 		av_transfer = average(transfer)
 		av_bandwidth = average(bandwidth)
-		av_latency = average(latency)
+		#av_latency = average(latency)
+		av_latency = ''
 
 		return av_transfer, av_bandwidth, av_latency
 
