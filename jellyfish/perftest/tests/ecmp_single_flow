@@ -1,0 +1,20 @@
+h10 iperf -s -e &
+h1 iperf -c h10 -e >> perftest/results/ecmp_single_flow.txt &
+h11 iperf -s -e &
+h8 iperf -c h11 -e >> perftest/results/ecmp_single_flow.txt &
+h16 iperf -s -e &
+h9 iperf -c h16 -e >> perftest/results/ecmp_single_flow.txt &
+h14 iperf -s -e &
+h18 iperf -c h14 -e >> perftest/results/ecmp_single_flow.txt &
+h12 iperf -s -e &
+h0 iperf -c h12 -e >> perftest/results/ecmp_single_flow.txt &
+h7 iperf -s -e &
+h17 iperf -c h7 -e >> perftest/results/ecmp_single_flow.txt &
+h19 iperf -s -e &
+h3 iperf -c h19 -e >> perftest/results/ecmp_single_flow.txt &
+h13 iperf -s -e &
+h5 iperf -c h13 -e >> perftest/results/ecmp_single_flow.txt &
+h15 iperf -s -e &
+h2 iperf -c h15 -e >> perftest/results/ecmp_single_flow.txt &
+h4 iperf -s -e &
+h6 iperf -c h4 -e >> perftest/results/ecmp_single_flow.txt &

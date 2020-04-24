@@ -38,7 +38,7 @@ ROUTING = {
     'jelly': JellyfishRouting
 }
 
-def getRouting( routing_type, topo): #, paths ):
+def getRouting( routing_type, topo, paths={} ):
     "Return Ripl Routing object given a type and a Topo object"
     if routing_type == None:
         routing_type = DEF_ROUTING
