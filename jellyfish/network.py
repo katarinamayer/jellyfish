@@ -36,7 +36,7 @@ class Jellyfish(Topo):
             
         # Connect each host to a switch
         for i in range(self.numNodes):
-            self.addLink(hosts[i], switches[i])
+            self.addLink(hosts[i], switches[i], bw=100)
             ports[i] -= 1
 
         with open(adj_list) as f:
@@ -46,7 +46,7 @@ class Jellyfish(Topo):
                 tokens = line.split()
                 source_node = tokens[0]
                 for dest_node in tokens[1:]:
-                    self.addLink(switches[int(source_node)], switches[int(dest_node)])
+                    self.addLink(switches[int(source_node)], switches[int(dest_node)], bw=100)
 
 
 topos = {'jelly' : Jellyfish }
