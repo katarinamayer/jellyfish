@@ -41,7 +41,7 @@ def compute_ksp(k=8):
 
 ''' implementation to compute (up to) k diverse short paths '''
 
-def compute_diverse_paths(k=8):
+def compute_dsp(k=8):
     diverse_paths = {}
     b = 2
 
@@ -124,11 +124,15 @@ def heuristic_algorithm(src, dst, graph_c, b, k):
             for edge in toRemove:
                 G_c.remove_edge(edge[0], edge[1])
 
+            if G_c.has_edge(u,v):
+                G_c.remove_edge(u,v)
+
             if nx.has_path(G_c, src, dst):
                 p_c = nx.shortest_path(G_c, src, dst)
                 U.append((p_c,G_c))
 
-                S.append(p_c)
+                if acceptable(p_c, S):
+                    S.append(p_c)
                 #print("added to S")
 
             #if acceptable(p_c, S):
@@ -144,14 +148,21 @@ def acceptable(p_c, S):
         return True
 
     else:
-        count = 0
-        for row in S:
-            for node in row:
-                if node in p_c:
-                    count += 1
+        for path in S:
+            if path == p_c:
+                return False
 
-        if float(count)/float(len(p_c)) < 0.9:
-            return True
+    return True
 
-    return False
+    # else:
+    #     count = 0
+    #     for row in S:
+    #         for node in row:
+    #             if node in p_c:
+    #                 count += 1
+
+    #     if float(count)/float(len(p_c)) < 0.9:
+    #         return True
+
+    # return False
 

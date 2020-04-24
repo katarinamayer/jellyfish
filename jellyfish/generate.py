@@ -61,19 +61,36 @@ def get_tests(n):
     servers = HostNums[1::2]
     pairs = zip(clients, servers)
 
-    f = open("perftest/tests/single_flow", "w+")
-    g = open("perftest/tests/eight_flow", "w+")
+    f = open("perftest/tests/ecmp_single_flow", "w+")
+    g = open("perftest/tests/ecmp_eight_flow", "w+")
+    h = open("perftest/tests/ksp_single_flow", "w+")
+    j = open("perftest/tests/ksp_eight_flow", "w+")
+    k = open("perftest/tests/dsp_single_flow", "w+")
+    l = open("perftest/tests/dsp_eight_flow", "w+")
+
     for pair in pairs:
         c = pair[0]
         s = pair[1]
 
         f.write("h" + str(s) + " iperf -s -e &\n")
-        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/single_flow.txt &\n")
+        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/ecmp_single_flow.txt &\n")
         g.write("h" + str(s) + " iperf -s -e &\n")
-        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/eight_flow.txt &\n")
+        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/ecmp_eight_flow.txt &\n")
+        h.write("h" + str(s) + " iperf -s -e &\n")
+        h.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/ksp_single_flow.txt &\n")
+        j.write("h" + str(s) + " iperf -s -e &\n")
+        j.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/ksp_eight_flow.txt &\n")
+        k.write("h" + str(s) + " iperf -s -e &\n")
+        k.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/dsp_single_flow.txt &\n")
+        l.write("h" + str(s) + " iperf -s -e &\n")
+        l.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/dsp_eight_flow.txt &\n")
 
     g.close()
     f.close()
+    h.close()
+    j.close()
+    k.close()
+    l.close()
 
 
 def main():
@@ -97,17 +114,19 @@ def main():
 
     filename = 'test'
     ecmp_routes = routing.compute_ecmp()
+    #print(ecmp_routes)
     ecmp_path = os.path.join(PKL_DIR, 'ecmp_{}.pkl'.format(filename))
     util.save_obj(ecmp_routes, ecmp_path)
 
     ksp_routes = routing.compute_ksp(k)
+    #print(ksp_routes)
     ksp_path = os.path.join(PKL_DIR, 'ksp_{}.pkl'.format(filename))
     util.save_obj(ksp_routes, ksp_path)
 
-    diverse_routes = routing.compute_diverse_paths(k)
-    print(diverse_routes)
-    diverse_path = os.path.join(PKL_DIR, 'dp_{}.pkl'.format(filename))
-    util.save_obj(diverse_routes, diverse_path)
+    dsp_routes = routing.compute_dsp(k)
+    #print(diverse_routes)
+    dsp_path = os.path.join(PKL_DIR, 'dsp_{}.pkl'.format(filename))
+    util.save_obj(dsp_routes, dsp_path)
 
     t_ecmp_routes = util.transform_paths_dpid(ecmp_path, k)
     t_ecmp_path = os.path.join(TRANSFORM_DIR, 'ecmp_{}_{}.pkl'.format(k, filename))
@@ -117,9 +136,9 @@ def main():
     t_ksp_path = os.path.join(TRANSFORM_DIR, 'ksp_{}_{}.pkl'.format(k, filename))
     util.save_obj(t_ksp_routes, t_ksp_path)
 
-    t_diverse_routes = util.transform_paths_dpid(diverse_path, k)
-    t_diverse_path = os.path.join(TRANSFORM_DIR, 'dp_{}_{}.pkl'.format(k, filename))
-    util.save_obj(t_diverse_routes, t_diverse_path)
+    t_dsp_routes = util.transform_paths_dpid(dsp_path, k)
+    t_dsp_path = os.path.join(TRANSFORM_DIR, 'dsp_{}_{}.pkl'.format(k, filename))
+    util.save_obj(t_dsp_routes, t_dsp_path)
 
 if __name__ == '__main__':
     main()
