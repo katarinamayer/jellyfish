@@ -28,7 +28,6 @@ def process_eight_flow(filepath):
 
 				line_ = line.split()
 
-
 				t = float(line_[3])
 				if t < 10:
 					t = t * 1000
@@ -52,11 +51,36 @@ def process_eight_flow(filepath):
 		#print(transfer)
 		av_transfer = average(transfer)
 		av_bandwidth = average(bandwidth)
-		#av_latency = average(latency)
-		av_latency = ''
+		av_latency = average(latency)
+		#av_latency = ''
 
 		return av_transfer, av_bandwidth, av_latency
 
+def process_single_flow(filepath):
+	transfer = []
+	bandwidth = []
+	latency = []
+
+	with open(filepath) as f:
+		for line in f:
+			if line.startswith('[  3] 0.00'):
+				line_ = line.split()
+
+				t = float(line_[4])
+				if t < 10:
+					t = t * 1000
+				transfer.append(t) # MBits/sec
+				
+				b = float(line_[6])
+				if b < 10:
+					b = b * 1000
+				bandwidth.append(b) # MBits/sec
+
+		av_transfer = average(transfer)
+		av_bandwidth = average(bandwidth)
+		av_latency = ''
+
+		return av_transfer, av_bandwidth, av_latency
 
 
 def average(lst):
@@ -69,7 +93,10 @@ def results_table(results):
 
 def read_file(filepath):
 	if path.exists(filepath):
-		return [x for x in process_eight_flow(filepath)]
+		if 'eight' in filepath:
+			return [x for x in process_eight_flow(filepath)]
+		if 'single' in filepath:
+			return [x for x in process_single_flow(filepath)]
 	else:
 		return ['', '', '']
 
@@ -87,8 +114,19 @@ def main():
 	results.append(dsp_results)
 	#print(results[0][0][0])
 
-
 	results_table(results)
+
+	results_1 = []
+	ecmp_1_results = read_file('perftest/results/ecmp_single_flow.txt')
+	results_1.append(ecmp_1_results)
+
+	ksp_1_results = read_file('perftest/results/ksp_single_flow.txt')
+	results_1.append(ksp_1_results)
+
+	dsp_1_results = read_file('perftest/results/dsp_single_flow.txt')
+	results_1.append(dsp_1_results)
+
+	results_table(results_1)
 
 
 
