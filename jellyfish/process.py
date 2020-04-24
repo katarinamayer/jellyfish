@@ -56,6 +56,7 @@ def process_eight_flow(filepath):
 
 		return av_transfer, av_bandwidth, av_latency
 
+
 def process_single_flow(filepath):
 	transfer = []
 	bandwidth = []
@@ -64,6 +65,7 @@ def process_single_flow(filepath):
 	with open(filepath) as f:
 		for line in f:
 			if line.startswith('[  3] 0.00'):
+				#print(line)
 				line_ = line.split()
 
 				t = float(line_[4])
@@ -76,9 +78,12 @@ def process_single_flow(filepath):
 				#	b = b * 1000
 				bandwidth.append(b) # MBits/sec
 
+				cwnd_rtt = line_[10].split('/')
+				latency.append(float(cwnd_rtt[1]))
+
 		av_transfer = average(transfer)
 		av_bandwidth = average(bandwidth)
-		av_latency = ''
+		av_latency = average(latency)
 
 		return av_transfer, av_bandwidth, av_latency
 
@@ -88,6 +93,7 @@ def average(lst):
 
 
 def results_table(results):
+
 	print(tabulate([['8-Way ECMP', results[0][0], results[0][1], results[0][2]], ['8-Shorest Paths', results[1][0], results[1][1], results[1][2]], ['Diverse Short Paths', results[2][0], results[2][1], results[2][2]]], headers=['Average Transfer (Mbytes)', 'Average Throughput (Mbits/sec)', 'Average RTT (us)']))
 
 
@@ -114,6 +120,7 @@ def main():
 	results.append(dsp_results)
 	#print(results[0][0][0])
 
+	print("\n10 Client/Server Flows, 8 Parallel Connections:")
 	results_table(results)
 
 	results_1 = []
@@ -126,6 +133,7 @@ def main():
 	dsp_1_results = read_file('perftest/results/dsp_single_flow.txt')
 	results_1.append(dsp_1_results)
 
+	print("\n10 Client/Server Flows, Single Connection:")
 	results_table(results_1)
 
 
