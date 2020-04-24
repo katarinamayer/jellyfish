@@ -10,6 +10,8 @@ def process_eight_flow(filepath):
 	latency = []
 
 	with open(filepath) as f:
+
+		# i = 1 
 		
 		for line in f:
 			if line.startswith('[ ID]') and printIDline == True:
@@ -19,18 +21,23 @@ def process_eight_flow(filepath):
 			if line.startswith('[SUM]'):
 				#print(line)
 
+				# if i < 4:
+				# 	i += 1
+
+				# elif i >= 4:
+
 				line_ = line.split()
 
 
 				t = float(line_[3])
 				if t < 10:
 					t = t * 1000
-				transfer.append(t) # GBytes/sec
+				transfer.append(t) # MBits/sec
 				
 				b = float(line_[5])
 				if b < 10:
 					b = b * 1000
-				bandwidth.append(b) # GBytes/sec
+				bandwidth.append(b) # MBits/sec
 
 			else:
 				
@@ -70,7 +77,7 @@ def read_file(filepath):
 def main():
 	results = []
 
-	ecmp_results = read_file('perftest/results/ecmp_eight_flow.txt') # TODO change file path
+	ecmp_results = read_file('perftest/results/ecmp_eight_flow.txt')
 	results.append(ecmp_results)
 
 	ksp_results = read_file('perftest/results/ksp_eight_flow.txt')
