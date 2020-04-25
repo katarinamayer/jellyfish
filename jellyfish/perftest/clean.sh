@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm perftest/results/*
+rm perftest/results/*.txt
