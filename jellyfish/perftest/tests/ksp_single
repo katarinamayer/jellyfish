@@ -1,20 +1,30 @@
-h5 iperf -s -e &
-h14 iperf -c h5 -e >> perftest/results/ksp_single.txt &
-h18 iperf -s -e &
-h7 iperf -c h18 -e >> perftest/results/ksp_single.txt &
-h2 iperf -s -e &
-h3 iperf -c h2 -e >> perftest/results/ksp_single.txt &
-h16 iperf -s -e &
-h17 iperf -c h16 -e >> perftest/results/ksp_single.txt &
+h9 iperf -s -e &
+h5 iperf -c h9 -e >> perftest/results/ksp_single.txt &
 h13 iperf -s -e &
-h11 iperf -c h13 -e >> perftest/results/ksp_single.txt &
+h26 iperf -c h13 -e >> perftest/results/ksp_single.txt &
+h14 iperf -s -e &
+h10 iperf -c h14 -e >> perftest/results/ksp_single.txt &
 h12 iperf -s -e &
-h8 iperf -c h12 -e >> perftest/results/ksp_single.txt &
-h0 iperf -s -e &
-h9 iperf -c h0 -e >> perftest/results/ksp_single.txt &
+h28 iperf -c h12 -e >> perftest/results/ksp_single.txt &
+h18 iperf -s -e &
+h29 iperf -c h18 -e >> perftest/results/ksp_single.txt &
+h15 iperf -s -e &
+h25 iperf -c h15 -e >> perftest/results/ksp_single.txt &
+h16 iperf -s -e &
+h21 iperf -c h16 -e >> perftest/results/ksp_single.txt &
 h19 iperf -s -e &
-h15 iperf -c h19 -e >> perftest/results/ksp_single.txt &
+h22 iperf -c h19 -e >> perftest/results/ksp_single.txt &
+h27 iperf -s -e &
+h2 iperf -c h27 -e >> perftest/results/ksp_single.txt &
+h11 iperf -s -e &
+h24 iperf -c h11 -e >> perftest/results/ksp_single.txt &
+h20 iperf -s -e &
+h0 iperf -c h20 -e >> perftest/results/ksp_single.txt &
 h6 iperf -s -e &
 h4 iperf -c h6 -e >> perftest/results/ksp_single.txt &
-h10 iperf -s -e &
-h1 iperf -c h10 -e >> perftest/results/ksp_single.txt &
+h7 iperf -s -e &
+h3 iperf -c h7 -e >> perftest/results/ksp_single.txt &
+h23 iperf -s -e &
+h17 iperf -c h23 -e >> perftest/results/ksp_single.txt &
+h1 iperf -s -e &
+h8 iperf -c h1 -e >> perftest/results/ksp_single.txt &
