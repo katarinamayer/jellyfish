@@ -1,105 +1,105 @@
 ------------------------------------------------------------
-Client connecting to 10.0.17.10, TCP port 5001 with pid 23494
+Client connecting to 10.0.17.10, TCP port 5001 with pid 16670
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.28.10 port 44064 connected with 10.0.17.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.10.10, TCP port 5001 with pid 23504
+Client connecting to 10.0.27.10, TCP port 5001 with pid 16680
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.25.10 port 51338 connected with 10.0.10.10 port 5001
+[  3] local 10.0.8.10 port 60828 connected with 10.0.17.10 port 5001
+[  3] local 10.0.1.10 port 35100 connected with 10.0.27.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.4.10, TCP port 5001 with pid 23514
+Client connecting to 10.0.24.10, TCP port 5001 with pid 16690
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.9.10 port 58210 connected with 10.0.4.10 port 5001
+[  3] local 10.0.10.10 port 53096 connected with 10.0.24.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.22.10, TCP port 5001 with pid 23524
+Client connecting to 10.0.5.10, TCP port 5001 with pid 16700
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.1.10 port 42256 connected with 10.0.22.10 port 5001
+[  3] local 10.0.4.10 port 38016 connected with 10.0.5.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.3.10, TCP port 5001 with pid 23534
+Client connecting to 10.0.11.10, TCP port 5001 with pid 16710
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.26.10 port 51304 connected with 10.0.3.10 port 5001
+[  3] local 10.0.25.10 port 43832 connected with 10.0.11.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.14.10, TCP port 5001 with pid 23544
+Client connecting to 10.0.13.10, TCP port 5001 with pid 16720
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.12.10 port 36060 connected with 10.0.14.10 port 5001
+[  3] local 10.0.22.10 port 47232 connected with 10.0.13.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.6.10, TCP port 5001 with pid 23554
+Client connecting to 10.0.3.10, TCP port 5001 with pid 16730
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.23.10 port 49614 connected with 10.0.6.10 port 5001
+[  3] local 10.0.29.10 port 52612 connected with 10.0.3.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.11.10, TCP port 5001 with pid 23563
+Client connecting to 10.0.20.10, TCP port 5001 with pid 16739
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.24.10 port 41136 connected with 10.0.11.10 port 5001
+[  3] local 10.0.6.10 port 60004 connected with 10.0.20.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.2.10, TCP port 5001 with pid 23573
+Client connecting to 10.0.21.10, TCP port 5001 with pid 16750
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.30.10 port 34818 connected with 10.0.2.10 port 5001
+[  3] local 10.0.18.10 port 55674 connected with 10.0.21.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.19.10, TCP port 5001 with pid 23584
+Client connecting to 10.0.16.10, TCP port 5001 with pid 16760
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.18.10 port 35444 connected with 10.0.19.10 port 5001
+[  3] local 10.0.26.10 port 54822 connected with 10.0.16.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.5.10, TCP port 5001 with pid 23593
+Client connecting to 10.0.9.10, TCP port 5001 with pid 16769
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.13.10 port 35956 connected with 10.0.5.10 port 5001
+[  3] local 10.0.7.10 port 43336 connected with 10.0.9.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.8.10, TCP port 5001 with pid 23604
+Client connecting to 10.0.14.10, TCP port 5001 with pid 16780
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.20.10 port 58762 connected with 10.0.8.10 port 5001
+[  3] local 10.0.23.10 port 47450 connected with 10.0.14.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.27.10, TCP port 5001 with pid 23613
+Client connecting to 10.0.28.10, TCP port 5001 with pid 16789
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.21.10 port 53238 connected with 10.0.27.10 port 5001
+[  3] local 10.0.19.10 port 34426 connected with 10.0.28.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.15.10, TCP port 5001 with pid 23624
+Client connecting to 10.0.30.10, TCP port 5001 with pid 16798
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.16.10 port 44848 connected with 10.0.15.10 port 5001
+[  3] local 10.0.12.10 port 34196 connected with 10.0.30.10 port 5001
 ------------------------------------------------------------
-Client connecting to 10.0.29.10, TCP port 5001 with pid 23634
+Client connecting to 10.0.2.10, TCP port 5001 with pid 16809
 TCP window size: 85.3 KByte (default)
 ------------------------------------------------------------
-[  3] local 10.0.7.10 port 55822 connected with 10.0.29.10 port 5001
+[  3] local 10.0.15.10 port 44054 connected with 10.0.2.10 port 5001
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.04 sec   114 MBytes  95.0 Mbits/sec  1/0          0      241K/12799 us
+[  3] 0.00-10.01 sec   112 MBytes  93.6 Mbits/sec  1/0          0      545K/42987 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.11 sec  93.0 MBytes  77.2 Mbits/sec  1/0         55     1771K/177618 us
+[  3] 0.00-10.03 sec  88.5 MBytes  74.0 Mbits/sec  1/0         80     1274K/158960 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.01 sec  13.4 MBytes  11.2 Mbits/sec  1/0         41      279K/312382 us
+[  3] 0.00-10.13 sec  22.2 MBytes  18.4 Mbits/sec  1/0         25      357K/141188 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.10 sec  14.8 MBytes  12.2 Mbits/sec  1/0          0      660K/312946 us
+[  3] 0.00-10.04 sec  14.2 MBytes  11.9 Mbits/sec  1/0         41      251K/132309 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.00 sec  79.2 MBytes  66.5 Mbits/sec  1/0          0     3577K/381119 us
+[  3] 0.00-10.31 sec   110 MBytes  89.8 Mbits/sec  1/0          0     5066K/516569 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.09 sec  96.1 MBytes  79.9 Mbits/sec  1/0        121     1192K/71720 us
+[  3] 0.00-10.11 sec  6.50 MBytes  5.40 Mbits/sec  1/0          0      534K/629282 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.17 sec  48.1 MBytes  39.7 Mbits/sec  1/0         80      972K/395437 us
+[  3] 0.00-10.35 sec  15.5 MBytes  12.6 Mbits/sec  1/0         17      264K/131055 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.47 sec  13.9 MBytes  11.1 Mbits/sec  1/0         17      432K/360524 us
+[  3] 0.00-10.48 sec  67.8 MBytes  54.2 Mbits/sec  1/0        389      421K/299634 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.80 sec  74.9 MBytes  58.1 Mbits/sec  1/0        169     1432K/343249 us
+[  3] 0.00-10.36 sec   115 MBytes  93.5 Mbits/sec  1/0          0     5219K/476087 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.79 sec  36.8 MBytes  28.6 Mbits/sec  1/0        167     1118K/229553 us
+[  3] 0.00-10.62 sec  27.8 MBytes  21.9 Mbits/sec  1/0         29      875K/689118 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.71 sec  16.8 MBytes  13.1 Mbits/sec  1/0        122      285K/241625 us
+[  3] 0.00-10.33 sec  51.4 MBytes  41.7 Mbits/sec  1/0        450       72K/194886 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.71 sec  29.8 MBytes  23.3 Mbits/sec  1/0          0     1353K/411711 us
+[  3] 0.00-10.31 sec  32.9 MBytes  26.7 Mbits/sec  1/0         30      492K/136061 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-10.98 sec  26.6 MBytes  20.3 Mbits/sec  1/0         54      205K/356232 us
+[  3] 0.00-10.48 sec  11.6 MBytes  9.30 Mbits/sec  1/0          0      626K/869849 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-11.24 sec  20.2 MBytes  15.1 Mbits/sec  1/0         97      287K/274453 us
+[  3] 0.00-10.68 sec  9.75 MBytes  7.66 Mbits/sec  1/0          0      616K/626547 us
 [ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
-[  3] 0.00-11.62 sec  16.2 MBytes  11.7 Mbits/sec  1/0         61      214K/398268 us
+[  3] 0.00-11.56 sec  11.6 MBytes  8.43 Mbits/sec  1/0        106      230K/379259 us
