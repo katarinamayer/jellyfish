@@ -140,5 +140,13 @@ def main():
     t_dsp_path = os.path.join(TRANSFORM_DIR, 'dsp_{}_{}.pkl'.format(k, filename))
     util.save_obj(t_dsp_routes, t_dsp_path)
 
+
+    derangement = util.random_derangement(numHosts)
+    all_links = graph.edges()
+    path_counts = util.get_path_counts(ecmp_routes, ksp_routes, derangement, all_links)
+    #print("Making the plot")
+    util.assemble_histogram(path_counts=path_counts, file_name=filename)
+
+
 if __name__ == '__main__':
     main()
