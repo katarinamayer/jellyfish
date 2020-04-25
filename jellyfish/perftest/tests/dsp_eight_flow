@@ -1,20 +1,30 @@
-h11 iperf -s -e &
-h9 iperf -c h11 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
-h0 iperf -s -e &
-h6 iperf -c h0 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
-h12 iperf -s -e &
-h16 iperf -c h12 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
-h1 iperf -s -e &
-h18 iperf -c h1 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
-h19 iperf -s -e &
-h14 iperf -c h19 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
-h8 iperf -s -e &
-h5 iperf -c h8 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
-h7 iperf -s -e &
-h2 iperf -c h7 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
-h15 iperf -s -e &
-h17 iperf -c h15 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
-h10 iperf -s -e &
-h3 iperf -c h10 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h2 iperf -s -e &
+h19 iperf -c h2 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h29 iperf -s -e &
+h13 iperf -c h29 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h16 iperf -s -e &
+h11 iperf -c h16 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h17 iperf -s -e &
+h5 iperf -c h17 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
 h4 iperf -s -e &
-h13 iperf -c h4 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h14 iperf -c h4 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h26 iperf -s -e &
+h8 iperf -c h26 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h25 iperf -s -e &
+h28 iperf -c h25 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h18 iperf -s -e &
+h3 iperf -c h18 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h23 iperf -s -e &
+h22 iperf -c h23 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h12 iperf -s -e &
+h20 iperf -c h12 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h1 iperf -s -e &
+h9 iperf -c h1 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h10 iperf -s -e &
+h15 iperf -c h10 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h21 iperf -s -e &
+h7 iperf -c h21 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h27 iperf -s -e &
+h0 iperf -c h27 -P 8 -e >> perftest/results/dsp_eight_flow.txt &
+h6 iperf -s -e &
+h24 iperf -c h6 -P 8 -e >> perftest/results/dsp_eight_flow.txt &

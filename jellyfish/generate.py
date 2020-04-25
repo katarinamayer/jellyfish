@@ -96,7 +96,7 @@ def get_tests(n):
 def main():
     
     ''' Get graph '''
-    edges = get_graph(20,5)
+    edges = get_graph(30,8)
     graph = nx.read_adjlist("graph_adjlist", nodetype = int)
     n = graph.number_of_nodes()
 
@@ -140,11 +140,9 @@ def main():
     t_dsp_path = os.path.join(TRANSFORM_DIR, 'dsp_{}_{}.pkl'.format(k, filename))
     util.save_obj(t_dsp_routes, t_dsp_path)
 
-
-    derangement = util.random_derangement(numHosts)
+    derangement = util.random_derangement(n)
     all_links = graph.edges()
-    path_counts = util.get_path_counts(ecmp_routes, ksp_routes, derangement, all_links)
-    #print("Making the plot")
+    path_counts = util.get_path_counts(ecmp_routes, ksp_routes, dsp_routes, derangement, all_links)
     util.assemble_histogram(path_counts=path_counts, file_name=filename)
 
 
