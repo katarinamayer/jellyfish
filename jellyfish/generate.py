@@ -61,29 +61,29 @@ def get_tests(n):
     servers = HostNums[1::2]
     pairs = zip(clients, servers)
 
-    f = open("perftest/tests/ecmp_single_flow", "w+")
-    g = open("perftest/tests/ecmp_eight_flow", "w+")
-    h = open("perftest/tests/ksp_single_flow", "w+")
-    j = open("perftest/tests/ksp_eight_flow", "w+")
-    k = open("perftest/tests/dsp_single_flow", "w+")
-    l = open("perftest/tests/dsp_eight_flow", "w+")
+    f = open("perftest/tests/ecmp_single", "w+")
+    g = open("perftest/tests/ecmp_eight", "w+")
+    h = open("perftest/tests/ksp_single", "w+")
+    j = open("perftest/tests/ksp_eight", "w+")
+    k = open("perftest/tests/dsp_single", "w+")
+    l = open("perftest/tests/dsp_eight", "w+")
 
     for pair in pairs:
         c = pair[0]
         s = pair[1]
 
         f.write("h" + str(s) + " iperf -s -e &\n")
-        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/ecmp_single_flow.txt &\n")
+        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/ecmp_single.txt &\n")
         g.write("h" + str(s) + " iperf -s -e &\n")
-        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/ecmp_eight_flow.txt &\n")
+        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/ecmp_eight.txt &\n")
         h.write("h" + str(s) + " iperf -s -e &\n")
-        h.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/ksp_single_flow.txt &\n")
+        h.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/ksp_single.txt &\n")
         j.write("h" + str(s) + " iperf -s -e &\n")
-        j.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/ksp_eight_flow.txt &\n")
+        j.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/ksp_eight.txt &\n")
         k.write("h" + str(s) + " iperf -s -e &\n")
-        k.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/dsp_single_flow.txt &\n")
+        k.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/dsp_single.txt &\n")
         l.write("h" + str(s) + " iperf -s -e &\n")
-        l.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/dsp_eight_flow.txt &\n")
+        l.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/dsp_eight.txt &\n")
 
     g.close()
     f.close()
@@ -91,7 +91,7 @@ def get_tests(n):
     j.close()
     k.close()
     l.close()
-
+    
 
 def main():
     
@@ -99,12 +99,6 @@ def main():
     edges = get_graph(20,5)
     graph = nx.read_adjlist("graph_adjlist", nodetype = int)
     n = graph.number_of_nodes()
-
-    # nx.draw(graph)
-    # plt.savefig("called.png")
-    # print(nx.info(graph))
-    # print(graph.edges())
-    # nx.write_adjlist(graph, "graph_adjlist")
 
     ''' Output tests in perftest/tests '''
     get_tests(n)

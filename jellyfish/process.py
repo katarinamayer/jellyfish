@@ -2,17 +2,13 @@
 from tabulate import tabulate
 from os import path
 
-def process_eight_flow(filepath):
-
+def process_eight_conn(filepath):
 	printIDline = True
 	transfer = []
 	bandwidth = []
 	latency = []
 
 	with open(filepath) as f:
-
-		# i = 1 
-		
 		for line in f:
 			if line.startswith('[ ID]') and printIDline == True:
 				#print(line)
@@ -20,22 +16,12 @@ def process_eight_flow(filepath):
 
 			if line.startswith('[SUM]'):
 				#print(line)
-
-				# if i < 4:
-				# 	i += 1
-
-				# elif i >= 4:
-
 				line_ = line.split()
 
 				t = float(line_[3])
-				#if t < 10:
-				#	t = t * 1000
 				transfer.append(t) # MBits/sec
 				
 				b = float(line_[5])
-				#if b < 10:
-				#	b = b * 1000
 				bandwidth.append(b) # MBits/sec
 
 			else:
@@ -47,8 +33,6 @@ def process_eight_flow(filepath):
 					latency.append(float(cwnd_rtt[1]))
 					#print(cwnd_rtt[1])
 
-
-		#print(transfer)
 		av_transfer = average(transfer)
 		av_bandwidth = average(bandwidth)
 		av_latency = average(latency)
@@ -57,7 +41,7 @@ def process_eight_flow(filepath):
 		return av_transfer, av_bandwidth, av_latency
 
 
-def process_single_flow(filepath):
+def process_single_conn(filepath):
 	transfer = []
 	bandwidth = []
 	latency = []
@@ -69,13 +53,9 @@ def process_single_flow(filepath):
 				line_ = line.split()
 
 				t = float(line_[4])
-				#if t < 10:
-				#	t = t * 1000
 				transfer.append(t) # MBits/sec
 				
 				b = float(line_[6])
-				#if b < 10:
-				#	b = b * 1000
 				bandwidth.append(b) # MBits/sec
 
 				cwnd_rtt = line_[10].split('/')
@@ -100,43 +80,40 @@ def results_table(results):
 def read_file(filepath):
 	if path.exists(filepath):
 		if 'eight' in filepath:
-			return [x for x in process_eight_flow(filepath)]
+			return [x for x in process_eight_conn(filepath)]
 		if 'single' in filepath:
-			return [x for x in process_single_flow(filepath)]
+			return [x for x in process_single_conn(filepath)]
 	else:
 		return ['', '', '']
 
 
 def main():
+	
 	results = []
-
-	ecmp_results = read_file('perftest/results/ecmp_eight_flow.txt')
+	ecmp_results = read_file('perftest/results/ecmp_eight.txt')
 	results.append(ecmp_results)
 
-	ksp_results = read_file('perftest/results/ksp_eight_flow.txt')
+	ksp_results = read_file('perftest/results/ksp_eight.txt')
 	results.append(ksp_results)
 
-	dsp_results = read_file('perftest/results/dsp_eight_flow.txt')
+	dsp_results = read_file('perftest/results/dsp_eight.txt')
 	results.append(dsp_results)
-	#print(results[0][0][0])
 
 	print("\n10 Client/Server Flows, 8 Parallel Connections:")
 	results_table(results)
 
 	results_1 = []
-	ecmp_1_results = read_file('perftest/results/ecmp_single_flow.txt')
+	ecmp_1_results = read_file('perftest/results/ecmp_single.txt')
 	results_1.append(ecmp_1_results)
 
-	ksp_1_results = read_file('perftest/results/ksp_single_flow.txt')
+	ksp_1_results = read_file('perftest/results/ksp_single.txt')
 	results_1.append(ksp_1_results)
 
-	dsp_1_results = read_file('perftest/results/dsp_single_flow.txt')
+	dsp_1_results = read_file('perftest/results/dsp_single.txt')
 	results_1.append(dsp_1_results)
 
 	print("\n10 Client/Server Flows, Single Connection:")
 	results_table(results_1)
-
-
 
 
 if __name__ == '__main__':
