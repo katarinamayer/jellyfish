@@ -1,0 +1,220 @@
+------------------------------------------------------------
+Client connecting to 10.0.11.10, TCP port 5001 with pid 24714
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.17.10 port 41944 connected with 10.0.11.10 port 5001
+[  5] local 10.0.17.10 port 41946 connected with 10.0.11.10 port 5001
+[  6] local 10.0.17.10 port 41948 connected with 10.0.11.10 port 5001
+[  7] local 10.0.17.10 port 41950 connected with 10.0.11.10 port 5001
+[  8] local 10.0.17.10 port 41952 connected with 10.0.11.10 port 5001
+[  9] local 10.0.17.10 port 41954 connected with 10.0.11.10 port 5001
+[  3] local 10.0.17.10 port 41942 connected with 10.0.11.10 port 5001
+[ 10] local 10.0.17.10 port 41956 connected with 10.0.11.10 port 5001
+------------------------------------------------------------
+Client connecting to 10.0.13.10, TCP port 5001 with pid 24738
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[ 10] local 10.0.12.10 port 50504 connected with 10.0.13.10 port 5001
+[  3] local 10.0.12.10 port 50490 connected with 10.0.13.10 port 5001
+[  4] local 10.0.12.10 port 50492 connected with 10.0.13.10 port 5001
+[  5] local 10.0.12.10 port 50494 connected with 10.0.13.10 port 5001
+[  6] local 10.0.12.10 port 50496 connected with 10.0.13.10 port 5001
+[  7] local 10.0.12.10 port 50498 connected with 10.0.13.10 port 5001
+[  8] local 10.0.12.10 port 50500 connected with 10.0.13.10 port 5001
+[  9] local 10.0.12.10 port 50502 connected with 10.0.13.10 port 5001
+------------------------------------------------------------
+Client connecting to 10.0.4.10, TCP port 5001 with pid 24762
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.18.10 port 54036 connected with 10.0.4.10 port 5001
+[  3] local 10.0.18.10 port 54034 connected with 10.0.4.10 port 5001
+[  6] local 10.0.18.10 port 54040 connected with 10.0.4.10 port 5001
+[  7] local 10.0.18.10 port 54042 connected with 10.0.4.10 port 5001
+[  9] local 10.0.18.10 port 54046 connected with 10.0.4.10 port 5001
+[  8] local 10.0.18.10 port 54044 connected with 10.0.4.10 port 5001
+[  5] local 10.0.18.10 port 54038 connected with 10.0.4.10 port 5001
+[ 10] local 10.0.18.10 port 54048 connected with 10.0.4.10 port 5001
+------------------------------------------------------------
+Client connecting to 10.0.16.10, TCP port 5001 with pid 24786
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  4] local 10.0.19.10 port 51798 connected with 10.0.16.10 port 5001
+[  5] local 10.0.19.10 port 51800 connected with 10.0.16.10 port 5001
+[  6] local 10.0.19.10 port 51802 connected with 10.0.16.10 port 5001
+[  7] local 10.0.19.10 port 51804 connected with 10.0.16.10 port 5001
+[  9] local 10.0.19.10 port 51808 connected with 10.0.16.10 port 5001
+[  8] local 10.0.19.10 port 51806 connected with 10.0.16.10 port 5001
+[  3] local 10.0.19.10 port 51796 connected with 10.0.16.10 port 5001
+[ 10] local 10.0.19.10 port 51810 connected with 10.0.16.10 port 5001
+------------------------------------------------------------
+Client connecting to 10.0.6.10, TCP port 5001 with pid 24810
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  7] local 10.0.14.10 port 48158 connected with 10.0.6.10 port 5001
+[  3] local 10.0.14.10 port 48150 connected with 10.0.6.10 port 5001
+[  5] local 10.0.14.10 port 48154 connected with 10.0.6.10 port 5001
+[  6] local 10.0.14.10 port 48156 connected with 10.0.6.10 port 5001
+[  8] local 10.0.14.10 port 48160 connected with 10.0.6.10 port 5001
+[  9] local 10.0.14.10 port 48162 connected with 10.0.6.10 port 5001
+[ 10] local 10.0.14.10 port 48164 connected with 10.0.6.10 port 5001
+[  4] local 10.0.14.10 port 48152 connected with 10.0.6.10 port 5001
+------------------------------------------------------------
+Client connecting to 10.0.1.10, TCP port 5001 with pid 24834
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[ 10] local 10.0.15.10 port 51070 connected with 10.0.1.10 port 5001
+[  5] local 10.0.15.10 port 51060 connected with 10.0.1.10 port 5001
+[  4] local 10.0.15.10 port 51058 connected with 10.0.1.10 port 5001
+[  7] local 10.0.15.10 port 51062 connected with 10.0.1.10 port 5001
+[  3] local 10.0.15.10 port 51056 connected with 10.0.1.10 port 5001
+[  8] local 10.0.15.10 port 51066 connected with 10.0.1.10 port 5001
+[  6] local 10.0.15.10 port 51064 connected with 10.0.1.10 port 5001
+[  9] local 10.0.15.10 port 51068 connected with 10.0.1.10 port 5001
+------------------------------------------------------------
+Client connecting to 10.0.9.10, TCP port 5001 with pid 24858
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[ 10] local 10.0.3.10 port 47628 connected with 10.0.9.10 port 5001
+[  3] local 10.0.3.10 port 47614 connected with 10.0.9.10 port 5001
+[  4] local 10.0.3.10 port 47616 connected with 10.0.9.10 port 5001
+[  5] local 10.0.3.10 port 47618 connected with 10.0.9.10 port 5001
+[  6] local 10.0.3.10 port 47620 connected with 10.0.9.10 port 5001
+[  7] local 10.0.3.10 port 47622 connected with 10.0.9.10 port 5001
+[  8] local 10.0.3.10 port 47624 connected with 10.0.9.10 port 5001
+[  9] local 10.0.3.10 port 47626 connected with 10.0.9.10 port 5001
+------------------------------------------------------------
+Client connecting to 10.0.10.10, TCP port 5001 with pid 24873
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[ 10] local 10.0.8.10 port 40316 connected with 10.0.10.10 port 5001
+[  3] local 10.0.8.10 port 40302 connected with 10.0.10.10 port 5001
+[  4] local 10.0.8.10 port 40304 connected with 10.0.10.10 port 5001
+[  5] local 10.0.8.10 port 40306 connected with 10.0.10.10 port 5001
+[  6] local 10.0.8.10 port 40308 connected with 10.0.10.10 port 5001
+[  7] local 10.0.8.10 port 40310 connected with 10.0.10.10 port 5001
+[  8] local 10.0.8.10 port 40312 connected with 10.0.10.10 port 5001
+[  9] local 10.0.8.10 port 40314 connected with 10.0.10.10 port 5001
+[ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
+[ 10] 0.00-0.01 sec  82.0 KBytes  64.4 Mbits/sec  0/1          0       14K/246741 us
+------------------------------------------------------------
+Client connecting to 10.0.20.10, TCP port 5001 with pid 24890
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[ 10] local 10.0.5.10 port 55546 connected with 10.0.20.10 port 5001
+[  3] local 10.0.5.10 port 55532 connected with 10.0.20.10 port 5001
+[  4] local 10.0.5.10 port 55534 connected with 10.0.20.10 port 5001
+[  5] local 10.0.5.10 port 55536 connected with 10.0.20.10 port 5001
+[  6] local 10.0.5.10 port 55538 connected with 10.0.20.10 port 5001
+[  7] local 10.0.5.10 port 55540 connected with 10.0.20.10 port 5001
+[  8] local 10.0.5.10 port 55542 connected with 10.0.20.10 port 5001
+[  9] local 10.0.5.10 port 55544 connected with 10.0.20.10 port 5001
+------------------------------------------------------------
+Client connecting to 10.0.7.10, TCP port 5001 with pid 24906
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[ 10] local 10.0.2.10 port 39610 connected with 10.0.7.10 port 5001
+[  3] local 10.0.2.10 port 39596 connected with 10.0.7.10 port 5001
+[  4] local 10.0.2.10 port 39598 connected with 10.0.7.10 port 5001
+[  5] local 10.0.2.10 port 39600 connected with 10.0.7.10 port 5001
+[  6] local 10.0.2.10 port 39602 connected with 10.0.7.10 port 5001
+[  7] local 10.0.2.10 port 39604 connected with 10.0.7.10 port 5001
+[  8] local 10.0.2.10 port 39606 connected with 10.0.7.10 port 5001
+[  9] local 10.0.2.10 port 39608 connected with 10.0.7.10 port 5001
+[ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
+[  9] 0.00-10.02 sec  6.50 MBytes  5.44 Mbits/sec  1/0          7      161K/179989 us
+[ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
+[  9] 0.00-10.01 sec  11.6 MBytes  9.74 Mbits/sec  1/0          4      183K/128903 us
+[  4] 0.00-10.04 sec  8.50 MBytes  7.10 Mbits/sec  1/0          8      120K/129041 us
+[ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
+[ 10] 0.00-10.02 sec  15.0 MBytes  12.6 Mbits/sec  1/0          0      390K/194880 us
+[  3] 0.00-10.05 sec  8.50 MBytes  7.10 Mbits/sec  1/0          4      120K/137949 us
+[  5] 0.00-10.11 sec  6.75 MBytes  5.60 Mbits/sec  1/0          2      171K/192882 us
+[ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
+[  7] 0.00-10.02 sec  11.6 MBytes  9.73 Mbits/sec  1/0          0      319K/165702 us
+[ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
+[  3] 0.00-10.08 sec  4.38 MBytes  3.64 Mbits/sec  1/0          6       83K/257030 us
+[  4] 0.00-10.12 sec  11.0 MBytes  9.11 Mbits/sec  1/0          0      295K/209851 us
+[ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
+[  4] 0.00-10.01 sec  11.0 MBytes  9.22 Mbits/sec  1/0          0      111K/69712 us
+[  8] 0.00-10.02 sec  10.9 MBytes  9.10 Mbits/sec  1/0          0      113K/71607 us
+[  6] 0.00-10.02 sec  10.9 MBytes  9.11 Mbits/sec  1/0          0      110K/71683 us
+[  5] 0.00-10.09 sec  9.00 MBytes  7.48 Mbits/sec  1/0          0      226K/176266 us
+[  9] 0.00-10.04 sec  11.8 MBytes  9.81 Mbits/sec  1/0          0      127K/78283 us
+[  9] 0.00-10.16 sec  11.0 MBytes  9.08 Mbits/sec  1/0          0      288K/221883 us
+[  6] 0.00-10.18 sec  11.1 MBytes  9.17 Mbits/sec  1/0          0      309K/227288 us
+[  5] 0.00-10.07 sec  11.1 MBytes  9.27 Mbits/sec  1/0          0      110K/84921 us
+[  7] 0.00-10.20 sec  11.1 MBytes  9.15 Mbits/sec  1/0          4      171K/160365 us
+[  5] 0.00-10.20 sec  11.5 MBytes  9.46 Mbits/sec  1/0          0      349K/235924 us
+[  9] 0.00-10.18 sec  9.12 MBytes  7.52 Mbits/sec  1/0          0      264K/190837 us
+[  5] 0.00-10.25 sec  11.5 MBytes  9.42 Mbits/sec  1/0         12      178K/165583 us
+[  7] 0.00-10.13 sec  12.2 MBytes  10.1 Mbits/sec  1/0          0      155K/81569 us
+[  6] 0.00-10.22 sec  10.2 MBytes  8.41 Mbits/sec  1/0          0      593K/298837 us
+[  6] 0.00-10.28 sec  11.5 MBytes  9.38 Mbits/sec  1/0         14      178K/168346 us
+[ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
+[  8] 0.00-10.05 sec  6.00 MBytes  5.01 Mbits/sec  1/0         12       91K/192189 us
+[  3] 0.00-10.20 sec  11.8 MBytes  9.66 Mbits/sec  1/0          0      124K/71989 us
+[ 10] 0.00-10.26 sec  9.12 MBytes  7.46 Mbits/sec  1/0          0      220K/196854 us
+[  3] 0.00-10.33 sec  11.2 MBytes  9.14 Mbits/sec  1/0          0      281K/243286 us
+[  8] 0.00-10.28 sec  9.25 MBytes  7.55 Mbits/sec  1/0          0      260K/195713 us
+[  8] 0.00-10.36 sec  8.50 MBytes  6.88 Mbits/sec  1/0         11      118K/161313 us
+[ 10] 0.00-10.37 sec  7.00 MBytes  5.66 Mbits/sec  1/0          8      101K/159741 us
+[SUM] 0.00-10.37 sec  78.2 MBytes  63.3 Mbits/sec  8/0        65
+[  7] 0.00-10.34 sec  5.38 MBytes  4.36 Mbits/sec  1/0          4      147K/304669 us
+[  6] 0.00-10.31 sec  9.25 MBytes  7.52 Mbits/sec  1/0          0      246K/193628 us
+[ 10] 0.00-10.27 sec  13.0 MBytes  10.6 Mbits/sec  1/0          0      197K/82365 us
+[SUM] 0.00-10.27 sec  92.6 MBytes  75.6 Mbits/sec  8/0         0
+[ 10] 0.00-10.17 sec  5.25 MBytes  4.33 Mbits/sec  1/0         14       67K/187609 us
+[  8] 0.00-10.01 sec  7.38 MBytes  6.18 Mbits/sec  1/0          0       70K/16384 us
+[  4] 0.00-10.43 sec  4.62 MBytes  3.72 Mbits/sec  1/0         34       87K/308916 us
+[  4] 0.00-10.21 sec  6.25 MBytes  5.13 Mbits/sec  1/0         16       94K/191167 us
+[ 10] 0.00-10.53 sec  6.75 MBytes  5.38 Mbits/sec  1/0          4      159K/231350 us
+[ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
+[  6] 0.00-10.03 sec  1.75 MBytes  1.46 Mbits/sec  1/0         12       86K/386113 us
+[ ID] Interval        Transfer    Bandwidth       Write/Err  Rtry    Cwnd/RTT
+[  4] 0.00-10.08 sec  4.00 MBytes  3.33 Mbits/sec  1/0         13       66K/201919 us
+[  4] 0.00-10.48 sec  9.62 MBytes  7.70 Mbits/sec  1/0          0      234K/209368 us
+[  7] 0.00-10.30 sec  4.62 MBytes  3.76 Mbits/sec  1/0         16       66K/205110 us
+[  3] 0.00-10.12 sec  4.00 MBytes  3.32 Mbits/sec  1/0          5      114K/201337 us
+[  3] 0.00-10.52 sec  10.0 MBytes  7.97 Mbits/sec  1/0          0      313K/217270 us
+[SUM] 0.00-10.52 sec  77.0 MBytes  61.4 Mbits/sec  8/0         0
+[  7] 0.00-10.58 sec  11.4 MBytes  9.02 Mbits/sec  1/0          0      296K/267243 us
+[  3] 0.00-10.17 sec  7.88 MBytes  6.50 Mbits/sec  1/0          0       79K/21934 us
+[  7] 0.00-10.17 sec  7.50 MBytes  6.19 Mbits/sec  1/0          0       70K/21367 us
+[  4] 0.00-10.18 sec  5.12 MBytes  4.22 Mbits/sec  1/0          0       42K/20153 us
+[  6] 0.00-10.65 sec  5.62 MBytes  4.43 Mbits/sec  1/0          8       97K/256607 us
+[  6] 0.00-10.17 sec  4.75 MBytes  3.92 Mbits/sec  1/0         10      124K/220658 us
+[  6] 0.00-10.22 sec  36.5 MBytes  30.0 Mbits/sec  1/0          0      278K/22425 us
+[  9] 0.00-10.24 sec  16.1 MBytes  13.2 Mbits/sec  1/0          0      139K/19380 us
+[  3] 0.00-10.43 sec  8.12 MBytes  6.54 Mbits/sec  1/0          9      107K/240525 us
+[  5] 0.00-10.34 sec  16.1 MBytes  13.1 Mbits/sec  1/0          0      139K/43448 us
+[SUM] 0.00-10.34 sec  96.7 MBytes  78.5 Mbits/sec  7/1         0
+[  8] 0.00-10.33 sec  6.50 MBytes  5.28 Mbits/sec  1/0          2      149K/308944 us
+[  3] 0.00-10.84 sec  5.50 MBytes  4.26 Mbits/sec  1/0          9       76K/312916 us
+[  8] 0.00-10.81 sec  12.0 MBytes  9.31 Mbits/sec  1/0          0      391K/361812 us
+[SUM] 0.00-10.81 sec  94.2 MBytes  73.1 Mbits/sec  8/0         0
+[  8] 0.00-10.81 sec  8.88 MBytes  6.89 Mbits/sec  1/0         13      169K/455982 us
+[  4] 0.00-10.37 sec  2.50 MBytes  2.02 Mbits/sec  1/0         27       63K/424914 us
+[  4] 0.00-10.92 sec  5.88 MBytes  4.51 Mbits/sec  1/0          7      100K/383273 us
+[  7] 0.00-10.50 sec  4.75 MBytes  3.79 Mbits/sec  1/0         14      125K/360404 us
+[  5] 0.00-10.99 sec  4.62 MBytes  3.53 Mbits/sec  1/0         20       86K/531114 us
+[  7] 0.00-11.09 sec  8.62 MBytes  6.52 Mbits/sec  1/0         14      115K/420227 us
+[ 10] 0.00-11.07 sec  9.12 MBytes  6.92 Mbits/sec  1/0         43      172K/537527 us
+[  7] 0.00-10.63 sec  2.12 MBytes  1.68 Mbits/sec  1/0          3       89K/569842 us
+[  8] 0.00-11.16 sec  5.62 MBytes  4.23 Mbits/sec  1/0          7       77K/381457 us
+[SUM] 0.00-11.16 sec  51.2 MBytes  38.5 Mbits/sec  8/0        58
+[  5] 0.00-10.89 sec  5.88 MBytes  4.53 Mbits/sec  1/0         11       89K/311553 us
+[  5] 0.00-10.66 sec  2.12 MBytes  1.67 Mbits/sec  1/0          8       89K/560310 us
+[  9] 0.00-10.71 sec  4.00 MBytes  3.13 Mbits/sec  1/0         16       65K/283915 us
+[  5] 0.00-10.72 sec  4.25 MBytes  3.33 Mbits/sec  1/0         14       67K/302732 us
+[  6] 0.00-10.93 sec  6.38 MBytes  4.89 Mbits/sec  1/0         10       93K/264325 us
+[  9] 0.00-11.18 sec  8.62 MBytes  6.47 Mbits/sec  1/0         10      161K/433281 us
+[SUM] 0.00-11.18 sec  55.9 MBytes  41.9 Mbits/sec  8/0       130
+[  8] 0.00-10.75 sec  2.00 MBytes  1.56 Mbits/sec  1/0         11       90K/559620 us
+[ 10] 0.00-10.77 sec  4.25 MBytes  3.31 Mbits/sec  1/0         12       67K/307669 us
+[SUM] 0.00-10.77 sec  36.5 MBytes  28.4 Mbits/sec  8/0        86
+[  9] 0.00-10.77 sec  2.00 MBytes  1.56 Mbits/sec  1/0         15       87K/489205 us
+[ 10] 0.00-10.80 sec  3.00 MBytes  2.33 Mbits/sec  1/0         22      106K/501232 us
+[  9] 0.00-11.05 sec  4.75 MBytes  3.61 Mbits/sec  1/0         13       67K/253422 us
+[SUM] 0.00-11.05 sec  47.2 MBytes  35.9 Mbits/sec  8/0       101
+[  3] 0.00-11.05 sec  2.75 MBytes  2.09 Mbits/sec  1/0         28       73K/166462 us
+[SUM] 0.00-11.05 sec  18.2 MBytes  13.9 Mbits/sec  8/0       126
