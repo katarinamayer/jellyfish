@@ -11,28 +11,6 @@ $ cd cs419-project
 $ ./setup/install.sh 
 ```
 
-### Start Basic Network
-``` code
- $ cd cs419-project/jellyfish
- $ sudo python network.py
- ```
-You should now be in the Mininet CLI and can perform some basic tests.
-
-``` code
-mininet> pingall
-mininet> h0 iperf -s -e &
-mininet> h1 iperf -c h0 -e
-```
-To exit the CLI, type:
-``` code
-mininet> exit
-
-```
-Clear the network after each run. 
-``` code
-$ sudo mn -c
-```
-
 ### Custom Routing with Remote Controller
 
 In two separate terminal windows:
@@ -43,11 +21,11 @@ In window 1, run this command to generate a saved graph (adjaceny list), routing
 ``` code
 $ python generate.py
 ```
-In window 2, start the remote controller:
+This script will generate three custom routing files: ```ecmp_8_test``` ```ksp_8_test``` and ```dsp_8_test``` In window 2, start the remote controller with one of these routing files:
 
 ~~$ /home/kat/cs419-project/pox/pox.py riplpox.riplpox --topo=jelly,20,20,5,graph_adjlist --routing=jelly,ecmp_8_test --mode=reactive~~
 ``` code
-$ ~/pox/pox.py riplpox.riplpox --topo=jelly,20,20,5,graph_adjlist --routing=jelly,ecmp_8_test --mode=reactive
+$ ~/pox/pox.py riplpox.riplpox --topo=jelly,20,20,5,graph_adjlist --routing=jelly,[ROUTING FILE] --mode=reactive
 ```
 
 In window 1, start the network:
@@ -59,20 +37,25 @@ You should now be in the Mininet CLI and can perform some iperf tests.
 
 ### Perform Tests in the Mininet CLI
 
-Perform an initial pingall to ensure network connectivity. It is likely that packets are initially dropped. Wait approximately 30 seconds or until packets start to be recieved before retrying pingall.
+Perform an initial ```pingall``` to ensure network connectivity. It is likely that packets will be dropped initially. Wait for connectivity (approximately 30 seconds) before moving onto the next step.
 ``` code
 mininet> pingall
 ```
 
-After achieving successful connectivity, perform iperf tests by typing these commands into the CLI:
+After achieving  connectivity, perform iperf tests by typing these commands into the CLI with corresponding routing (```ecmp```, ```ksp``` or ```dsp```). Wait approximately 30 seconds after the first command before executing the second command.
+
 ``` code
-mininet> source perftest/tests/single_flow
-mininet> source perftest/tests/eight_flow
+mininet> source perftest/tests/[ROUTING]_eight
+mininet> source perftest/tests/[ROUTING]_single
 ```
 
-To view the results, wait a few minutes and exit the Mininet CLI by typing ``` mininet> exit ```. View tests results under directory ``` perftest/results ``` After exiting the Mininet CLI in window 1, exit the pox controller in window 2 by hitting ctrl-D.
+To view the results, wait a few minutes and exit the Mininet CLI by typing ``` mininet> exit ```. After exiting the Mininet CLI in window 1, exit the pox controller in window 2 by hitting ctrl-D. 
 
-
+To process the results, type:
+``` code
+python process.py
+```
+Alternatively, view raw results under directory ``` jellyfish/perftest/results ```.
 
 ### Lingering Issues
 - FIXED, pingall now reaches all hosts. ~~After some research and a lot of headache, I've discovered that Mininet does not work well with cycles in a graph, which is why it's dropping packets.~~ Manually specified 10.0.X.X IP addresses and added stp and failMode params to addSwitch() calls.
