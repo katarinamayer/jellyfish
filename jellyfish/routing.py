@@ -56,7 +56,9 @@ def compute_dsp(k=8):
     # diverse_paths[(str(src), str(dst))] = [p for p in S]
 
     for src in range(n):
+        print("source " + str(src))
         for dst in range(src+1, n):
+            print("dest " + str(dst))
             S = heuristic_algorithm(src, dst, graph_c, b, k)
             diverse_paths[(str(src), str(dst))] = [p for p in S]
 
