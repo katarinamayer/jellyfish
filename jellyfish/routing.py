@@ -56,7 +56,9 @@ def compute_dsp(k=8):
     # diverse_paths[(str(src), str(dst))] = [p for p in S]
 
     for src in range(n):
+        print("source " + str(src))
         for dst in range(src+1, n):
+            print("dest " + str(dst))
             S = heuristic_algorithm(src, dst, graph_c, b, k)
             diverse_paths[(str(src), str(dst))] = [p for p in S]
 
@@ -78,12 +80,7 @@ def heuristic_algorithm(src, dst, graph_c, b, k):
 
     while (len(U) > 0):
         (p, G) = U.pop(0)
-        #row = 0.26*len(p)
-
-        #nx.write_adjlist(G, "graph_adjlist_temp")
-
         for i in range(0,b):
-            #G_c = nx.read_adjlist("graph_adjlist_temp", nodetype = int)
 
             G_c = nx.Graph()
             G_c.add_edges_from(G.edges())
