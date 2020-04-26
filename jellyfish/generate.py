@@ -96,7 +96,7 @@ def get_tests(n):
 def main():
     
     ''' Get graph '''
-    edges = get_graph(30,5)
+    edges = get_graph(40,8)
     graph = nx.read_adjlist("graph_adjlist", nodetype = int)
     n = graph.number_of_nodes()
 
