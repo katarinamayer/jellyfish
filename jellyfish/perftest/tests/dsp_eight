@@ -1,40 +1,50 @@
-h15 iperf -s -e &
-h13 iperf -c h15 -P 8 -e >> perftest/results/dsp_eight.txt &
-h34 iperf -s -e &
-h37 iperf -c h34 -P 8 -e >> perftest/results/dsp_eight.txt &
-h0 iperf -s -e &
-h25 iperf -c h0 -P 8 -e >> perftest/results/dsp_eight.txt &
-h1 iperf -s -e &
-h9 iperf -c h1 -P 8 -e >> perftest/results/dsp_eight.txt &
-h23 iperf -s -e &
-h7 iperf -c h23 -P 8 -e >> perftest/results/dsp_eight.txt &
-h18 iperf -s -e &
-h6 iperf -c h18 -P 8 -e >> perftest/results/dsp_eight.txt &
-h12 iperf -s -e &
-h28 iperf -c h12 -P 8 -e >> perftest/results/dsp_eight.txt &
-h20 iperf -s -e &
-h30 iperf -c h20 -P 8 -e >> perftest/results/dsp_eight.txt &
-h3 iperf -s -e &
-h36 iperf -c h3 -P 8 -e >> perftest/results/dsp_eight.txt &
-h31 iperf -s -e &
-h4 iperf -c h31 -P 8 -e >> perftest/results/dsp_eight.txt &
-h35 iperf -s -e &
-h32 iperf -c h35 -P 8 -e >> perftest/results/dsp_eight.txt &
-h2 iperf -s -e &
-h11 iperf -c h2 -P 8 -e >> perftest/results/dsp_eight.txt &
-h33 iperf -s -e &
-h16 iperf -c h33 -P 8 -e >> perftest/results/dsp_eight.txt &
-h29 iperf -s -e &
-h8 iperf -c h29 -P 8 -e >> perftest/results/dsp_eight.txt &
-h22 iperf -s -e &
-h21 iperf -c h22 -P 8 -e >> perftest/results/dsp_eight.txt &
+h8 iperf -s -e &
+h13 iperf -c h8 -P 8 -e >> perftest/results/dsp_eight.txt &
 h19 iperf -s -e &
-h14 iperf -c h19 -P 8 -e >> perftest/results/dsp_eight.txt &
-h38 iperf -s -e &
-h24 iperf -c h38 -P 8 -e >> perftest/results/dsp_eight.txt &
-h39 iperf -s -e &
-h5 iperf -c h39 -P 8 -e >> perftest/results/dsp_eight.txt &
+h46 iperf -c h19 -P 8 -e >> perftest/results/dsp_eight.txt &
+h31 iperf -s -e &
+h28 iperf -c h31 -P 8 -e >> perftest/results/dsp_eight.txt &
+h35 iperf -s -e &
+h30 iperf -c h35 -P 8 -e >> perftest/results/dsp_eight.txt &
+h3 iperf -s -e &
+h23 iperf -c h3 -P 8 -e >> perftest/results/dsp_eight.txt &
+h43 iperf -s -e &
+h1 iperf -c h43 -P 8 -e >> perftest/results/dsp_eight.txt &
+h25 iperf -s -e &
+h38 iperf -c h25 -P 8 -e >> perftest/results/dsp_eight.txt &
+h0 iperf -s -e &
+h6 iperf -c h0 -P 8 -e >> perftest/results/dsp_eight.txt &
+h32 iperf -s -e &
+h36 iperf -c h32 -P 8 -e >> perftest/results/dsp_eight.txt &
+h40 iperf -s -e &
+h14 iperf -c h40 -P 8 -e >> perftest/results/dsp_eight.txt &
+h34 iperf -s -e &
+h15 iperf -c h34 -P 8 -e >> perftest/results/dsp_eight.txt &
+h18 iperf -s -e &
+h44 iperf -c h18 -P 8 -e >> perftest/results/dsp_eight.txt &
+h5 iperf -s -e &
+h39 iperf -c h5 -P 8 -e >> perftest/results/dsp_eight.txt &
+h21 iperf -s -e &
+h10 iperf -c h21 -P 8 -e >> perftest/results/dsp_eight.txt &
+h7 iperf -s -e &
+h17 iperf -c h7 -P 8 -e >> perftest/results/dsp_eight.txt &
+h47 iperf -s -e &
+h41 iperf -c h47 -P 8 -e >> perftest/results/dsp_eight.txt &
+h37 iperf -s -e &
+h27 iperf -c h37 -P 8 -e >> perftest/results/dsp_eight.txt &
+h24 iperf -s -e &
+h20 iperf -c h24 -P 8 -e >> perftest/results/dsp_eight.txt &
 h26 iperf -s -e &
-h17 iperf -c h26 -P 8 -e >> perftest/results/dsp_eight.txt &
-h27 iperf -s -e &
-h10 iperf -c h27 -P 8 -e >> perftest/results/dsp_eight.txt &
+h4 iperf -c h26 -P 8 -e >> perftest/results/dsp_eight.txt &
+h48 iperf -s -e &
+h11 iperf -c h48 -P 8 -e >> perftest/results/dsp_eight.txt &
+h16 iperf -s -e &
+h33 iperf -c h16 -P 8 -e >> perftest/results/dsp_eight.txt &
+h12 iperf -s -e &
+h9 iperf -c h12 -P 8 -e >> perftest/results/dsp_eight.txt &
+h29 iperf -s -e &
+h45 iperf -c h29 -P 8 -e >> perftest/results/dsp_eight.txt &
+h22 iperf -s -e &
+h49 iperf -c h22 -P 8 -e >> perftest/results/dsp_eight.txt &
+h2 iperf -s -e &
+h42 iperf -c h2 -P 8 -e >> perftest/results/dsp_eight.txt &
