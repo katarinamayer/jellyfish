@@ -29,7 +29,6 @@ filenames = dict(zip(exps, filenames))
 
 def plot_metric_vs_hosts(ecmp_data, ksp_data, dsp_data, metric, num_conn):
     fig = plt.figure()
-#     ax = plt.subplot(111)
     fig, ax = plt.subplots(figsize=(8, 4.5))
     servers = []
     for i in range(len(hosts)):
