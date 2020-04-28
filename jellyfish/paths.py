@@ -31,7 +31,6 @@ def average_path_length(d):
 	return sum(path_lens) / len(path_lens)
 
 
-
 ecmp_num_paths = average_num_paths(ecmp)
 dsp_num_paths = average_num_paths(dsp)
 ksp_num_paths = average_num_paths(ksp)
@@ -40,5 +39,5 @@ ecmp_path_lens = average_path_length(ecmp)
 ksp_path_lens = average_path_length(ksp)
 dsp_path_lens = average_path_length(dsp)
 
-print(tabulate([['ecmp', ecmp_num_paths, ecmp_path_lens], ['ksp', ksp_num_paths, ksp_path_lens], ['dsp', dsp_num_paths, dsp_path_lens]], headers=['Num Paths', 'Path Lens']))
+print(tabulate([['ECMP', ecmp_num_paths, ecmp_path_lens], ['K-Shortest Paths', ksp_num_paths, ksp_path_lens], ['K-Diverse Short Paths', dsp_num_paths, dsp_path_lens]], headers=['Average # Paths', 'Average Path Length']))
 

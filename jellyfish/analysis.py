@@ -1,8 +1,10 @@
+# analysis.py
+# Last revised 4/26/20
+# Script to process and graph results across all experiments, same code as analysis.ipynb
+
 from os import path
 from tabulate import tabulate
 from process import *
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 

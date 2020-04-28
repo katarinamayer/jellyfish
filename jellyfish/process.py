@@ -1,4 +1,7 @@
-# process.
+# process.py
+# Last revised 4/26/20
+# Script to process and output results for 1 round of experiments
+
 from tabulate import tabulate
 from os import path
 
@@ -74,7 +77,7 @@ def average(lst):
 
 def results_table(results):
 
-	print(tabulate([['8-Way ECMP', results[0][0], results[0][1], results[0][2]], ['8-Shortest Paths', results[1][0], results[1][1], results[1][2]], ['Diverse Short Paths', results[2][0], results[2][1], results[2][2]]], headers=['Average Transfer (Mbytes)', 'Average Throughput (Mbits/sec)', 'Average RTT (us)']))
+	print(tabulate([['ECMP', results[0][0], results[0][1], results[0][2]], ['8-Shortest Paths', results[1][0], results[1][1], results[1][2]], ['8-Diverse Short Paths', results[2][0], results[2][1], results[2][2]]], headers=['Average Transfer (Mbytes)', 'Average Throughput (Mbits/sec)', 'Average RTT (us)']))
 
 
 def read_file(filepath):
