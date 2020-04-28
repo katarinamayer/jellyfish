@@ -1,50 +1,50 @@
-h38 iperf -s -e &
-h1 iperf -c h38 -e >> perftest/results/dsp_single.txt &
-h10 iperf -s -e &
-h0 iperf -c h10 -e >> perftest/results/dsp_single.txt &
-h35 iperf -s -e &
-h20 iperf -c h35 -e >> perftest/results/dsp_single.txt &
-h41 iperf -s -e &
-h2 iperf -c h41 -e >> perftest/results/dsp_single.txt &
-h31 iperf -s -e &
-h33 iperf -c h31 -e >> perftest/results/dsp_single.txt &
-h16 iperf -s -e &
-h7 iperf -c h16 -e >> perftest/results/dsp_single.txt &
-h4 iperf -s -e &
-h43 iperf -c h4 -e >> perftest/results/dsp_single.txt &
-h14 iperf -s -e &
-h49 iperf -c h14 -e >> perftest/results/dsp_single.txt &
-h19 iperf -s -e &
-h3 iperf -c h19 -e >> perftest/results/dsp_single.txt &
-h25 iperf -s -e &
-h42 iperf -c h25 -e >> perftest/results/dsp_single.txt &
+h13 iperf -s -e &
+h9 iperf -c h13 -e >> perftest/results/dsp_single.txt &
 h8 iperf -s -e &
-h36 iperf -c h8 -e >> perftest/results/dsp_single.txt &
-h9 iperf -s -e &
-h30 iperf -c h9 -e >> perftest/results/dsp_single.txt &
-h5 iperf -s -e &
-h39 iperf -c h5 -e >> perftest/results/dsp_single.txt &
+h1 iperf -c h8 -e >> perftest/results/dsp_single.txt &
+h42 iperf -s -e &
+h44 iperf -c h42 -e >> perftest/results/dsp_single.txt &
 h18 iperf -s -e &
-h22 iperf -c h18 -e >> perftest/results/dsp_single.txt &
-h17 iperf -s -e &
-h11 iperf -c h17 -e >> perftest/results/dsp_single.txt &
-h48 iperf -s -e &
-h15 iperf -c h48 -e >> perftest/results/dsp_single.txt &
-h24 iperf -s -e &
-h13 iperf -c h24 -e >> perftest/results/dsp_single.txt &
-h46 iperf -s -e &
-h29 iperf -c h46 -e >> perftest/results/dsp_single.txt &
+h34 iperf -c h18 -e >> perftest/results/dsp_single.txt &
+h16 iperf -s -e &
+h25 iperf -c h16 -e >> perftest/results/dsp_single.txt &
 h6 iperf -s -e &
-h40 iperf -c h6 -e >> perftest/results/dsp_single.txt &
-h27 iperf -s -e &
-h45 iperf -c h27 -e >> perftest/results/dsp_single.txt &
+h17 iperf -c h6 -e >> perftest/results/dsp_single.txt &
+h45 iperf -s -e &
+h48 iperf -c h45 -e >> perftest/results/dsp_single.txt &
+h41 iperf -s -e &
+h35 iperf -c h41 -e >> perftest/results/dsp_single.txt &
+h31 iperf -s -e &
+h46 iperf -c h31 -e >> perftest/results/dsp_single.txt &
+h10 iperf -s -e &
+h49 iperf -c h10 -e >> perftest/results/dsp_single.txt &
+h24 iperf -s -e &
+h12 iperf -c h24 -e >> perftest/results/dsp_single.txt &
+h32 iperf -s -e &
+h5 iperf -c h32 -e >> perftest/results/dsp_single.txt &
+h43 iperf -s -e &
+h11 iperf -c h43 -e >> perftest/results/dsp_single.txt &
+h47 iperf -s -e &
+h39 iperf -c h47 -e >> perftest/results/dsp_single.txt &
+h22 iperf -s -e &
+h3 iperf -c h22 -e >> perftest/results/dsp_single.txt &
+h29 iperf -s -e &
+h23 iperf -c h29 -e >> perftest/results/dsp_single.txt &
+h14 iperf -s -e &
+h15 iperf -c h14 -e >> perftest/results/dsp_single.txt &
 h28 iperf -s -e &
-h34 iperf -c h28 -e >> perftest/results/dsp_single.txt &
-h23 iperf -s -e &
-h37 iperf -c h23 -e >> perftest/results/dsp_single.txt &
-h12 iperf -s -e &
-h47 iperf -c h12 -e >> perftest/results/dsp_single.txt &
-h44 iperf -s -e &
-h32 iperf -c h44 -e >> perftest/results/dsp_single.txt &
-h26 iperf -s -e &
-h21 iperf -c h26 -e >> perftest/results/dsp_single.txt &
+h2 iperf -c h28 -e >> perftest/results/dsp_single.txt &
+h40 iperf -s -e &
+h4 iperf -c h40 -e >> perftest/results/dsp_single.txt &
+h30 iperf -s -e &
+h26 iperf -c h30 -e >> perftest/results/dsp_single.txt &
+h37 iperf -s -e &
+h20 iperf -c h37 -e >> perftest/results/dsp_single.txt &
+h36 iperf -s -e &
+h33 iperf -c h36 -e >> perftest/results/dsp_single.txt &
+h0 iperf -s -e &
+h38 iperf -c h0 -e >> perftest/results/dsp_single.txt &
+h19 iperf -s -e &
+h21 iperf -c h19 -e >> perftest/results/dsp_single.txt &
+h7 iperf -s -e &
+h27 iperf -c h7 -e >> perftest/results/dsp_single.txt &

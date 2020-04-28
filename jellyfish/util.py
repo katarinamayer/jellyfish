@@ -13,7 +13,8 @@ import matplotlib.pyplot as plt
 
 def save_obj(obj, path):
     with open(path, 'wb') as f:
-        pickle.dump(obj,f, protocol=0)
+        pickle.dump(obj,f,protocol=pickle.HIGHEST_PROTOCOL)
+        
 
 def load_obj(path):
     with open(path, 'rb') as f:
