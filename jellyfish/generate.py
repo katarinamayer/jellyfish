@@ -108,7 +108,7 @@ def main():
 
     filename = 'test'
     ecmp_routes = routing.compute_ecmp()
-    #print(ecmp_routes)
+    print(ecmp_routes)
     ecmp_path = os.path.join(PKL_DIR, 'ecmp_{}.pkl'.format(filename))
     util.save_obj(ecmp_routes, ecmp_path)
 

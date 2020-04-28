@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 # Set up dirs/filenames
 results_dir = 'perftest/results'
 hosts = [20, 30, 40, 50]
-tests = [6, 5, 4, 1]
+tests = [6, 5, 4, 4]
 host_dirs = [[results_dir + '/results_{}hosts_0{}'.format(num_hosts, str(i)) 
                for i in range(1, num_tests+1)] for num_hosts,num_tests in zip(hosts,tests)]
 # Map from num_hosts to paths of results
@@ -88,7 +88,7 @@ def plot_results(num_conn, metric):
 
 
 
-# plot_results('single', 'throughput')
-# plot_results('eight', 'throughput')
+plot_results('single', 'throughput')
+plot_results('eight', 'throughput')
 plot_results('single', 'latency')
 plot_results('eight','latency')
