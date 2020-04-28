@@ -60,7 +60,6 @@ def plot_metric_vs_hosts(ecmp_data, ksp_data, dsp_data, metric, num_conn):
     plt.show()
 
 
-
 def aggregate_average(num_hosts, num_conn):
     dir = host_dirs[num_hosts]
     files = filenames[num_conn]
@@ -75,18 +74,14 @@ def aggregate_average(num_hosts, num_conn):
     return dict(zip(protocols, results))
 
 
-
 def plot_results(num_conn, metric):
     data = [aggregate_average(num_hosts, num_conn) for num_hosts in hosts]
 
     ecmp_data = [sub_data['ecmp'][metric] for sub_data in data]
     ksp_data = [sub_data['ksp'][metric] for sub_data in data]
     dsp_data = [sub_data['dsp'][metric] for sub_data in data]
-
-    #print(ecmp_data)
         
     plot_metric_vs_hosts(ecmp_data, ksp_data, dsp_data, metric, num_conn)
-
 
 
 plot_results('single', 'throughput')

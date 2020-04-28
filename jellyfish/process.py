@@ -102,7 +102,7 @@ def main():
 	dsp_results = read_file('perftest/results/dsp_eight.txt')
 	results.append(dsp_results)
 
-	print("\n10 Client/Server Flows, 8 Parallel Connections:")
+	print("\n8 Parallel Connections:")
 	results_table(results)
 
 	results_1 = []
@@ -115,7 +115,7 @@ def main():
 	dsp_1_results = read_file('perftest/results/dsp_single.txt')
 	results_1.append(dsp_1_results)
 
-	print("\n10 Client/Server Flows, Single Connection:")
+	print("\nSingle Connection:")
 	results_table(results_1)
 
 
