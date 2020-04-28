@@ -1,0 +1,79 @@
+'''
+
+Output: A set S of at most k diverse, short paths in G from
+s to g.
+
+1: U ← EmptyQueue
+2: S ← ∅
+3: p ← SHORTESTPATH(G, s, g) #choose a shortest path
+
+Make copy of the graph
+
+4: if p not empty then                      # e.g. while shortest path doesn't fail
+    5: enqueue(U,(p, G))                    # add the path and the graph as a pair to the queue.
+    6: S ← {p}                              # add path to set.
+
+7: while U not empty do
+    8: (p, G) ← dequeue(U)                  # dequeue a path-graph pair
+    
+    9: for i ← 1, b do                                  # for i in range (0,b)
+        10: x ← SAMPLEUNIFORM(p)                        # x = (edge(uv), fraction of edge (t)) e.g. randomly choose edge along p, randomly choose some t:0-1 incl, 
+                                                        # loop through all edges in graph, remove all edges where no point along edge is in row
+                                                        # for each edge in graph:
+                                                            # for each endpoint (a,b) in edge:
+                                                                # calc len shortest path a,u + t
+                                                                # calc len shortest path a,v + 1-t
+                                                                # d = min(above paths)
+                                                                # if d < row, remove edge
+
+                                                            # for each ednpoint, find distance from endpoint to x.
+                                                            # e.g. Find min length distance from the endpoint to each of x's endpoints  
+        11: E0 ← {e ∈ E : d(x, e(t)) ≥ ρ ∀t ∈ [0, 1]}
+        12: G0 ← (V, E0)
+        13: p0 ← SHORTESTPATH(G0, s, g)
+        
+        4: if p0 not empty then
+            15: enqueue(U,(p0, G0))
+        
+        16: if ACCEPTABLE(p0) then
+            17: S ← S ∪ {p0}
+        
+        18: if |S| = k then
+            19: return S
+
+return S
+'''
+
+
+
+
+
+                    # remove edges as above from G_copy
+                    # Find new shortest path between src and dest in G_copy
+
+                    # if path from s--->d
+                        # p' = get shortest path
+                        # add pair (p', G_copy) to U queue
+
+                    # if P < 90% similar to any other path (the higher the %, the less diverse)
+                        # add p' to S
+
+                    # if length of S = k
+                        # break
+
+            #return S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+h13 iperf -s -e &
+h9 iperf -c h13 -P 8 -e >> perftest/results/ksp_eight.txt &
+h8 iperf -s -e &
+h1 iperf -c h8 -P 8 -e >> perftest/results/ksp_eight.txt &
+h42 iperf -s -e &
+h44 iperf -c h42 -P 8 -e >> perftest/results/ksp_eight.txt &
+h18 iperf -s -e &
+h34 iperf -c h18 -P 8 -e >> perftest/results/ksp_eight.txt &
+h16 iperf -s -e &
+h25 iperf -c h16 -P 8 -e >> perftest/results/ksp_eight.txt &
+h6 iperf -s -e &
+h17 iperf -c h6 -P 8 -e >> perftest/results/ksp_eight.txt &
+h45 iperf -s -e &
+h48 iperf -c h45 -P 8 -e >> perftest/results/ksp_eight.txt &
+h41 iperf -s -e &
+h35 iperf -c h41 -P 8 -e >> perftest/results/ksp_eight.txt &
+h31 iperf -s -e &
+h46 iperf -c h31 -P 8 -e >> perftest/results/ksp_eight.txt &
+h10 iperf -s -e &
+h49 iperf -c h10 -P 8 -e >> perftest/results/ksp_eight.txt &
+h24 iperf -s -e &
+h12 iperf -c h24 -P 8 -e >> perftest/results/ksp_eight.txt &
+h32 iperf -s -e &
+h5 iperf -c h32 -P 8 -e >> perftest/results/ksp_eight.txt &
+h43 iperf -s -e &
+h11 iperf -c h43 -P 8 -e >> perftest/results/ksp_eight.txt &
+h47 iperf -s -e &
+h39 iperf -c h47 -P 8 -e >> perftest/results/ksp_eight.txt &
+h22 iperf -s -e &
+h3 iperf -c h22 -P 8 -e >> perftest/results/ksp_eight.txt &
+h29 iperf -s -e &
+h23 iperf -c h29 -P 8 -e >> perftest/results/ksp_eight.txt &
+h14 iperf -s -e &
+h15 iperf -c h14 -P 8 -e >> perftest/results/ksp_eight.txt &
+h28 iperf -s -e &
+h2 iperf -c h28 -P 8 -e >> perftest/results/ksp_eight.txt &
+h40 iperf -s -e &
+h4 iperf -c h40 -P 8 -e >> perftest/results/ksp_eight.txt &
+h30 iperf -s -e &
+h26 iperf -c h30 -P 8 -e >> perftest/results/ksp_eight.txt &
+h37 iperf -s -e &
+h20 iperf -c h37 -P 8 -e >> perftest/results/ksp_eight.txt &
+h36 iperf -s -e &
+h33 iperf -c h36 -P 8 -e >> perftest/results/ksp_eight.txt &
+h0 iperf -s -e &
+h38 iperf -c h0 -P 8 -e >> perftest/results/ksp_eight.txt &
+h19 iperf -s -e &
+h21 iperf -c h19 -P 8 -e >> perftest/results/ksp_eight.txt &
+h7 iperf -s -e &
+h27 iperf -c h7 -P 8 -e >> perftest/results/ksp_eight.txt &
