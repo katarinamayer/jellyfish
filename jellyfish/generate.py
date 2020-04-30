@@ -74,17 +74,17 @@ def get_tests(n):
         s = pair[1]
 
         f.write("h" + str(s) + " iperf -s -e &\n")
-        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/ecmp_single.txt &\n")
+        f.write("h" + str(c) + " iperf -c h" + str(s) + " -e > perftest/results/ecmp_single.txt &\n")
         g.write("h" + str(s) + " iperf -s -e &\n")
-        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/ecmp_eight.txt &\n")
+        g.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e > perftest/results/ecmp_eight.txt &\n")
         h.write("h" + str(s) + " iperf -s -e &\n")
         h.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/ksp_single.txt &\n")
         j.write("h" + str(s) + " iperf -s -e &\n")
-        j.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/ksp_eight.txt &\n")
+        j.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e > perftest/results/ksp_eight.txt &\n")
         k.write("h" + str(s) + " iperf -s -e &\n")
         k.write("h" + str(c) + " iperf -c h" + str(s) + " -e >> perftest/results/dsp_single.txt &\n")
         l.write("h" + str(s) + " iperf -s -e &\n")
-        l.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e >> perftest/results/dsp_eight.txt &\n")
+        l.write("h" + str(c) + " iperf -c h" + str(s) + " -P 8 -e > perftest/results/dsp_eight.txt &\n")
 
     g.close()
     f.close()
@@ -97,7 +97,7 @@ def get_tests(n):
 def main():
     
     ''' Get graph '''
-    edges = get_graph(50,6)
+    edges = get_graph(20,5)
     graph = nx.read_adjlist("graph_adjlist", nodetype = int)
     n = graph.number_of_nodes()
 
@@ -109,7 +109,7 @@ def main():
 
     filename = 'test'
     ecmp_routes = routing.compute_ecmp()
-    print(ecmp_routes)
+    #print(ecmp_routes)
     ecmp_path = os.path.join(PKL_DIR, 'ecmp_{}.pkl'.format(filename))
     util.save_obj(ecmp_routes, ecmp_path)
 

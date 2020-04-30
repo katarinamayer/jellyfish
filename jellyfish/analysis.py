@@ -34,9 +34,9 @@ def plot_metric_vs_hosts(ecmp_data, ksp_data, dsp_data, metric, num_conn):
     for i in range(len(hosts)):
     	servers.append(hosts[i]/2)
 
-    ax.plot(servers, ecmp_data, label='ECMP')
-    ax.plot(servers, ksp_data, label='8-Shortest Paths')
-    ax.plot(servers, dsp_data, label='8-Diverse Short Paths')
+    ax.plot(servers, ecmp_data, label='ECMP', marker='.')
+    ax.plot(servers, ksp_data, label='8-Shortest Paths', marker='.')
+    ax.plot(servers, dsp_data, label='8-Diverse Short Paths', marker='.')
     
     unit = units[metrics.index(metric)]
     plt.xlabel('Number of Server Pairs', fontsize=12)
