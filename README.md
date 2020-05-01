@@ -3,8 +3,6 @@
 
 ### [Instructions for Peer Validators](https://docs.google.com/document/d/12diR7cZjga3QByGUJ_-UPkwQ9HItD67_AWI2WW5HUQ0/edit?usp=sharing)
 
-### [Final Presentation](https://docs.google.com/presentation/d/1VC06KK8xzkOqqk9WotgSNXZwlDYV1wZLeO8lsE6WPMY/edit?usp=sharing)
-
 
 ### Progress Achieved
 - [X] Built and tested custom Jellyfish topo and network. Our network is based on the topology described in [Jellyfish: Networking Data Centers Randomly, Singla et al](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final82.pdf).
