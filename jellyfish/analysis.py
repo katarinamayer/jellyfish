@@ -1,22 +1,29 @@
 # analysis.py
-# Last revised 4/26/20
-# Script to process and graph results across all experiments, same code as analysis.ipynb
+# Last revised 4/30/20
+# Process and graph results across all experiments, same code as analysis.ipynb
 
 from os import path
+import os
 from tabulate import tabulate
 from process import *
+from collections import defaultdict
+import re
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 
 # Set up dirs/filenames
 results_dir = 'perftest/results'
-hosts = [20, 30, 40, 50]
-tests = [6, 5, 4, 4]
-host_dirs = [[results_dir + '/results_{}hosts_0{}'.format(num_hosts, str(i)) 
-               for i in range(1, num_tests+1)] for num_hosts,num_tests in zip(hosts,tests)]
-# Map from num_hosts to paths of results
-host_dirs = dict(zip(hosts, host_dirs))  
+dirs = sorted(next(os.walk(results_dir))[1])
+host_dirs = defaultdict(list)
+hosts = set()
+for subdir in dirs:
+    num_hosts = int(re.search(r'\d+', subdir).group())
+    hosts.add(num_hosts)
+    host_dirs[num_hosts].append(results_dir + '/' +subdir)
+host_dirs = dict(host_dirs)
+hosts = sorted(list(hosts))
 
 metrics = ['transfer', 'throughput', 'latency']
 units = ['MBytes', 'MBit/s', '\u03BCs']
