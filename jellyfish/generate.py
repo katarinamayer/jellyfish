@@ -140,5 +140,7 @@ def main():
     t_dsp_path = os.path.join(TRANSFORM_DIR, 'dsp_{}_{}.pkl'.format(k, filename))
     util.save_obj(t_dsp_routes, t_dsp_path)
 
+    print("Concluded successfully")
+
 if __name__ == '__main__':
     main()
