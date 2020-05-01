@@ -1,7 +1,7 @@
 # generate.py
-# Last revised 4/23/20
-# Script containing logic to output adjacency list, routing files and tests
-# Run this prior to network.py to generate files
+# Last revised 4/30/20
+# Output adjacency list, routing files and tests
+# Run this prior to network.py to generate necessary files
 
 import os
 import sys
@@ -45,8 +45,8 @@ def get_graph(nSwitches, nPorts):
     # print(G.edges())
 
     nx.write_adjlist(G, "graph_adjlist")
-
     return G.edges()
+
 
 ''' Get random sampling of tests. 
     Divide hosts in half clients, half servers '''
@@ -97,29 +97,34 @@ def get_tests(n):
 def main():
     
     ''' Get graph '''
+    print("Generating graph")
     edges = get_graph(20,5)
     graph = nx.read_adjlist("graph_adjlist", nodetype = int)
     n = graph.number_of_nodes()
 
     ''' Output tests in perftest/tests '''
+    print("Generating tests")
     get_tests(n)
 
     ''' Output routing files for ECMP, KSP and DP '''
     k = 8
-
     filename = 'test'
+
+    print("Generating ECMP paths")
     ecmp_routes = routing.compute_ecmp()
-    #print(ecmp_routes)
+    # print(ecmp_routes)
     ecmp_path = os.path.join(PKL_DIR, 'ecmp_{}.pkl'.format(filename))
     util.save_obj(ecmp_routes, ecmp_path)
 
+    print("Generating 8-shortest paths")
     ksp_routes = routing.compute_ksp(k)
-    #print(ksp_routes)
+    # print(ksp_routes)
     ksp_path = os.path.join(PKL_DIR, 'ksp_{}.pkl'.format(filename))
     util.save_obj(ksp_routes, ksp_path)
 
+    print("Generating 8-diverse short paths")
     dsp_routes = routing.compute_dsp(k)
-    #print(diverse_routes)
+    # print(diverse_routes)
     dsp_path = os.path.join(PKL_DIR, 'dsp_{}.pkl'.format(filename))
     util.save_obj(dsp_routes, dsp_path)
 

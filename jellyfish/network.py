@@ -1,6 +1,5 @@
-# Last Revised 4/11/20
-# Script to build jellyfish network on mininet based on adjacency list
-# Refer to running instructions in README
+# Last Revised 4/30/20
+# Build jellyfish network on Mininet based on adjacency list
 
 from mininet.net import Mininet
 from mininet.topo import Topo
@@ -25,14 +24,12 @@ class Jellyfish(Topo):
         hosts = []
         for i in range(self.numNodes):
             hosts.append(self.addHost('h' + str(i), ip = "10.0." +str(i+1)+".10"))
-            #print("10.0." +str(i+1)+".10")
-            #print(hosts[i])
 
         switches = []
         ports = []
         for i in range(self.numSwitches):
             switches.append(self.addSwitch('s' + str(i), stp=True, failMode='standalone'))
-            ports.append(self.numPorts) # each switch has all open ports at this point
+            ports.append(self.numPorts)
             
         # Connect each host to a switch
         for i in range(self.numNodes):
@@ -49,27 +46,14 @@ class Jellyfish(Topo):
                     self.addLink(switches[int(source_node)], switches[int(dest_node)], bw=100)
 
 
+# Required for running topo via --custom flag
 topos = {'jelly' : Jellyfish }
-'''
-def get_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--numNodes', help="Number of hosts", required=True)
-    parser.add_argument('--numPorts', help="Number of total ports per switch", required=True)
-    parser.add_argument('--numServerPorts', help="Number of ports per switch to reserve to servers", required=True)
-    parser.add_argument('--numSwitches', help="Number of Switches", required=True)
-    return parser.parse_args()
-'''
 
-# Running the topo via --custom flag does not run main()
+
+# Running the topo via --custom flag DOES NOT run main() below
 # Running via sudo network.py calls main()
 def main():
-    '''
-    args = get_args()
-    numNodes = args.numNodes
-    numPorts = args.numPorts
-    numServerPorts = arsg.numServerPorts
-    numSwitches = args.numSwitches
-    '''
+
     numHosts = 20
     numSwitches = 20
     numPorts = 5
