@@ -1,6 +1,5 @@
 # Last Revised 4/5/20
 # Stand alone implementation (old implementation)
-# Don't run this one anymore.
 
 from mininet.net import Mininet
 from mininet.topo import Topo
@@ -27,7 +26,6 @@ class Jellyfish(Topo):
         hosts = []
         for i in range(self.numNodes):
             hosts.append(self.addHost('h' + str(i), ip = "127.0.0." +str(i+1)))
-            #print(hosts[i])
 
         switches = []
         ports = []
@@ -49,10 +47,9 @@ class Jellyfish(Topo):
             node1 = link[0]
             node2 = link[1]
 
-            # check if opposite pair is in adjacent since we don't want to double link
+            # check if opposite pair is in adjacent since do not want to double link
             if((node2, node1) not in added_to_mininet): 
                 self.addLink(switches[node1], switches[node2])
-                #print("Link between s"+str(node1)+" and s"+str(node2)+" added to network.")
                 added_to_mininet.append(link)
 
     # Create graph
@@ -92,14 +89,12 @@ class Jellyfish(Topo):
         i = 0
         while i < self.numSwitches:
             if (ports[i] >= 2):
-                #print("s"+str(i)+" has more than 2 ports.")
                 randLink = random.choice(tuple(adjacent))
 
                 if (randLink[0] == i or randLink[1] == i):
                     i += 0 # restart the loop to choose a new random link
 
                 else:
-                    #print("s"+str(i)+" has >= 2 ports. Link between "+str(randLink)+" broken. New links between "+str((i, randLink[0]))+" and "+str((i, randLink[1]))+" formed.")
                     adjacent.remove(randLink)
                     adjacent.remove((randLink[1], randLink[0]))
 
@@ -187,7 +182,7 @@ def main():
     network.start()
 
     dumpNodeConnections(network.hosts)
-    #network.pingAll()
+    # network.pingAll()
 
     network.run( CLI, network )
     info( '* Stopping Network\n' )
