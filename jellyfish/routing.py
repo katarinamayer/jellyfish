@@ -51,7 +51,7 @@ def compute_dsp(k=8):
     # print(nx.info(graph_c))
 
     for src in range(n):
-        print("Computing diverse short paths for source " + str(src))
+        print("Computing diverse short paths for source " + str(src + 1) + "/20")
         for dst in range(src+1, n):
             # print("dest " + str(dst))
             S = heuristic_algorithm(src, dst, graph_c, b, k)
